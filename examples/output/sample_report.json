@@ -1,0 +1,326 @@
+{
+  "run_id": "demo-offline-001",
+  "question": "Is aspirin effective for secondary prevention of cardiovascular events in adults?",
+  "timestamp": "2026-02-18T00:10:32.963050+00:00",
+  "pico": {
+    "population": "Adults with established cardiovascular disease",
+    "intervention": "Low-dose aspirin (75-100mg daily)",
+    "comparator": "Placebo or no treatment",
+    "outcome": "Major adverse cardiovascular events (MACE)",
+    "comparator_source": "user_specified"
+  },
+  "prisma_counts": {
+    "records_identified": 247,
+    "records_after_dedup": 189,
+    "records_screened": 189,
+    "records_excluded_screening": 142,
+    "full_text_assessed": 47,
+    "reports_assessed": 47,
+    "reports_excluded": 30,
+    "studies_included": 17,
+    "duplicates_removed": 58
+  },
+  "study_count": 17,
+  "claim_count": 8,
+  "snippet_count": 24,
+  "claims": [
+    {
+      "claim_id": "C-001",
+      "claim_text": "Low-dose aspirin (75-100mg/day) significantly reduces the risk of major adverse cardiovascular events in patients with established cardiovascular disease.",
+      "certainty": "high",
+      "supporting_snippet_ids": [
+        "S-001",
+        "S-002",
+        "S-003"
+      ],
+      "verified": true,
+      "therapeutic_context": "secondary_prevention"
+    },
+    {
+      "claim_id": "C-002",
+      "claim_text": "Aspirin reduces the relative risk of recurrent MI by approximately 20-25% compared to placebo in secondary prevention populations.",
+      "certainty": "high",
+      "supporting_snippet_ids": [
+        "S-004",
+        "S-005",
+        "S-006"
+      ],
+      "verified": true,
+      "therapeutic_context": "secondary_prevention"
+    },
+    {
+      "claim_id": "C-003",
+      "claim_text": "The benefit of aspirin is accompanied by an increased risk of major gastrointestinal bleeding (absolute risk increase ~0.5% per year).",
+      "certainty": "high",
+      "supporting_snippet_ids": [
+        "S-007",
+        "S-008"
+      ],
+      "verified": true,
+      "therapeutic_context": "safety"
+    },
+    {
+      "claim_id": "C-004",
+      "claim_text": "Aspirin's net clinical benefit is favorable in high-risk secondary prevention patients where cardiovascular event reduction outweighs bleeding risk.",
+      "certainty": "moderate",
+      "supporting_snippet_ids": [
+        "S-009",
+        "S-010",
+        "S-011"
+      ],
+      "verified": true,
+      "therapeutic_context": "risk_benefit"
+    },
+    {
+      "claim_id": "C-005",
+      "claim_text": "Dual antiplatelet therapy (aspirin + P2Y12 inhibitor) provides additional benefit over aspirin alone in the first 12 months after acute coronary syndrome.",
+      "certainty": "high",
+      "supporting_snippet_ids": [
+        "S-012",
+        "S-013",
+        "S-014"
+      ],
+      "verified": true,
+      "therapeutic_context": "combination_therapy"
+    },
+    {
+      "claim_id": "C-006",
+      "claim_text": "No significant difference in efficacy between 75mg and 100mg daily aspirin doses for secondary prevention.",
+      "certainty": "moderate",
+      "supporting_snippet_ids": [
+        "S-015",
+        "S-016"
+      ],
+      "verified": true,
+      "therapeutic_context": "dosing"
+    },
+    {
+      "claim_id": "C-007",
+      "claim_text": "Aspirin resistance, defined by laboratory measures, is observed in 5-40% of patients but clinical significance remains debated.",
+      "certainty": "low",
+      "supporting_snippet_ids": [
+        "S-017",
+        "S-018",
+        "S-019"
+      ],
+      "verified": true,
+      "therapeutic_context": "pharmacology"
+    },
+    {
+      "claim_id": "C-008",
+      "claim_text": "Aspirin use in secondary prevention is supported by all major international guidelines (AHA/ACC, ESC) as a Class I recommendation.",
+      "certainty": "high",
+      "supporting_snippet_ids": [
+        "S-020",
+        "S-021"
+      ],
+      "verified": true,
+      "therapeutic_context": "guidelines"
+    }
+  ],
+  "snippets": [
+    {
+      "snippet_id": "S-001",
+      "pmid": "32245678",
+      "text": "In pooled analysis of 12 randomized controlled trials (n=18,450), low-dose aspirin was associated with a significant reduction in MACE (RR 0.78, 95% CI 0.71-0.85, p<0.001).",
+      "page_or_section": "Results"
+    },
+    {
+      "snippet_id": "S-002",
+      "pmid": "31456789",
+      "text": "Aspirin 81mg daily reduced the primary composite endpoint of cardiovascular death, nonfatal MI, and nonfatal stroke by 22% (HR 0.78, 95% CI 0.68-0.89).",
+      "page_or_section": "Results"
+    },
+    {
+      "snippet_id": "S-003",
+      "pmid": "30567890",
+      "text": "All antiplatelet regimens including aspirin demonstrated consistent benefits in secondary prevention across subgroups defined by age, sex, and diabetes status.",
+      "page_or_section": "Discussion"
+    },
+    {
+      "snippet_id": "S-004",
+      "pmid": "32245678",
+      "text": "Subgroup analysis showed NNT of 67 for prevention of one recurrent MI over 2 years.",
+      "page_or_section": "Results"
+    },
+    {
+      "snippet_id": "S-005",
+      "pmid": "31456789",
+      "text": "Relative risk reduction of 22% translates to approximately 25 fewer MIs per 1000 patient-years.",
+      "page_or_section": "Discussion"
+    },
+    {
+      "snippet_id": "S-006",
+      "pmid": "30567890",
+      "text": "Meta-regression analysis found no evidence of heterogeneity by study design or patient population.",
+      "page_or_section": "Results"
+    },
+    {
+      "snippet_id": "S-007",
+      "pmid": "32245678",
+      "text": "Major gastrointestinal bleeding occurred at 0.5% per year in the aspirin arm vs 0.3% in placebo (absolute increase 0.2%/year).",
+      "page_or_section": "Safety Analysis"
+    },
+    {
+      "snippet_id": "S-008",
+      "pmid": "31456789",
+      "text": "Three major bleeds per 1000 patient-years attributable to aspirin therapy.",
+      "page_or_section": "Safety"
+    },
+    {
+      "snippet_id": "S-009",
+      "pmid": "32245678",
+      "text": "NNH for major GI bleeding is 500 patient-years, favoring use in high-risk CV populations.",
+      "page_or_section": "Discussion"
+    },
+    {
+      "snippet_id": "S-010",
+      "pmid": "31456789",
+      "text": "In patients aged >70 without prior GI ulcer, CV benefit exceeded bleeding risk.",
+      "page_or_section": "Risk-Benefit Analysis"
+    },
+    {
+      "snippet_id": "S-011",
+      "pmid": "30567890",
+      "text": "Guidelines recommend aspirin for all CAD patients unless contraindicated by GI intolerance or history.",
+      "page_or_section": "Recommendations"
+    },
+    {
+      "snippet_id": "S-012",
+      "pmid": "32111222",
+      "text": "DAPT (aspirin + clopidogrel) reduced stent thrombosis by 67% in acute coronary syndrome vs aspirin alone.",
+      "page_or_section": "Results"
+    },
+    {
+      "snippet_id": "S-013",
+      "pmid": "32111222",
+      "text": "Benefit of DAPT was maximal in first 12 months post-PCI.",
+      "page_or_section": "Follow-up Analysis"
+    },
+    {
+      "snippet_id": "S-014",
+      "pmid": "32111222",
+      "text": "Long-term aspirin monotherapy after 12 months DAPT is standard of care.",
+      "page_or_section": "Recommendations"
+    },
+    {
+      "snippet_id": "S-015",
+      "pmid": "32333444",
+      "text": "Dose comparison trial found equivalent efficacy between 75mg and 100mg aspirin.",
+      "page_or_section": "Results"
+    },
+    {
+      "snippet_id": "S-016",
+      "pmid": "32333444",
+      "text": "GI bleeding rates did not differ by dose (p=0.87).",
+      "page_or_section": "Safety"
+    },
+    {
+      "snippet_id": "S-017",
+      "pmid": "32444555",
+      "text": "Aspirin resistance defined by platelet aggregation testing occurs in 5-40% depending on assay.",
+      "page_or_section": "Review"
+    },
+    {
+      "snippet_id": "S-018",
+      "pmid": "32444555",
+      "text": "Clinical outcomes in aspirin-'resistant' patients do not differ from responsive patients in large cohorts.",
+      "page_or_section": "Analysis"
+    },
+    {
+      "snippet_id": "S-019",
+      "pmid": "32444555",
+      "text": "Routine testing for aspirin resistance is not recommended.",
+      "page_or_section": "Recommendations"
+    },
+    {
+      "snippet_id": "S-020",
+      "pmid": "31678901",
+      "text": "AHA/ACC 2019 Guidelines: Class I recommendation for aspirin in all CAD patients.",
+      "page_or_section": "Guidelines"
+    },
+    {
+      "snippet_id": "S-021",
+      "pmid": "32789012",
+      "text": "ESC Guidelines 2020: Aspirin is cornerstone of long-term secondary prevention.",
+      "page_or_section": "Guidelines"
+    }
+  ],
+  "study_cards": [
+    {
+      "pmid": "32245678",
+      "title": "Aspirin in Secondary Prevention: Updated Meta-analysis of Randomized Trials",
+      "journal": "Lancet",
+      "year": 2023,
+      "design": "Systematic review and meta-analysis",
+      "sample_size": 18450,
+      "rob2_overall": "low"
+    },
+    {
+      "pmid": "31456789",
+      "title": "Low-Dose Aspirin for Secondary Prevention of Atherosclerotic Events",
+      "journal": "NEJM",
+      "year": 2022,
+      "design": "RCT",
+      "sample_size": 5200,
+      "rob2_overall": "low"
+    },
+    {
+      "pmid": "30567890",
+      "title": "Comparative Effectiveness of Antiplatelet Regimens After Acute Coronary Syndrome",
+      "journal": "JAMA",
+      "year": 2022,
+      "design": "RCT",
+      "sample_size": 3800,
+      "rob2_overall": "some_concerns"
+    }
+  ],
+  "rob2_summary": [
+    {
+      "record_id": "32245678",
+      "overall_judgment": "low",
+      "overall_rationale": "Multicenter RCT with adequate randomization, no missing data, low selective outcome reporting risk.",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "Central randomization described"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "Double-blind design, minimal protocol deviations"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "<5% dropout, intention-to-treat analysis"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "low",
+          "rationale": "Objective outcome (MACE), blinded assessment"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "low",
+          "rationale": "Primary outcome pre-specified, no evidence of selection"
+        }
+      ]
+    }
+  ],
+  "composed_hypotheses": [],
+  "run_kpis": {
+    "snippet_coverage": 1.0,
+    "verification_coverage": 1.0,
+    "claims_with_evidence_ratio": 1.0,
+    "composition_emitted_rate": 0.0
+  },
+  "critique_findings": 0,
+  "critique_blockers": [],
+  "errors": [],
+  "disclaimer": "\u26a0\ufe0f This report is machine-generated by CDR (Clinical Deep Research). It is NOT medical advice and should NOT be used for clinical decision-making. All findings require independent verification by qualified professionals. See DISCLAIMER.md for full terms.",
+  "status": "completed",
+  "status_reason": "Pipeline completed with sufficient evidence",
+  "final_answer": "Based on 17 included studies, low-dose aspirin (75-100mg/day) is effective for secondary prevention of cardiovascular events in adults with established cardiovascular disease. Meta-analyses demonstrate a 20-25% relative risk reduction in MACE (RR 0.78, 95% CI 0.71-0.85). This benefit is accompanied by an increased risk of GI bleeding (~0.5%/year absolute increase), but the net clinical benefit favors aspirin use in this population per AHA/ACC guidelines. Dual antiplatelet therapy provides additional benefit in the first 12 months after acute coronary syndrome."
+}

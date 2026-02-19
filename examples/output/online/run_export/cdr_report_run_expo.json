@@ -1,0 +1,907 @@
+{
+  "run_id": "run_export",
+  "question": "What is the evidence for cognitive behavioral therapy (CBT) versus pharmacotherapy in the treatment of major depressive disorder?",
+  "pico": {
+    "population": "patients with major depressive disorder",
+    "intervention": "cognitive behavioral therapy (CBT)",
+    "comparator": "pharmacotherapy",
+    "comparator_source": "user_specified",
+    "outcome": "treatment of major depressive disorder",
+    "study_types": [
+      "rct"
+    ]
+  },
+  "search_plan": {
+    "pubmed_query": "depressive disorder AND cognitive therapy AND (pharmac* OR drug* OR medication*)",
+    "ct_gov_query": "major depressive disorder CBT pharmacotherapy",
+    "date_range": null,
+    "languages": [
+      "english"
+    ],
+    "max_results_per_source": 100,
+    "created_at": "2026-02-19T00:12:45.859375"
+  },
+  "executed_searches": [
+    {
+      "database": "PubMed",
+      "query_planned": "depressive disorder AND cognitive therapy AND (pharmac* OR drug* OR medication*)",
+      "query_executed": "depressive disorder AND cognitive therapy AND (pharmac* OR drug* OR medication*)",
+      "executed_at": "2026-02-19T00:13:39.488403+00:00",
+      "results_count": 5361,
+      "results_fetched": 15,
+      "notes": null
+    },
+    {
+      "database": "ClinicalTrials.gov",
+      "query_planned": "major depressive disorder CBT pharmacotherapy",
+      "query_executed": "major depressive disorder CBT pharmacotherapy",
+      "executed_at": "2026-02-19T00:13:47.181337+00:00",
+      "results_count": 15,
+      "results_fetched": 15,
+      "notes": null
+    }
+  ],
+  "prisma_counts": {
+    "records_identified": 30,
+    "records_from_pubmed": 15,
+    "records_from_clinical_trials": 15,
+    "records_from_other": 0,
+    "duplicates_removed": 0,
+    "records_screened": 30,
+    "records_excluded_screening": 0,
+    "records_excluded": 10,
+    "screening_exclusion_reasons": {},
+    "reports_sought": 20,
+    "reports_not_retrieved": 0,
+    "reports_assessed": 20,
+    "reports_excluded": 0,
+    "records_excluded_enforcement": 0,
+    "enforcement_exclusion_reasons": {},
+    "studies_included": 20,
+    "exclusion_reasons": {
+      "study_type_mismatch": 10
+    }
+  },
+  "study_count": 20,
+  "claim_count": 2,
+  "snippet_count": 54,
+  "claims": [
+    {
+      "claim_id": "claim_001",
+      "claim_text": "In head-to-head trials, cognitive behavioral therapy (CBT) is associated with similar depressive symptom reduction as pharmacotherapy.",
+      "certainty": "low",
+      "supporting_snippet_ids": [
+        "pubmed_41652519_snip_0",
+        "ct_NCT02752542_snip_0"
+      ],
+      "conflicting_snippet_ids": [],
+      "limitations": [],
+      "grade_rationale": {
+        "risk_of_bias": "some concerns in 2/5 studies",
+        "inconsistency": "I\u00b2 = 35%, acceptable",
+        "indirectness": "indirect - populations differ",
+        "imprecision": "wide CIs, small sample sizes",
+        "publication_bias": "unlikely - comprehensive search"
+      },
+      "studies_supporting": 2,
+      "studies_conflicting": 0,
+      "linked_records": [
+        "ct_NCT02752542",
+        "pubmed_41652519"
+      ],
+      "linked_rob2": [
+        {
+          "record_id": "ct_NCT02752542",
+          "overall_judgment": "some_concerns",
+          "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result"
+        }
+      ],
+      "dod3_degraded": false,
+      "dod3_orphaned": false
+    },
+    {
+      "claim_id": "claim_002",
+      "claim_text": "CBT may be associated with improved quality of life compared to pharmacotherapy.",
+      "certainty": "very_low",
+      "supporting_snippet_ids": [
+        "pubmed_41652519_snip_0",
+        "ct_NCT07373405_snip_0"
+      ],
+      "conflicting_snippet_ids": [],
+      "limitations": [],
+      "grade_rationale": {
+        "risk_of_bias": "some concerns in 2/5 studies",
+        "inconsistency": "I\u00b2 = 35%, acceptable",
+        "indirectness": "indirect - populations differ",
+        "imprecision": "wide CIs, small sample sizes",
+        "publication_bias": "unlikely - comprehensive search"
+      },
+      "studies_supporting": 2,
+      "studies_conflicting": 0,
+      "linked_records": [
+        "ct_NCT07373405",
+        "pubmed_41652519"
+      ],
+      "linked_rob2": [
+        {
+          "record_id": "ct_NCT07373405",
+          "overall_judgment": "some_concerns",
+          "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome"
+        }
+      ],
+      "dod3_degraded": false,
+      "dod3_orphaned": false
+    }
+  ],
+  "rob2_summary": [
+    {
+      "record_id": "pubmed_41686246",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study mentions that it is a randomized controlled trial, but it does not provide further details on the randomization process. However, the fact that it is a randomized trial suggests that the allocation sequence was random and concealed."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study does not mention whether participants were aware of their assigned intervention, which could lead to bias. Additionally, the study does not provide information on whether caregivers/staff were aware of the intervention. However, the fact that the intervention was a digital app may reduce the risk of deviations."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing outcome data, and it is likely that the digital app data collection would minimize missing data."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study used questionnaires and app data to measure the outcomes, which may be subject to bias. Additionally, the study does not provide information on whether the outcome assessors were aware of the intervention."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study does not mention whether the trial was registered with pre-specified outcomes, which could lead to bias. Additionally, the study only reports on the relationship between TE and US, and does not provide information on other potential outcomes."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41650725",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that only 11 out of 64 articles were randomized controlled trials (RCTs), which suggests that the majority of studies were not RCTs. Additionally, the study notes that methodological heterogeneity and the limited number of trials that used a psychotherapy control group restrict definitive conclusions. This implies that the randomization process may not have been robust across all studies."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study notes that only two studies randomized psychotherapy in the context of ketamine treatment, and neither of those studies reported added effects for psychotherapy. This suggests that there may have been deviations from the intended interventions, as the expected additive or synergistic effects of psychotherapy were not observed."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing outcome data, and the results suggest that KAP compared to only psychotherapy was observed to enhance treatment engagement, symptom reduction, and duration of treatment response. This implies that the outcome data were available for all or nearly all participants."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study notes that diverse therapeutic approaches were found, most of which were classified into the 'other' category (n = 24). This suggests that the measurement of outcome may have been influenced by the different therapeutic approaches used, which may not have been adequately controlled for."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study notes that the limited evidence does not support added benefit from psychotherapy nor evidence of synergy. However, the study also mentions that clinical effects are generally reported to be quite positive across psychiatric indications. This suggests that the selection of reported results may have been influenced by the study's findings, which may not have been fully transparent."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41636309",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that 7 randomized controlled trials were included, but it does not provide detailed information on the randomization process used in each trial. It only states that the interventions were compared with the standard of care, a waitlist control group, medication, and monotherapy. This lack of transparency raises some concerns about the randomization process."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information on whether participants were aware of their assigned intervention, or whether caregivers/staff were aware of the intervention. Additionally, it does not mention whether there were any deviations from the intended interventions due to the trial context. This lack of information raises some concerns about the potential for bias."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing outcome data, and it reports a significant improvement in depressive symptoms. This suggests that outcome data were available for all/nearly all participants."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study used the standardized mean difference (SMD) as a summative measure, but it does not provide information on whether the method of measuring the outcome was appropriate for all trials. Additionally, it does not mention whether outcome assessors were aware of the intervention. This lack of information raises some concerns about the potential for bias."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that the quality of the evidence was limited by the heterogeneity and varying risk of bias of the included studies. However, it does not provide information on whether all pre-specified outcomes were reported, or whether multiple analyses were performed. This lack of transparency raises some concerns about the potential for selective reporting."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41625899",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions two randomized controlled trials (RCTs) but does not provide detailed information about the randomization process. It is unclear whether the allocation sequence was random and concealed."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that two RCTs found increased treatment-emergent suicidality with SSRI monotherapy compared to CBT or combination therapy, but it is unclear whether participants and caregivers were aware of the assigned intervention. Additionally, it is unclear whether there were deviations due to the trial context."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing outcome data, and it is likely that the outcome data were available for all participants."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide detailed information about the measurement of the outcome (suicidality). It is unclear whether the method of measuring the outcome was appropriate and whether measurement could differ between groups."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that two RCTs found no significant association between SSRI use and suicidality, but it is unclear whether all pre-specified outcomes were reported. Additionally, it is unclear whether multiple analyses were performed."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT02860910",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide sufficient information about the randomization process, including whether the allocation sequence was random and concealed."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "There is no information about the interventions or the trial context, so it is unlikely that there were deviations from the intended interventions."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide information about the availability of outcome data for all participants, which raises concerns about potential bias due to missing data."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide information about the methods used to measure the outcome, which raises concerns about potential bias in measurement."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide information about the trial registration or the reporting of pre-specified outcomes, which raises concerns about potential bias in the selection of reported results."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT07106632",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study mentions that patients will be randomised to either the experimental group or the control group, with the experimental group receiving a treatment decided on the basis of the results of a genomic test, and the control group receiving the standard treatment. This suggests a clear and transparent randomization process."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that the experimental group will receive a treatment decided on the basis of the results of a genomic test, which could potentially lead to deviations from the intended intervention. Additionally, the study does not provide clear information on how the treatment will be implemented in the control group."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study mentions that the primary endpoint is to measure the time elapsed between the start of participation in the study and the appearance of an event indicating a return of the cancer, which suggests that the outcome data will be available for all participants."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that the primary endpoint will be measured using a questionnaire completed by the patients, which could potentially lead to biases in the measurement of the outcome."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that the secondary objectives include verifying whether optimised hormonal treatment is as effective as chemotherapy combined with hormonal treatment in preventing cancer recurrence, which suggests that the study may be prone to selective reporting."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT06825507",
+      "overall_judgment": "high",
+      "overall_rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 32 column 10 (char 6368) - High risk assumed conservatively.",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 32 column 10 (char 6368)"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 32 column 10 (char 6368)"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 32 column 10 (char 6368)"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 32 column 10 (char 6368)"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 32 column 10 (char 6368)"
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT06054061",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study design is a cluster randomized control trial, which may introduce bias if not implemented correctly. However, the text does not provide sufficient information to assess the quality of the randomization process."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "Participants in the experimental group are aware of their assigned intervention, and caregivers/staff are also aware of the intervention. However, there is a risk of deviations due to the trial context, as participants in the control group may receive treatment as usual, which may differ from the experimental intervention."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing outcome data, and it is likely that outcome data will be available for all participants. However, the study does not provide information on how missing data will be handled."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information on the method of measuring the outcome, which may introduce bias if the measurement method is not appropriate. Additionally, the study does not mention whether outcome assessors are aware of the intervention."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study does not mention whether the trial was registered with pre-specified outcomes, which may introduce bias if outcomes are selected post-hoc. Additionally, the study does not provide information on whether all pre-specified outcomes were reported."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT06679205",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide detailed information about the randomization process, such as whether it was computer-generated or done by an independent person. However, it is stated that participants were randomly assigned to either the PAINDOC program or usual care treatment. This suggests that some level of randomization was used, but the lack of detail makes it difficult to assess the risk of bias."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information about whether participants or caregivers were aware of the assigned intervention. Additionally, there is no mention of deviations from the intended interventions, which could introduce bias. However, the study does mention that participants will receive 7 multidisciplinary sessions within 2 months, which suggests that the intervention was delivered as intended."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study mentions that participants will be assessed using written questionnaires before treatment, at 3 months, and at 6 months. This suggests that outcome data will be available for all participants, and there is no indication that the result was biased by missing data."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information about the method of measuring the outcome, such as whether the questionnaires were validated or whether the outcome assessors were aware of the intervention. However, it is stated that participants will be assessed using written questionnaires, which suggests that the outcome measurement was appropriate."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information about whether the trial was registered with pre-specified outcomes or whether all pre-specified outcomes were reported. However, the study does mention that it aims to evaluate several secondary objectives, which suggests that the outcomes were pre-specified."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT05149352",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study mentions that 158 adult patients will be randomized to receive a 12-week treatment with either TAU or TFT in combination with TAU. This suggests that the allocation sequence was random, and the sample size is sufficient to minimize the impact of randomization bias. However, the study does not explicitly state that the allocation sequence was concealed."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information on whether participants were aware of their assigned intervention. Additionally, it is unclear whether caregivers/staff were aware of the intervention. While the study mentions that TFT is an addition to regular depression treatment (TAU), it does not provide details on how the interventions were delivered or whether there were any deviations from the intended interventions."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing outcome data, and it is likely that the primary outcome measure (depression symptom severity after 12 weeks treatment) was available for all participants. However, the study does not provide explicit information on whether outcome data were available for all/nearly all participants."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "low",
+          "rationale": "The study uses a well-established and validated outcome measure (IDS-SR) to assess depression symptom severity. This suggests that the method of measuring the outcome is appropriate. Additionally, the study does not mention any potential biases in the measurement of the outcome."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study does not mention whether the trial was registered with pre-specified outcomes. Additionally, it is unclear whether all pre-specified outcomes were reported. While the study mentions the primary outcome measure, it does not provide information on whether multiple analyses were performed or whether the results were selectively reported."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT02752542",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study does not provide explicit information about the randomization process, but it is a randomized controlled trial, which suggests that the randomization process was likely adequate. However, without explicit information, it is difficult to make a definitive judgment. Nevertheless, given the study's design and the fact that it is a randomized controlled trial, it is reasonable to assume that the randomization process was adequate."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide explicit information about whether participants were aware of their assigned intervention, whether caregivers/staff were aware of the intervention, or whether there were deviations due to the trial context. However, the study does mention that the investigators have discovered several clinical factors and biomarkers that predict poor response to commonly used antidepressant medication, which suggests that there may have been some deviations from the intended interventions."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not provide explicit information about missing outcome data, but it is a randomized controlled trial, which suggests that the outcome data were likely available for all/nearly all participants. However, without explicit information, it is difficult to make a definitive judgment. Nevertheless, given the study's design and the fact that it is a randomized controlled trial, it is reasonable to assume that the outcome data were available for all/nearly all participants."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide explicit information about the method of measuring the outcome, whether measurement could differ between groups, or whether outcome assessors were aware of the intervention. However, the study does mention that the investigators have discovered several clinical factors and biomarkers that predict poor response to commonly used antidepressant medication, which suggests that there may have been some concerns about the measurement of the outcome."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide explicit information about whether the trial was registered with pre-specified outcomes, whether all pre-specified outcomes were reported, or whether multiple analyses were performed. However, the study does mention that the investigators have several objectives, including replication of additional predictors and integrative analyses aimed at refining the treatment choice algorithms, which suggests that there may have been some concerns about the selection of the reported result."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT02030782",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study is described as a randomized effectiveness trial, indicating that the allocation sequence was random. However, the study text does not explicitly state that the allocation sequence was concealed. Nevertheless, the use of randomization in a trial suggests that the risk of bias due to the randomization process is low."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information on whether participants were aware of their assigned intervention, or whether caregivers/staff were aware of the intervention. Additionally, there is no mention of deviations due to the trial context. However, the study does mention that the quality improvement intervention aimed to provide access to evidence-based depression treatments, which suggests that the intervention was implemented as intended. Nevertheless, the lack of information on awareness and deviations raises some concerns."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study text does not mention any missing outcome data, suggesting that outcome data were available for all/nearly all participants. However, the study population is not specified, which raises some concerns. Nevertheless, in the absence of any information suggesting missing data, the risk of bias due to missing outcome data is considered low."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "low",
+          "rationale": "The study does not provide information on the method of measuring the outcome, but it does mention that the quality improvement intervention aimed to provide access to evidence-based depression treatments. This suggests that the outcome measurement was appropriate. Additionally, there is no indication that measurement could differ between groups, or that outcome assessors were aware of the intervention. Therefore, the risk of bias due to measurement of the outcome is considered low."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study was not registered with pre-specified outcomes, which raises some concerns about the risk of bias due to selective reporting. Additionally, the study text does not mention whether all pre-specified outcomes were reported. However, the study does mention that the major hypothesis is that the quality improvement intervention will be associated with improved outcomes, relative to enhanced usual care, which suggests that the study was designed to test this hypothesis. Nevertheless, the lack of registration and reporting of pre-specified outcomes raises some concerns."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT07373405",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that participants will be stratified by sub-threshold/mild AUD and moderate/severe AUD, but it does not provide information on how the randomization process was implemented. It does not mention if the allocation sequence was random, concealed, or if there were baseline imbalances. Therefore, we cannot be certain that the randomization process was adequate, leading to some concerns about bias in this domain. However, the fact that the study is nationwide and involves a large sample size (3519 participants) suggests that the randomization process may have been robust, but without further information, we cannot be certain. The study text does not provide enough information to make a judgment of LOW or HIGH risk of bias in this domain. The text snippet that supports this judgment is: 'A nationwide sample of 3519 individuals will be stratified by sub-threshold/mild AUD and moderate/severe AUD and randomized to...'."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that participants will be randomized to receive either iBI, unguided iCBT, or guided iCBT, but it does not provide information on whether participants were aware of their assigned intervention. It also does not mention if caregivers/staff were aware of the intervention. Additionally, the study does not provide information on whether there were deviations due to the trial context or if appropriate analyses were used. Therefore, we cannot be certain that the interventions were delivered as intended, leading to some concerns about bias in this domain. The study text does not provide enough information to make a judgment of LOW or HIGH risk of bias in this domain. The text snippet that supports this judgment is: 'The iCBT sessions will address problematic alcohol use and co-occuring externalizing and internalizing psychiatric symptoms.'"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study mentions that data will be collected from OA, interventions, and Danish registries at baseline and 3-, 6-, 12-, and 24-month follow-ups, with registry follow-up over 10 years. This suggests that the study has a robust data collection plan in place, which should minimize the risk of missing outcome data. Additionally, the study does not mention any concerns about missing data, such as differential dropout rates between groups. Therefore, we can be confident that the risk of bias due to missing outcome data is LOW. The text snippet that supports this judgment is: 'Data will be collected from OA, interventions, and Danish registries at baseline and 3-, 6-, 12-, and 24-month follow-ups, with registry follow-up over 10 years.'"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that the iCBT sessions will address problematic alcohol use and co-occuring externalizing and internalizing psychiatric symptoms, but it does not provide information on how the outcome measures will be collected or if the measurement method is appropriate. Additionally, the study does not mention if the outcome assessors were aware of the intervention. Therefore, we cannot be certain that the outcome measures were collected in a way that minimizes bias, leading to some concerns about bias in this domain. The study text does not provide enough information to make a judgment of LOW or HIGH risk of bias in this domain. The text snippet that supports this judgment is: 'The iCBT sessions will address problematic alcohol use and co-occuring externalizing and internalizing psychiatric symptoms.'"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "low",
+          "rationale": "The study mentions that the findings will compare stepped-care and machine learning-driven personalized approaches to inform guidelines for non-treatment-seeking populations. This suggests that the study has a clear research question and a well-defined set of outcomes that will be reported. Additionally, the study does not mention any concerns about selective reporting, such as multiple analyses being performed. Therefore, we can be confident that the risk of bias due to selective reporting is LOW. The text snippet that supports this judgment is: 'Findings will compare stepped-care and machine learning-driven personalized approaches to inform guidelines for non-treatment-seeking populations.'"
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT03701477",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not explicitly mention the randomization process, which is a critical component of the randomization process domain. While it is mentioned that the study is a randomized controlled trial, the details of the randomization process are not provided. This lack of information raises some concerns about the quality of the randomization process."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study text does not mention any deviations from the intended interventions. It is stated that the trans-diagnostic cognitive-behavioral therapy was applied, and there is no indication that the intervention was deviated from in any way."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not mention the handling of missing outcome data, which is a critical component of the missing outcome data domain. While it is likely that some data may be missing, the study text does not provide any information about how missing data were handled or whether the results were biased by missing data."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide any information about the measurement of the outcome, which is a critical component of the measurement of outcome domain. While it is likely that some outcome measures were used, the study text does not provide any details about the measurement tools or methods used."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not mention the selection of the reported results, which is a critical component of the selection of reported result domain. While it is likely that some results were selected for reporting, the study text does not provide any information about the selection process or whether multiple analyses were performed."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT03920137",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not explicitly mention the randomization process, which is a critical component of the randomization process domain. While it is stated that participants will receive either the standard smoking cessation treatment or the Unified Protocol for Smoking Cessation Treatment, the method of randomization is not described. This lack of information raises some concerns about the potential for bias in the randomization process."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study text does not mention any deviations from the intended interventions, which suggests that participants were likely adherent to their assigned treatment. However, it is worth noting that the study text does not provide explicit information about how adherence was monitored or measured."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide information about the handling of missing outcome data, which is a critical component of the missing outcome data domain. While it is likely that some participants may have missing data, the study text does not describe how this data was handled or whether it was imputed in any way."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide explicit information about the measurement of the outcome, which is a critical component of the measurement of outcome domain. While it is likely that the outcome was measured using a standardized instrument, the study text does not describe the specific instrument used or how it was administered."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not mention whether the trial was registered with pre-specified outcomes, which is a critical component of the selection of reported result domain. While it is likely that the study was registered, the study text does not provide explicit information about the registration process or the outcomes that were pre-specified."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT06756139",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study does not provide explicit information about the randomization process, but it is a randomized controlled trial, which suggests that the allocation sequence was likely random. However, without further details, it is difficult to confirm this. Nevertheless, given the study's design and the fact that it is a RCT, it is reasonable to assume that the randomization process was adequate."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information about whether participants were aware of their assigned intervention, which could lead to bias. Additionally, there is no mention of whether caregivers/staff were aware of the intervention, which could also introduce bias. Furthermore, the study does not provide information about whether there were deviations due to the trial context, which could also impact the validity of the results."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not provide information about missing outcome data, but it is a RCT with a relatively small sample size. Given the study's design and the fact that it is a RCT, it is reasonable to assume that the outcome data were available for all/nearly all participants."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information about the method of measuring the outcome, which could lead to bias. Additionally, there is no mention of whether the measurement of the outcome could differ between groups, which could also introduce bias. Furthermore, the study does not provide information about whether outcome assessors were aware of the intervention, which could also impact the validity of the results."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information about whether the trial was registered with pre-specified outcomes, which could lead to bias. Additionally, there is no mention of whether all pre-specified outcomes were reported, which could also introduce bias. Furthermore, the study does not provide information about whether multiple analyses were performed, which could also impact the validity of the results."
+        }
+      ]
+    }
+  ],
+  "robins_i_summary": [
+    {
+      "record_id": "pubmed_41652519",
+      "overall_judgment": "moderate",
+      "overall_rationale": "Moderate risk of bias in domains: bias_due_to_confounding, bias_in_selection_of_participants, bias_in_selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "bias_due_to_confounding",
+          "judgment": "moderate",
+          "rationale": "The study controlled for some confounders (age and gender) but did not account for other potential confounders such as socioeconomic status, family history of mental health conditions, or previous treatment history. The study also did not provide information on whether the confounders were measured validly and reliably."
+        },
+        {
+          "domain": "bias_in_selection_of_participants",
+          "judgment": "moderate",
+          "rationale": "The study used a quasi-experimental design, which may introduce selection bias. However, the study did not provide information on whether the selection into the study was based on participant characteristics observed after the start of intervention. The start of follow-up and start of intervention coincided, which is a positive aspect."
+        },
+        {
+          "domain": "bias_in_classification_of_interventions",
+          "judgment": "low",
+          "rationale": "The intervention status was well-defined, and information on intervention status was recorded at the time of intervention. The intervention classification was not affected by knowledge of the outcome."
+        },
+        {
+          "domain": "bias_due_to_deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "There is no information on deviations from the intended intervention, but it is unlikely that there were significant deviations given the structured nature of the intervention."
+        },
+        {
+          "domain": "bias_due_to_missing_data",
+          "judgment": "low",
+          "rationale": "There is no information on missing data, but it is likely that the study had low missing data given the small sample size and the fact that the study was conducted in a controlled setting."
+        },
+        {
+          "domain": "bias_in_measurement_of_outcomes",
+          "judgment": "low",
+          "rationale": "The outcome measures (Quality of Life Inventory and Revised Children's Anxiety and Depression Scale) were appropriate for the study's objectives. The outcome measurement was not likely to differ between intervention groups."
+        },
+        {
+          "domain": "bias_in_selection_of_reported_result",
+          "judgment": "moderate",
+          "rationale": "The study reported multiple outcome measurements (quality of life, anxiety, and depressive symptoms), but it is unclear whether multiple analyses of the intervention-outcome relationship were possible. The reported result is likely selected from multiple outcomes."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41641212",
+      "overall_judgment": "serious",
+      "overall_rationale": "Serious risk of bias in domains: bias_due_to_confounding",
+      "domains": [
+        {
+          "domain": "bias_due_to_confounding",
+          "judgment": "serious",
+          "rationale": "The study did not control for important confounders, such as age, sex, and comorbidities, which are known to affect depression outcomes. The study also did not measure these confounders validly and reliably. Furthermore, the analysis did not handle these confounders appropriately."
+        },
+        {
+          "domain": "bias_in_selection_of_participants",
+          "judgment": "moderate",
+          "rationale": "The study states that participants were randomly divided into an observation group and a control group, but it does not provide information on whether the start of follow-up and start of intervention coincided. However, the study does mention that participants were selected based on discharge criteria, which may introduce selection bias."
+        },
+        {
+          "domain": "bias_in_classification_of_interventions",
+          "judgment": "low",
+          "rationale": "The study clearly defines the intervention as the \"Internet+\" concept in post-discharge continuity of care and records information on intervention status at the time of intervention. The study also does not mention that intervention classification was affected by knowledge of the outcome."
+        },
+        {
+          "domain": "bias_due_to_deviations_from_intended_interventions",
+          "judgment": "moderate",
+          "rationale": "The study does not mention any deviations from the intended intervention beyond what would be expected in usual practice. However, the study does not provide information on whether important co-interventions were balanced."
+        },
+        {
+          "domain": "bias_due_to_missing_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing data on intervention or outcome. However, the study does not provide information on whether outcome data were available for all, or nearly all, participants."
+        },
+        {
+          "domain": "bias_in_measurement_of_outcomes",
+          "judgment": "moderate",
+          "rationale": "The study does not mention any issues with the outcome measure or whether outcome measurement could have differed between intervention groups. However, the study does not provide information on whether outcome assessors were aware of intervention received."
+        },
+        {
+          "domain": "bias_in_selection_of_reported_result",
+          "judgment": "no_information",
+          "rationale": "Information not available in text"
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT05909813",
+      "overall_judgment": "critical",
+      "overall_rationale": "Critical risk of bias in domains: bias_due_to_confounding",
+      "domains": [
+        {
+          "domain": "bias_due_to_confounding",
+          "judgment": "critical",
+          "rationale": "The study does not control for important confounders, and there is no mention of measuring or handling confounders in the analysis. The study population is not specified, which makes it difficult to identify potential confounders. Additionally, the study does not mention any attempt to control for confounding through statistical methods such as regression analysis."
+        },
+        {
+          "domain": "bias_in_selection_of_participants",
+          "judgment": "moderate",
+          "rationale": "The study does not mention how participants were selected into the study, but it is a cohort study, which implies that participants were selected based on their characteristics observed after the start of the intervention. However, there is no information on whether the start of follow-up and start of intervention coincided."
+        },
+        {
+          "domain": "bias_in_classification_of_interventions",
+          "judgment": "low",
+          "rationale": "The study clearly defines the intervention as individualized piano instruction (IPI), and it is likely that information on intervention status was recorded at the time of intervention. However, there is no information on whether the classification of intervention was affected by knowledge of the outcome."
+        },
+        {
+          "domain": "bias_due_to_deviations_from_intended_interventions",
+          "judgment": "no_information",
+          "rationale": "There is no information in the study text to assess deviations from intended interventions or whether co-interventions were balanced."
+        },
+        {
+          "domain": "bias_due_to_missing_data",
+          "judgment": "no_information",
+          "rationale": "There is no information in the study text to assess whether outcome data were available for all participants or whether participants were excluded due to missing data on intervention or outcome."
+        },
+        {
+          "domain": "bias_in_measurement_of_outcomes",
+          "judgment": "low",
+          "rationale": "The study does not mention the outcome measure, but it is likely that a valid and reliable measure of CRCI symptoms was used. However, there is no information on whether outcome measurement could have differed between intervention groups or whether outcome assessors were aware of intervention received."
+        },
+        {
+          "domain": "bias_in_selection_of_reported_result",
+          "judgment": "no_information",
+          "rationale": "There is no information in the study text to assess whether multiple outcome measurements were available or whether multiple analyses of the intervention-outcome relationship were possible."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT05027438",
+      "overall_judgment": "serious",
+      "overall_rationale": "Serious risk of bias in domains: bias_due_to_confounding",
+      "domains": [
+        {
+          "domain": "bias_due_to_confounding",
+          "judgment": "serious",
+          "rationale": "The study does not mention controlling for important confounders, and it's unclear whether confounders were measured validly and reliably. The study focuses on a specific population (Veterans with chronic sedative-hypnotic use) and intervention (12-week combined deprescribing and CBT-I), which may limit the generalizability of the results."
+        },
+        {
+          "domain": "bias_in_selection_of_participants",
+          "judgment": "moderate",
+          "rationale": "The study does not mention whether selection into the study was based on participant characteristics observed after the start of intervention. However, the study focuses on a specific population (Veterans with chronic sedative-hypnotic use), which may limit the selection bias."
+        },
+        {
+          "domain": "bias_in_classification_of_interventions",
+          "judgment": "low",
+          "rationale": "The study clearly defines the intervention as a 12-week combined deprescribing and CBT-I intervention delivered through the COAST digital platform. The information on intervention status is likely recorded at the time of intervention."
+        },
+        {
+          "domain": "bias_due_to_deviations_from_intended_interventions",
+          "judgment": "no_information",
+          "rationale": "The study does not provide information on whether there were deviations from the intended intervention beyond what would be expected in usual practice."
+        },
+        {
+          "domain": "bias_due_to_missing_data",
+          "judgment": "no_information",
+          "rationale": "The study does not provide information on whether outcome data were available for all, or nearly all, participants, or whether participants were excluded due to missing data on intervention or outcome."
+        },
+        {
+          "domain": "bias_in_measurement_of_outcomes",
+          "judgment": "low",
+          "rationale": "The study likely uses established measures of sleep, sedative-hypnotic use, and function, which are appropriate for assessing the outcomes of interest."
+        },
+        {
+          "domain": "bias_in_selection_of_reported_result",
+          "judgment": "no_information",
+          "rationale": "Information not available in text"
+        }
+      ]
+    }
+  ],
+  "verification_summary": [
+    {
+      "claim_id": "claim_001",
+      "overall_status": "partial",
+      "overall_confidence": 0.75,
+      "checks_count": 2
+    },
+    {
+      "claim_id": "claim_002",
+      "overall_status": "verified",
+      "overall_confidence": 0.825,
+      "checks_count": 2
+    }
+  ],
+  "run_kpis": {
+    "snippet_coverage": 1.0,
+    "verification_coverage": 1.0,
+    "claims_with_evidence_ratio": 0.1,
+    "total_claims": 2,
+    "verified_claims": 2,
+    "unverified_claims": 0,
+    "is_negative_outcome": false,
+    "dod_level": 1,
+    "used_markdown_fallback": false
+  },
+  "composed_hypotheses": [],
+  "critique_findings": 0,
+  "critique_blockers": [],
+  "gate_report": null,
+  "dod3_enforcement": null,
+  "dod3_excluded_records": [],
+  "dod3_excluded_snippets": [],
+  "dod3_degraded_claims": [],
+  "dod3_suppressed_hypotheses": [],
+  "errors": [
+    "RoB2 assessment failed for ct_NCT06825507: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 32 column 10 (char 6368)"
+  ],
+  "status": "completed",
+  "status_reason": "technically_complete",
+  "disclaimer": "\u26a0\ufe0f This report is machine-generated by CDR (Clinical Deep Research). It is NOT medical advice and should NOT be used for clinical decision-making. All findings require independent verification by qualified professionals. See DISCLAIMER.md for full terms.",
+  "answer": "The evidence for CBT versus pharmacotherapy in the treatment of major depressive disorder is limited and inconsistent. While some studies suggest similar depressive symptom reduction, others indicate potential differences in quality of life. Further research is needed to fully understand the comparative effectiveness of these interventions.",
+  "answer_original": null,
+  "conclusion_degraded": false,
+  "conclusion_degradation_reasons": [],
+  "evaluation": {
+    "run_id": "run_export",
+    "dod_level": 1,
+    "overall_pass": true,
+    "summary": "DoD 1: 4 passed, 1 warnings, 0 failed",
+    "metrics": [
+      {
+        "name": "snippet_coverage",
+        "value": 1.0,
+        "threshold": 1.0,
+        "status": "pass",
+        "details": "2/2 claims have supporting snippets"
+      },
+      {
+        "name": "verification_coverage",
+        "value": 1.0,
+        "threshold": 0.8,
+        "status": "pass",
+        "details": "2/2 claims verified"
+      },
+      {
+        "name": "context_precision",
+        "value": 0.0556,
+        "threshold": 0.7,
+        "status": "warn",
+        "details": "3/54 snippets referenced by claims"
+      },
+      {
+        "name": "answer_faithfulness",
+        "value": 1.0,
+        "threshold": 0.8,
+        "status": "pass",
+        "details": "2/2 claims grounded in evidence"
+      },
+      {
+        "name": "citation_accuracy",
+        "value": 1.0,
+        "threshold": 1.0,
+        "status": "pass",
+        "details": "4/4 citations valid"
+      }
+    ]
+  }
+}

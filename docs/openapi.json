@@ -1,0 +1,1731 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Clinical Deep Research (CDR) API",
+    "description": "Evidence-based systematic review automation",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/v1/runs": {
+      "get": {
+        "tags": [
+          "cdr"
+        ],
+        "summary": "List Runs",
+        "description": "List all CDR runs.\n\nReturns:\n    List of run summaries (from RunStore + in-memory)",
+        "operationId": "list_runs_api_v1_runs_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/RunSummaryResponse"
+                  },
+                  "type": "array",
+                  "title": "Response List Runs Api V1 Runs Get"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "cdr"
+        ],
+        "summary": "Create Run",
+        "description": "Start a new CDR systematic review run.\n\nThis endpoint initiates an asynchronous systematic review process.\nThe run will execute in the background and can be monitored via the\nstatus endpoint.\n\nArgs:\n    request: Run configuration\n    background_tasks: FastAPI background task handler\n\nReturns:\n    Run ID and initial status",
+        "operationId": "create_run_api_v1_runs_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RunRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/runs/{run_id}": {
+      "get": {
+        "tags": [
+          "cdr"
+        ],
+        "summary": "Get Run Status",
+        "description": "Get the status of a CDR run.\n\nArgs:\n    run_id: The run ID to check\n\nReturns:\n    Current run status and progress",
+        "operationId": "get_run_status_api_v1_runs__run_id__get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunStatusResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "cdr"
+        ],
+        "summary": "Cancel Run",
+        "description": "Cancel a running CDR job.\n\nArgs:\n    run_id: The run ID to cancel",
+        "operationId": "cancel_run_api_v1_runs__run_id__delete",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/runs/{run_id}/claims": {
+      "get": {
+        "tags": [
+          "cdr"
+        ],
+        "summary": "Get Run Claims",
+        "description": "Get the evidence claims from a completed run.\n\nArgs:\n    run_id: The run ID\n\nReturns:\n    List of evidence claims with verification status",
+        "operationId": "get_run_claims_api_v1_runs__run_id__claims_get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ClaimResponse"
+                  },
+                  "title": "Response Get Run Claims Api V1 Runs  Run Id  Claims Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/runs/{run_id}/detail": {
+      "get": {
+        "tags": [
+          "cdr"
+        ],
+        "summary": "Get Run Detail",
+        "description": "Get full detail of a CDR run.\n\nArgs:\n    run_id: The run ID\n\nReturns:\n    Full run detail including counts and summaries",
+        "operationId": "get_run_detail_api_v1_runs__run_id__detail_get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunDetailResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/runs/{run_id}/snippets": {
+      "get": {
+        "tags": [
+          "cdr"
+        ],
+        "summary": "Get Run Snippets",
+        "description": "Get all snippets from a run.\n\nArgs:\n    run_id: The run ID\n\nReturns:\n    List of evidence snippets",
+        "operationId": "get_run_snippets_api_v1_runs__run_id__snippets_get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SnippetResponse"
+                  },
+                  "title": "Response Get Run Snippets Api V1 Runs  Run Id  Snippets Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/runs/{run_id}/studies": {
+      "get": {
+        "tags": [
+          "cdr"
+        ],
+        "summary": "Get Run Studies",
+        "description": "Get all study cards from a run.\n\nArgs:\n    run_id: The run ID\n\nReturns:\n    List of study cards",
+        "operationId": "get_run_studies_api_v1_runs__run_id__studies_get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StudyCardResponse"
+                  },
+                  "title": "Response Get Run Studies Api V1 Runs  Run Id  Studies Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/runs/{run_id}/prisma": {
+      "get": {
+        "tags": [
+          "cdr"
+        ],
+        "summary": "Get Run Prisma",
+        "description": "Get PRISMA flow counts for a run.\n\nArgs:\n    run_id: The run ID\n\nReturns:\n    PRISMA flow counts",
+        "operationId": "get_run_prisma_api_v1_runs__run_id__prisma_get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PRISMACountsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/runs/{run_id}/search-plan": {
+      "get": {
+        "tags": [
+          "cdr"
+        ],
+        "summary": "Get Run Search Plan",
+        "description": "Get search strategy (PRISMA-S) for a run.\n\nArgs:\n    run_id: The run ID\n\nReturns:\n    Search plan details",
+        "operationId": "get_run_search_plan_api_v1_runs__run_id__search_plan_get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchPlanResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/runs/{run_id}/hypotheses": {
+      "get": {
+        "tags": [
+          "cdr"
+        ],
+        "summary": "Get Run Hypotheses",
+        "description": "Get composed hypotheses from a run (DoD Level 3).\n\nArgs:\n    run_id: The run ID\n\nReturns:\n    List of composed hypotheses",
+        "operationId": "get_run_hypotheses_api_v1_runs__run_id__hypotheses_get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HypothesisResponse"
+                  },
+                  "title": "Response Get Run Hypotheses Api V1 Runs  Run Id  Hypotheses Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/runs/{run_id}/pico": {
+      "get": {
+        "tags": [
+          "cdr"
+        ],
+        "summary": "Get Run Pico",
+        "description": "Get the parsed PICO for a run.\n\nArgs:\n    run_id: The run ID\n\nReturns:\n    Parsed PICO components",
+        "operationId": "get_run_pico_api_v1_runs__run_id__pico_get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PICOResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/runs/{run_id}/report": {
+      "get": {
+        "tags": [
+          "cdr"
+        ],
+        "summary": "Get Run Report",
+        "description": "Get report metadata for export.\n\nArgs:\n    run_id: The run ID\n\nReturns:\n    Report metadata with download URLs",
+        "operationId": "get_run_report_api_v1_runs__run_id__report_get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/runs/{run_id}/evaluation": {
+      "get": {
+        "tags": [
+          "cdr"
+        ],
+        "summary": "Get Run Evaluation",
+        "description": "Get evaluation report for a run.\n\nArgs:\n    run_id: The run ID\n\nReturns:\n    Evaluation report with scores and grades",
+        "operationId": "get_run_evaluation_api_v1_runs__run_id__evaluation_get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EvaluationReportResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/runs/{run_id}/export/{format}": {
+      "get": {
+        "tags": [
+          "cdr"
+        ],
+        "summary": "Export Run",
+        "description": "Export run results in specified format.\n\nArgs:\n    run_id: The run ID\n    format: Export format (json or markdown)\n\nReturns:\n    Exported content as file download",
+        "operationId": "export_run_api_v1_runs__run_id__export__format__get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          },
+          {
+            "name": "format",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Format"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/parse-question": {
+      "post": {
+        "tags": [
+          "cdr"
+        ],
+        "summary": "Parse Question",
+        "description": "Parse a research question into PICO components.\n\nThis is a utility endpoint for testing PICO extraction\nwithout starting a full run.\n\nArgs:\n    question: The research question to parse\n\nReturns:\n    Parsed PICO components",
+        "operationId": "parse_question_api_v1_parse_question_post",
+        "parameters": [
+          {
+            "name": "question",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Question"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PICOResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/health": {
+      "get": {
+        "tags": [
+          "cdr"
+        ],
+        "summary": "Health Check",
+        "description": "Health check endpoint.\n\nReturns:\n    Health status and version info",
+        "operationId": "health_check_api_v1_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Health Check Api V1 Health Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/metrics": {
+      "get": {
+        "tags": [
+          "cdr"
+        ],
+        "summary": "Get Metrics",
+        "description": "Get current metrics.\n\nReturns:\n    Dictionary of metric values",
+        "operationId": "get_metrics_api_v1_metrics_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Get Metrics Api V1 Metrics Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ClaimResponse": {
+        "properties": {
+          "claim_id": {
+            "type": "string",
+            "title": "Claim Id"
+          },
+          "claim_text": {
+            "type": "string",
+            "title": "Claim Text"
+          },
+          "certainty": {
+            "type": "string",
+            "title": "Certainty"
+          },
+          "supporting_snippet_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Supporting Snippet Ids"
+          },
+          "verification_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verification Status"
+          },
+          "grade_rationale": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Grade Rationale"
+          }
+        },
+        "type": "object",
+        "required": [
+          "claim_id",
+          "claim_text",
+          "certainty",
+          "supporting_snippet_ids",
+          "verification_status"
+        ],
+        "title": "ClaimResponse",
+        "description": "Evidence claim response.\n\nRefs: EvidenceClaim schema, CDR_Integral_Audit_2026-01-20.md CRITICAL-3"
+      },
+      "EvaluationDimensionResponse": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "score": {
+            "type": "number",
+            "title": "Score"
+          },
+          "grade": {
+            "type": "string",
+            "title": "Grade"
+          },
+          "rationale": {
+            "type": "string",
+            "title": "Rationale"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "score",
+          "grade",
+          "rationale"
+        ],
+        "title": "EvaluationDimensionResponse",
+        "description": "Single evaluation dimension response."
+      },
+      "EvaluationReportResponse": {
+        "properties": {
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "overall_score": {
+            "type": "number",
+            "title": "Overall Score"
+          },
+          "overall_grade": {
+            "type": "string",
+            "title": "Overall Grade"
+          },
+          "dimensions": {
+            "items": {
+              "$ref": "#/components/schemas/EvaluationDimensionResponse"
+            },
+            "type": "array",
+            "title": "Dimensions"
+          },
+          "strengths": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Strengths",
+            "default": []
+          },
+          "weaknesses": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Weaknesses",
+            "default": []
+          },
+          "recommendations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Recommendations",
+            "default": []
+          },
+          "created_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Created At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "run_id",
+          "overall_score",
+          "overall_grade",
+          "dimensions"
+        ],
+        "title": "EvaluationReportResponse",
+        "description": "Full evaluation report response."
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HypothesisResponse": {
+        "properties": {
+          "hypothesis_id": {
+            "type": "string",
+            "title": "Hypothesis Id"
+          },
+          "claim_a_id": {
+            "type": "string",
+            "title": "Claim A Id"
+          },
+          "claim_b_id": {
+            "type": "string",
+            "title": "Claim B Id"
+          },
+          "hypothesis_text": {
+            "type": "string",
+            "title": "Hypothesis Text"
+          },
+          "mechanism": {
+            "type": "string",
+            "title": "Mechanism"
+          },
+          "rival_hypotheses": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Rival Hypotheses",
+            "default": []
+          },
+          "threats_to_validity": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Threats To Validity",
+            "default": []
+          },
+          "mcid": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mcid"
+          },
+          "test_design": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Test Design"
+          },
+          "confidence": {
+            "type": "number",
+            "title": "Confidence",
+            "default": 0.0
+          }
+        },
+        "type": "object",
+        "required": [
+          "hypothesis_id",
+          "claim_a_id",
+          "claim_b_id",
+          "hypothesis_text",
+          "mechanism"
+        ],
+        "title": "HypothesisResponse",
+        "description": "Composed hypothesis response."
+      },
+      "PICOResponse": {
+        "properties": {
+          "population": {
+            "type": "string",
+            "title": "Population"
+          },
+          "intervention": {
+            "type": "string",
+            "title": "Intervention"
+          },
+          "comparator": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Comparator"
+          },
+          "outcome": {
+            "type": "string",
+            "title": "Outcome"
+          },
+          "study_types": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Study Types"
+          }
+        },
+        "type": "object",
+        "required": [
+          "population",
+          "intervention",
+          "comparator",
+          "outcome",
+          "study_types"
+        ],
+        "title": "PICOResponse",
+        "description": "Parsed PICO response."
+      },
+      "PRISMACountsResponse": {
+        "properties": {
+          "records_identified": {
+            "type": "integer",
+            "title": "Records Identified",
+            "default": 0
+          },
+          "records_screened": {
+            "type": "integer",
+            "title": "Records Screened",
+            "default": 0
+          },
+          "records_excluded_screening": {
+            "type": "integer",
+            "title": "Records Excluded Screening",
+            "default": 0
+          },
+          "reports_assessed": {
+            "type": "integer",
+            "title": "Reports Assessed",
+            "default": 0
+          },
+          "reports_not_retrieved": {
+            "type": "integer",
+            "title": "Reports Not Retrieved",
+            "default": 0
+          },
+          "studies_included": {
+            "type": "integer",
+            "title": "Studies Included",
+            "default": 0
+          },
+          "exclusion_reasons": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Exclusion Reasons",
+            "default": {}
+          }
+        },
+        "type": "object",
+        "title": "PRISMACountsResponse",
+        "description": "PRISMA flow counts response."
+      },
+      "ReportResponse": {
+        "properties": {
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "generated_at": {
+            "type": "string",
+            "title": "Generated At"
+          },
+          "formats_available": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Formats Available"
+          },
+          "download_urls": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Download Urls"
+          }
+        },
+        "type": "object",
+        "required": [
+          "run_id",
+          "generated_at",
+          "formats_available",
+          "download_urls"
+        ],
+        "title": "ReportResponse",
+        "description": "Report metadata response."
+      },
+      "RunDetailResponse": {
+        "properties": {
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "status_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Status Reason"
+          },
+          "dod_level": {
+            "type": "integer",
+            "title": "Dod Level",
+            "default": 0
+          },
+          "pico": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PICOResponse"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "search_plan": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SearchPlanResponse"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "prisma_counts": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PRISMACountsResponse"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "claims_count": {
+            "type": "integer",
+            "title": "Claims Count",
+            "default": 0
+          },
+          "snippets_count": {
+            "type": "integer",
+            "title": "Snippets Count",
+            "default": 0
+          },
+          "studies_count": {
+            "type": "integer",
+            "title": "Studies Count",
+            "default": 0
+          },
+          "hypotheses_count": {
+            "type": "integer",
+            "title": "Hypotheses Count",
+            "default": 0
+          },
+          "verification_coverage": {
+            "type": "number",
+            "title": "Verification Coverage",
+            "default": 0.0
+          },
+          "errors": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Errors",
+            "default": []
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At"
+          },
+          "updated_at": {
+            "type": "string",
+            "title": "Updated At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "run_id",
+          "status",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "RunDetailResponse",
+        "description": "Full run detail response."
+      },
+      "RunRequest": {
+        "properties": {
+          "research_question": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 10,
+            "title": "Research Question",
+            "description": "The clinical research question to investigate"
+          },
+          "max_results": {
+            "type": "integer",
+            "maximum": 500.0,
+            "minimum": 10.0,
+            "title": "Max Results",
+            "description": "Maximum records to retrieve per source",
+            "default": 100
+          },
+          "output_formats": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Output Formats",
+            "description": "Output formats for the report",
+            "default": [
+              "markdown",
+              "json"
+            ]
+          },
+          "model": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model",
+            "description": "LLM model to use. If None, uses provider-specific default (Gemini: gemini-2.5-flash, Groq: llama-3.3-70b-versatile)"
+          },
+          "dod_level": {
+            "type": "integer",
+            "maximum": 3.0,
+            "minimum": 1.0,
+            "title": "Dod Level",
+            "description": "Definition of Done level (1=Basic, 2=Full, 3=Research)",
+            "default": 1
+          }
+        },
+        "type": "object",
+        "required": [
+          "research_question"
+        ],
+        "title": "RunRequest",
+        "description": "Request to start a new CDR run."
+      },
+      "RunResponse": {
+        "properties": {
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "run_id",
+          "status",
+          "message"
+        ],
+        "title": "RunResponse",
+        "description": "Response after starting a run."
+      },
+      "RunStatusResponse": {
+        "properties": {
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "progress": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Progress"
+          },
+          "errors": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Errors"
+          },
+          "report_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Report Path"
+          }
+        },
+        "type": "object",
+        "required": [
+          "run_id",
+          "status",
+          "progress",
+          "errors"
+        ],
+        "title": "RunStatusResponse",
+        "description": "Response for run status check."
+      },
+      "RunSummaryResponse": {
+        "properties": {
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "status_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Status Reason"
+          },
+          "dod_level": {
+            "type": "integer",
+            "title": "Dod Level",
+            "default": 0
+          },
+          "claims_count": {
+            "type": "integer",
+            "title": "Claims Count",
+            "default": 0
+          },
+          "verification_coverage": {
+            "type": "number",
+            "title": "Verification Coverage",
+            "default": 0.0
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At"
+          },
+          "updated_at": {
+            "type": "string",
+            "title": "Updated At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "run_id",
+          "status",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "RunSummaryResponse",
+        "description": "Summary of a run for listing."
+      },
+      "SearchPlanResponse": {
+        "properties": {
+          "pubmed_query": {
+            "type": "string",
+            "title": "Pubmed Query"
+          },
+          "ct_gov_query": {
+            "type": "string",
+            "title": "Ct Gov Query"
+          },
+          "date_range": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Date Range"
+          },
+          "languages": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Languages",
+            "default": []
+          },
+          "max_results_per_source": {
+            "type": "integer",
+            "title": "Max Results Per Source",
+            "default": 100
+          },
+          "created_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Created At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "pubmed_query",
+          "ct_gov_query"
+        ],
+        "title": "SearchPlanResponse",
+        "description": "Search strategy response (PRISMA-S compliant)."
+      },
+      "SnippetResponse": {
+        "properties": {
+          "snippet_id": {
+            "type": "string",
+            "title": "Snippet Id"
+          },
+          "record_id": {
+            "type": "string",
+            "title": "Record Id"
+          },
+          "pmid": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pmid"
+          },
+          "doi": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Doi"
+          },
+          "nct_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nct Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "authors": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Authors",
+            "default": []
+          },
+          "publication_year": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Publication Year"
+          },
+          "journal": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Journal"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Url"
+          },
+          "section": {
+            "type": "string",
+            "title": "Section"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "offset_start": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Offset Start"
+          },
+          "offset_end": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Offset End"
+          },
+          "relevance_score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Relevance Score"
+          }
+        },
+        "type": "object",
+        "required": [
+          "snippet_id",
+          "record_id",
+          "title",
+          "section",
+          "text"
+        ],
+        "title": "SnippetResponse",
+        "description": "Evidence snippet response."
+      },
+      "StudyCardResponse": {
+        "properties": {
+          "study_id": {
+            "type": "string",
+            "title": "Study Id"
+          },
+          "record_id": {
+            "type": "string",
+            "title": "Record Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "study_type": {
+            "type": "string",
+            "title": "Study Type"
+          },
+          "population": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Population"
+          },
+          "intervention": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Intervention"
+          },
+          "comparator": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Comparator"
+          },
+          "outcomes": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Outcomes",
+            "default": []
+          },
+          "sample_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sample Size"
+          },
+          "follow_up_duration": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Follow Up Duration"
+          }
+        },
+        "type": "object",
+        "required": [
+          "study_id",
+          "record_id",
+          "title",
+          "study_type"
+        ],
+        "title": "StudyCardResponse",
+        "description": "Study card response."
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

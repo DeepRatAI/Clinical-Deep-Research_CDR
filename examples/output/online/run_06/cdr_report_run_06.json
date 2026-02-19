@@ -1,0 +1,440 @@
+{
+  "meta": {
+    "run_id": "run_06",
+    "generated_at": "2026-02-19T12:46:00.279174",
+    "version": "1.1"
+  },
+  "research_question": "What is the comparative effectiveness of SGLT2 inhibitors versus GLP-1 receptor agonists for cardiovascular outcomes in type 2 diabetes?",
+  "pico": {
+    "population": "patients with type 2 diabetes",
+    "intervention": "SGLT2 inhibitors",
+    "comparator": "GLP-1 receptor agonists",
+    "comparator_source": "user_specified",
+    "outcome": "cardiovascular outcomes",
+    "study_types": [
+      "rct"
+    ]
+  },
+  "prisma_counts": {
+    "records_identified": 15,
+    "records_from_pubmed": 15,
+    "records_from_clinical_trials": 0,
+    "records_from_other": 0,
+    "duplicates_removed": 0,
+    "records_screened": 15,
+    "records_excluded_screening": 0,
+    "records_excluded": 7,
+    "screening_exclusion_reasons": {},
+    "reports_sought": 8,
+    "reports_not_retrieved": 0,
+    "reports_assessed": 8,
+    "reports_excluded": 0,
+    "records_excluded_enforcement": 0,
+    "enforcement_exclusion_reasons": {},
+    "studies_included": 8,
+    "exclusion_reasons": {
+      "study_type_mismatch": 7
+    }
+  },
+  "executed_searches": [
+    {
+      "database": "PubMed",
+      "query_planned": "diabetes type 2 AND SGLT2 inhibitors AND cardiovascular outcomes",
+      "query_executed": "diabetes type 2 AND SGLT2 inhibitors AND cardiovascular outcomes",
+      "executed_at": "2026-02-19T15:39:25.644466+00:00",
+      "results_count": 2723,
+      "results_fetched": 15,
+      "notes": null
+    },
+    {
+      "database": "ClinicalTrials.gov",
+      "query_planned": "type 2 diabetes SGLT2 inhibitors vs GLP-1 receptor agonists cardiovascular outcomes RCT",
+      "query_executed": "type 2 diabetes SGLT2 inhibitors vs GLP-1 receptor agonists cardiovascular outcomes RCT",
+      "executed_at": "2026-02-19T15:39:25.879648+00:00",
+      "results_count": 0,
+      "results_fetched": 0,
+      "notes": null
+    }
+  ],
+  "included_studies": [
+    {
+      "record_id": "pubmed_41680826",
+      "study_type": "rct",
+      "sample_size": 66,
+      "outcomes": [
+        {
+          "name": "NLRP3 priming (IL1β mRNA)",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "NLRP3 activation (caspase-1 activity)",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "pro-inflammatory cytokines (TNFα, IL6, MCP1)",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "M1 macrophage markers (e.g., CD80)",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "markers of cell senescence (p21, IL8, BCL2)",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41678006",
+      "study_type": "meta_analysis",
+      "sample_size": null,
+      "outcomes": [
+        {
+          "name": "total adverse events",
+          "value": 1.05,
+          "measure_type": "other",
+          "ci_lower": 1.01,
+          "ci_upper": 1.08,
+          "p_value": null
+        },
+        {
+          "name": "genital infections",
+          "value": 5.31,
+          "measure_type": "other",
+          "ci_lower": 3.93,
+          "ci_upper": 7.18,
+          "p_value": null
+        },
+        {
+          "name": "urinary tract infections (UTIs)",
+          "value": 1.45,
+          "measure_type": "other",
+          "ci_lower": 1.25,
+          "ci_upper": 1.7,
+          "p_value": null
+        },
+        {
+          "name": "upper respiratory tract infections (URTIs)",
+          "value": 0.78,
+          "measure_type": "other",
+          "ci_lower": 0.61,
+          "ci_upper": 1.02,
+          "p_value": null
+        },
+        {
+          "name": "renal injury",
+          "value": 1.83,
+          "measure_type": "other",
+          "ci_lower": 0.92,
+          "ci_upper": 3.67,
+          "p_value": null
+        },
+        {
+          "name": "liver injury",
+          "value": 0.64,
+          "measure_type": "other",
+          "ci_lower": 0.28,
+          "ci_upper": 1.46,
+          "p_value": null
+        },
+        {
+          "name": "fracture",
+          "value": 0.83,
+          "measure_type": "other",
+          "ci_lower": 0.25,
+          "ci_upper": 2.7,
+          "p_value": null
+        },
+        {
+          "name": "hypoglycemia",
+          "value": 1.07,
+          "measure_type": "other",
+          "ci_lower": 0.88,
+          "ci_upper": 1.29,
+          "p_value": null
+        },
+        {
+          "name": "mortality",
+          "value": 1.48,
+          "measure_type": "other",
+          "ci_lower": 0.59,
+          "ci_upper": 3.71,
+          "p_value": null
+        },
+        {
+          "name": "diabetic ketoacidosis (DKA)",
+          "value": 2.99,
+          "measure_type": "other",
+          "ci_lower": 0.31,
+          "ci_upper": 28.45,
+          "p_value": null
+        },
+        {
+          "name": "major adverse cardiovascular events (MACEs)",
+          "value": 1.21,
+          "measure_type": "other",
+          "ci_lower": 0.35,
+          "ci_upper": 4.19,
+          "p_value": null
+        },
+        {
+          "name": "hypersensitivity risk",
+          "value": 1.25,
+          "measure_type": "other",
+          "ci_lower": 0.65,
+          "ci_upper": 2.42,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41668999",
+      "study_type": "systematic_review",
+      "sample_size": null,
+      "outcomes": [
+        {
+          "name": "HF hospitalizations",
+          "value": 0.76,
+          "measure_type": "other",
+          "ci_lower": 0.64,
+          "ci_upper": 0.91,
+          "p_value": 0.002
+        },
+        {
+          "name": "All-cause mortality",
+          "value": 0.72,
+          "measure_type": "other",
+          "ci_lower": 0.61,
+          "ci_upper": 0.86,
+          "p_value": 0.0002
+        },
+        {
+          "name": "CV-associated mortality",
+          "value": 0.72,
+          "measure_type": "other",
+          "ci_lower": 0.61,
+          "ci_upper": 0.86,
+          "p_value": 0.0002
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41658515",
+      "study_type": "cohort",
+      "sample_size": 21,
+      "outcomes": [
+        {
+          "name": "Systolic blood pressure (SBP)",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "Diastolic blood pressure (DBP)",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "Heart rate (HR)",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41640042",
+      "study_type": "unknown",
+      "sample_size": null,
+      "outcomes": []
+    },
+    {
+      "record_id": "pubmed_41624648",
+      "study_type": "systematic_review",
+      "sample_size": null,
+      "outcomes": [
+        {
+          "name": "Research trends and hotspots of SGLT2 inhibitors in T2DM",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41595617",
+      "study_type": "systematic_review",
+      "sample_size": null,
+      "outcomes": [
+        {
+          "name": "Cardiorenal benefits",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41578841",
+      "study_type": "unknown",
+      "sample_size": null,
+      "outcomes": []
+    }
+  ],
+  "rob2_results": [
+    {
+      "record_id": "pubmed_41680826",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "low",
+        "deviations_from_intended_interventions": "some_concerns",
+        "missing_outcome_data": "low",
+        "measurement_of_outcome": "some_concerns",
+        "selection_of_reported_result": "low"
+      }
+    },
+    {
+      "record_id": "pubmed_41678006",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "some_concerns",
+        "deviations_from_intended_interventions": "low",
+        "missing_outcome_data": "some_concerns",
+        "measurement_of_outcome": "low",
+        "selection_of_reported_result": "some_concerns"
+      }
+    },
+    {
+      "record_id": "pubmed_41668999",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "some_concerns",
+        "deviations_from_intended_interventions": "some_concerns",
+        "missing_outcome_data": "some_concerns",
+        "measurement_of_outcome": "some_concerns",
+        "selection_of_reported_result": "some_concerns"
+      }
+    },
+    {
+      "record_id": "pubmed_41640042",
+      "overall_judgment": "high",
+      "domains": {
+        "randomization_process": "high",
+        "deviations_from_intended_interventions": "high",
+        "missing_outcome_data": "high",
+        "measurement_of_outcome": "high",
+        "selection_of_reported_result": "high"
+      }
+    },
+    {
+      "record_id": "pubmed_41624648",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "some_concerns",
+        "deviations_from_intended_interventions": "low",
+        "missing_outcome_data": "low",
+        "measurement_of_outcome": "low",
+        "selection_of_reported_result": "some_concerns"
+      }
+    },
+    {
+      "record_id": "pubmed_41595617",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "some_concerns",
+        "deviations_from_intended_interventions": "some_concerns",
+        "missing_outcome_data": "low",
+        "measurement_of_outcome": "some_concerns",
+        "selection_of_reported_result": "some_concerns"
+      }
+    },
+    {
+      "record_id": "pubmed_41578841",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "some_concerns",
+        "deviations_from_intended_interventions": "low",
+        "missing_outcome_data": "low",
+        "measurement_of_outcome": "some_concerns",
+        "selection_of_reported_result": "some_concerns"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "claim_001",
+      "statement": "SGLT2 inhibitors may reduce the risk of major adverse cardiovascular events (MACEs) compared to GLP-1 receptor agonists in patients with type 2 diabetes.",
+      "certainty": "low",
+      "supporting_snippets": [
+        "pubmed_41678006_snip_0",
+        "pubmed_41678006_snip_1"
+      ]
+    },
+    {
+      "claim_id": "claim_002",
+      "statement": "SGLT2 inhibitors may reduce the risk of hospitalizations for heart failure (HF) compared to GLP-1 receptor agonists in patients with type 2 diabetes.",
+      "certainty": "low",
+      "supporting_snippets": [
+        "pubmed_41668999_snip_0",
+        "pubmed_41668999_snip_1"
+      ]
+    },
+    {
+      "claim_id": "claim_003",
+      "statement": "SGLT2 inhibitors may reduce all-cause mortality and cardiovascular-associated mortality compared to GLP-1 receptor agonists in patients with type 2 diabetes.",
+      "certainty": "low",
+      "supporting_snippets": [
+        "pubmed_41668999_snip_0",
+        "pubmed_41668999_snip_1"
+      ]
+    }
+  ],
+  "heterogeneity": "{'clinical': 'Studies varied in population characteristics, interventions, and outcomes.', 'methodological': 'Studies had different designs (RCT, meta-analysis, systematic review, cohort) and risk of bias.', 'statistical': 'I² = 50%, indicating moderate heterogeneity.'}",
+  "narrative": "The evidence suggests that SGLT2 inhibitors may have a beneficial effect on cardiovascular outcomes compared to GLP-1 receptor agonists in patients with type 2 diabetes. However, the certainty of the evidence is low due to small sample sizes, high risk of bias in some studies, and conflicting results.",
+  "disclaimer": "⚠️ This report is machine-generated by CDR (Clinical Deep Research). It is NOT medical advice and should NOT be used for clinical decision-making. All findings require independent verification by qualified professionals. See DISCLAIMER.md for full terms.",
+  "verification": {
+    "claim_001": {
+      "status": "unverifiable",
+      "confidence": 0.6
+    },
+    "claim_002": {
+      "status": "verified",
+      "confidence": 0.95
+    },
+    "claim_003": {
+      "status": "verified",
+      "confidence": 0.95
+    }
+  }
+}

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="440" viewBox="0 0 720 440">
+  <defs>
+    <style>
+      @keyframes typing { from { width: 0 } to { width: 100% } }
+      @keyframes blink { 0%,50% { opacity: 1 } 51%,100% { opacity: 0 } }
+      @keyframes fade1 { 0%,5% { opacity: 0 } 6%,100% { opacity: 1 } }
+      @keyframes fade2 { 0%,15% { opacity: 0 } 16%,100% { opacity: 1 } }
+      @keyframes fade3 { 0%,25% { opacity: 0 } 26%,100% { opacity: 1 } }
+      @keyframes fade4 { 0%,35% { opacity: 0 } 36%,100% { opacity: 1 } }
+      @keyframes fade5 { 0%,45% { opacity: 0 } 46%,100% { opacity: 1 } }
+      @keyframes fade6 { 0%,55% { opacity: 0 } 56%,100% { opacity: 1 } }
+      @keyframes fade7 { 0%,65% { opacity: 0 } 66%,100% { opacity: 1 } }
+      @keyframes fade8 { 0%,75% { opacity: 0 } 76%,100% { opacity: 1 } }
+      @keyframes fade9 { 0%,85% { opacity: 0 } 86%,100% { opacity: 1 } }
+      .term-bg { fill: #0f172a; rx: 10; }
+      .term-bar { fill: #1e293b; rx: 10 10 0 0; }
+      .dot-r { fill: #ef4444; }
+      .dot-y { fill: #f59e0b; }
+      .dot-g { fill: #22c55e; }
+      .prompt { fill: #22c55e; font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; font-size: 13px; }
+      .cmd { fill: #e2e8f0; font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; font-size: 13px; }
+      .output { fill: #94a3b8; font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; font-size: 12px; }
+      .ok { fill: #22c55e; }
+      .title-text { fill: #64748b; font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; font-size: 12px; }
+      .emoji { font-size: 13px; }
+      .line1 { animation: fade1 15s infinite; }
+      .line2 { animation: fade2 15s infinite; }
+      .line3 { animation: fade3 15s infinite; }
+      .line4 { animation: fade4 15s infinite; }
+      .line5 { animation: fade5 15s infinite; }
+      .line6 { animation: fade6 15s infinite; }
+      .line7 { animation: fade7 15s infinite; }
+      .line8 { animation: fade8 15s infinite; }
+      .line9 { animation: fade9 15s infinite; }
+    </style>
+  </defs>
+
+  <!-- Terminal window -->
+  <rect class="term-bg" x="0" y="0" width="720" height="440" />
+  <rect class="term-bar" x="0" y="0" width="720" height="36" />
+
+  <!-- Window controls -->
+  <circle class="dot-r" cx="20" cy="18" r="6" />
+  <circle class="dot-y" cx="40" cy="18" r="6" />
+  <circle class="dot-g" cx="60" cy="18" r="6" />
+  <text class="title-text" x="360" y="22" text-anchor="middle">CDR — make demo</text>
+
+  <!-- Command prompt -->
+  <text class="prompt" x="20" y="65">$</text>
+  <text class="cmd" x="35" y="65">make demo</text>
+
+  <!-- Output lines with staggered animation -->
+  <g class="line1">
+    <text class="output" x="20" y="95">🔬  CDR Demo — Offline Sample Generation</text>
+    <text class="output" x="20" y="112">==================================================</text>
+  </g>
+
+  <g class="line2">
+    <text class="output ok" x="20" y="140">  ✅ Loaded sample_report.json</text>
+  </g>
+
+  <g class="line3">
+    <text class="output" x="20" y="162">     Question: Is aspirin effective for secondary</text>
+    <text class="output" x="20" y="179">               prevention of cardiovascular events?</text>
+    <text class="output" x="20" y="196">     Status:   completed</text>
+    <text class="output" x="20" y="213">     Claims:   8     Studies:  17</text>
+  </g>
+
+  <g class="line4">
+    <text class="output" x="20" y="241">  🔍 Validating against schemas/report.schema.json...</text>
+  </g>
+
+  <g class="line5">
+    <text class="output ok" x="20" y="263">  ✅ Schema validation passed</text>
+  </g>
+
+  <g class="line6">
+    <text class="output ok" x="20" y="291">  ✅ Rendered sample_report.md (2938 bytes)</text>
+  </g>
+
+  <g class="line7">
+    <text class="output" x="20" y="319">📋  Outputs:</text>
+    <text class="output" x="20" y="336">    JSON: examples/output/sample_report.json</text>
+    <text class="output" x="20" y="353">    MD:   examples/output/sample_report.md</text>
+  </g>
+
+  <g class="line8">
+    <text class="output ok" x="20" y="381">✅  Demo complete</text>
+  </g>
+
+  <g class="line9">
+    <text class="prompt" x="20" y="415">$</text>
+    <rect x="35" y="402" width="8" height="16" fill="#22c55e" opacity="0.8">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" />
+    </rect>
+  </g>
+</svg>

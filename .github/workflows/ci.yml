@@ -1,0 +1,270 @@
+# CDR CI Workflow
+# Runs on push to main and pull requests
+#
+# Jobs:
+#   backend       — 635 pytest tests, coverage report, type check
+#   frontend      — vitest unit tests, typecheck
+#   openapi       — Export + validate OpenAPI spec
+#   integration   — Contract, evaluation, E2E API, composition tests
+#   eval-offline  — Offline structural evaluation (golden set)
+#   e2e           — Playwright E2E (build → preview → test)
+#
+# All backend jobs use uv sync --frozen for reproducible installs.
+
+name: CDR CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+env:
+  PYTHON_VERSION: "3.12"
+  NODE_VERSION: "20"
+
+jobs:
+  # ──────────────────────────────────────────────────────────────────
+  # Backend: pytest 635 tests + coverage report
+  # ──────────────────────────────────────────────────────────────────
+  backend:
+    runs-on: ubuntu-latest
+    name: Backend Tests (635)
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('uv.lock') }}
+          restore-keys: ${{ runner.os }}-pip-
+
+      - name: Install uv
+        run: pip install uv
+
+      - name: Install dependencies (frozen from uv.lock)
+        run: uv sync --frozen
+
+      - name: Type check (advisory)
+        run: |
+          pip install mypy
+          mypy src/cdr --ignore-missing-imports || true
+
+      - name: Run tests with coverage
+        env:
+          # Block network calls — tests must be fully mocked
+          no_proxy: "*"
+        run: |
+          uv run python -m pytest tests/ -v --tb=short \
+            --junitxml=test_reports/junit.xml \
+            --cov=src/cdr --cov-branch \
+            --cov-report=xml:test_reports/coverage.xml \
+            --cov-report=term-missing
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: backend-test-results
+          path: |
+            test_reports/junit.xml
+            test_reports/coverage.xml
+
+  # ──────────────────────────────────────────────────────────────────
+  # Frontend: vitest + typecheck
+  # ──────────────────────────────────────────────────────────────────
+  frontend:
+    runs-on: ubuntu-latest
+    name: Frontend Tests
+    defaults:
+      run:
+        working-directory: ui
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+          cache-dependency-path: ui/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Lint (advisory)
+        run: npm run lint || true
+
+      - name: Run tests
+        run: npm test -- --run
+
+  # ──────────────────────────────────────────────────────────────────
+  # E2E: Playwright (build → preview → test)
+  # ──────────────────────────────────────────────────────────────────
+  e2e:
+    runs-on: ubuntu-latest
+    name: E2E Playwright Tests
+    needs: [frontend]
+    defaults:
+      run:
+        working-directory: ui
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+          cache-dependency-path: ui/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build for production
+        run: npm run build
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Playwright tests
+        run: npx playwright test --config=playwright.config.ts
+        env:
+          CI: true
+
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: ui/playwright-report/
+
+  # ──────────────────────────────────────────────────────────────────
+  # OpenAPI: export + validate
+  # ──────────────────────────────────────────────────────────────────
+  openapi:
+    runs-on: ubuntu-latest
+    name: OpenAPI Spec Validation
+    needs: [backend]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install uv
+        run: pip install uv
+
+      - name: Install dependencies (frozen from uv.lock)
+        run: uv sync --frozen
+
+      - name: Export OpenAPI spec
+        run: uv run python scripts/export_openapi.py --output docs/openapi.json
+
+      - name: Validate OpenAPI spec tests
+        run: uv run python -m pytest tests/test_openapi_spec.py -v --tb=short
+
+      - name: Upload OpenAPI spec
+        uses: actions/upload-artifact@v4
+        with:
+          name: openapi-spec
+          path: docs/openapi.json
+
+  # ──────────────────────────────────────────────────────────────────
+  # Integration: contract, evaluation, E2E API, composition
+  # ──────────────────────────────────────────────────────────────────
+  integration:
+    runs-on: ubuntu-latest
+    name: Integration Tests
+    needs: [backend]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install uv
+        run: pip install uv
+
+      - name: Install dependencies (frozen from uv.lock)
+        run: uv sync --frozen
+
+      - name: Run contract conformity tests
+        run: uv run python -m pytest tests/test_contract_conformity.py -v --tb=short
+
+      - name: Run evaluation tests
+        run: uv run python -m pytest tests/test_evaluation.py -v --tb=short
+
+      - name: Run E2E API flow tests
+        run: uv run python -m pytest tests/test_e2e_api_flow.py -v --tb=short
+
+      - name: Run composition quality tests
+        run: uv run python -m pytest tests/test_composition_quality.py -v --tb=short
+
+  # ──────────────────────────────────────────────────────────────────
+  # Eval Offline: golden set structural validation (no LLM required)
+  # ──────────────────────────────────────────────────────────────────
+  eval-offline:
+    runs-on: ubuntu-latest
+    name: Eval Offline (Golden Set)
+    needs: [backend]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install uv
+        run: pip install uv
+
+      - name: Install dependencies (frozen from uv.lock)
+        run: uv sync --frozen
+
+      - name: Run offline evaluation
+        run: |
+          uv run python -m eval.eval_runner \
+            --dataset eval/datasets/golden_set_toy.json \
+            --output eval/results/
+
+      - name: Validate eval outputs
+        run: |
+          # Check that results were generated
+          LATEST=$(ls -t eval/results/*_results.json 2>/dev/null | head -1)
+          if [ -z "$LATEST" ]; then
+            echo "❌ No eval results generated"
+            exit 1
+          fi
+          echo "✅ Eval results: $LATEST"
+          uv run python -c "
+          import json
+          d = json.load(open('$LATEST'))
+          agg = d.get('aggregate', d.get('summary', {}))
+          total = agg.get('total_questions', d.get('total_questions', 0))
+          passed = agg.get('passed', 0)
+          print(f'  Questions: {total}')
+          print(f'  Passed:    {passed}')
+          if total > 0:
+              print(f'  Pass rate: {passed*100//total}%')
+          "
+
+      - name: Upload eval results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-offline-results
+          path: eval/results/

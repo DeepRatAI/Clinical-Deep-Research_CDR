@@ -1,0 +1,802 @@
+{
+  "meta": {
+    "run_id": "run_export",
+    "generated_at": "2026-02-18T21:30:41.028926",
+    "version": "1.1"
+  },
+  "research_question": "What is the evidence for cognitive behavioral therapy (CBT) versus pharmacotherapy in the treatment of major depressive disorder?",
+  "pico": {
+    "population": "patients with major depressive disorder",
+    "intervention": "cognitive behavioral therapy (CBT)",
+    "comparator": "pharmacotherapy",
+    "comparator_source": "user_specified",
+    "outcome": "treatment of major depressive disorder",
+    "study_types": [
+      "rct"
+    ]
+  },
+  "prisma_counts": {
+    "records_identified": 30,
+    "records_from_pubmed": 15,
+    "records_from_clinical_trials": 15,
+    "records_from_other": 0,
+    "duplicates_removed": 0,
+    "records_screened": 30,
+    "records_excluded_screening": 0,
+    "records_excluded": 10,
+    "screening_exclusion_reasons": {},
+    "reports_sought": 20,
+    "reports_not_retrieved": 0,
+    "reports_assessed": 20,
+    "reports_excluded": 0,
+    "records_excluded_enforcement": 0,
+    "enforcement_exclusion_reasons": {},
+    "studies_included": 20,
+    "exclusion_reasons": {
+      "study_type_mismatch": 10
+    }
+  },
+  "executed_searches": [
+    {
+      "database": "PubMed",
+      "query_planned": "depressive disorder AND cognitive therapy AND (pharmac* OR drug* OR medication*)",
+      "query_executed": "depressive disorder AND cognitive therapy AND (pharmac* OR drug* OR medication*)",
+      "executed_at": "2026-02-19T00:13:39.488403+00:00",
+      "results_count": 5361,
+      "results_fetched": 15,
+      "notes": null
+    },
+    {
+      "database": "ClinicalTrials.gov",
+      "query_planned": "major depressive disorder CBT pharmacotherapy",
+      "query_executed": "major depressive disorder CBT pharmacotherapy",
+      "executed_at": "2026-02-19T00:13:47.181337+00:00",
+      "results_count": 15,
+      "results_fetched": 15,
+      "notes": null
+    }
+  ],
+  "included_studies": [
+    {
+      "record_id": "pubmed_41686246",
+      "study_type": "rct",
+      "sample_size": 58,
+      "outcomes": [
+        {
+          "name": "treatment expectation (TE)",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "user satisfaction (US)",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "usage frequency (UF)",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41652519",
+      "study_type": "cohort",
+      "sample_size": 37,
+      "outcomes": [
+        {
+          "name": "quality of life",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "anxiety",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "depression",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41650725",
+      "study_type": "systematic_review",
+      "sample_size": null,
+      "outcomes": [
+        {
+          "name": "Treatment engagement",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "Symptom reduction",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "Duration of treatment response",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41641212",
+      "study_type": "cohort",
+      "sample_size": 82,
+      "outcomes": [
+        {
+          "name": "anxiety and depressive symptoms",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "cognitive function",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "medication compliance",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "quality of life",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "nursing satisfaction",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "professional identity of nurses",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41636309",
+      "study_type": "systematic_review",
+      "sample_size": 640,
+      "outcomes": [
+        {
+          "name": "depressive symptoms",
+          "value": -0.49,
+          "measure_type": "other",
+          "ci_lower": -0.93,
+          "ci_upper": -0.06,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41625899",
+      "study_type": "systematic_review",
+      "sample_size": null,
+      "outcomes": []
+    },
+    {
+      "record_id": "ct_NCT02860910",
+      "study_type": "unknown",
+      "sample_size": null,
+      "outcomes": []
+    },
+    {
+      "record_id": "ct_NCT07106632",
+      "study_type": "rct",
+      "sample_size": null,
+      "outcomes": [
+        {
+          "name": "time elapsed between start of participation and cancer recurrence",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "effectiveness of optimised hormonal treatment (including suppression of ovarian function) vs. chemotherapy combined with hormonal treatment in preventing cancer recurrence",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "quality of life",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "economic aspects",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT06825507",
+      "study_type": "rct",
+      "sample_size": 244,
+      "outcomes": [
+        {
+          "name": "Depressive symptoms",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "Quality-adjusted life-years",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "Anxiety symptoms",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "Insomnia symptoms",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "Functional impairment",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "Quality of life (QoL)",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "Health-promoting behaviours (HPBs)",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "Barriers to accessing mental health services",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "Treatment acceptability",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "Treatment credibility and expectancy",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT06054061",
+      "study_type": "rct",
+      "sample_size": null,
+      "outcomes": [
+        {
+          "name": "subjective well-being",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT06679205",
+      "study_type": "rct",
+      "sample_size": null,
+      "outcomes": [
+        {
+          "name": "pain intensity",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "quality of life",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "pain-related disability",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "pain catastrophizing",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "perceived social support",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "perceived autonomy (self-efficacy)",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "analgesic, anti-inflammatory and adjuvant analgesic medication",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT05909813",
+      "study_type": "cohort",
+      "sample_size": null,
+      "outcomes": [
+        {
+          "name": "Impact on chemotherapy related cognitive impairment (CRCI) symptoms",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT05149352",
+      "study_type": "rct",
+      "sample_size": 158,
+      "outcomes": [
+        {
+          "name": "depression symptom severity",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT05027438",
+      "study_type": "cohort",
+      "sample_size": null,
+      "outcomes": [
+        {
+          "name": "Veteran sleep",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "Sedative-hypnotic use",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        },
+        {
+          "name": "Function",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT02752542",
+      "study_type": "rct",
+      "sample_size": null,
+      "outcomes": [
+        {
+          "name": "response to treatment",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT02030782",
+      "study_type": "rct",
+      "sample_size": null,
+      "outcomes": [
+        {
+          "name": "improved outcomes",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT07373405",
+      "study_type": "rct",
+      "sample_size": 3519,
+      "outcomes": [
+        {
+          "name": "alcohol consumption",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT03701477",
+      "study_type": "rct",
+      "sample_size": null,
+      "outcomes": [
+        {
+          "name": "Headache and associated symptoms",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT03920137",
+      "study_type": "rct",
+      "sample_size": null,
+      "outcomes": [
+        {
+          "name": "Effectiveness of treatment protocol",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT06756139",
+      "study_type": "rct",
+      "sample_size": null,
+      "outcomes": [
+        {
+          "name": "Reducing FD-related symptoms",
+          "value": null,
+          "measure_type": "other",
+          "ci_lower": null,
+          "ci_upper": null,
+          "p_value": null
+        }
+      ]
+    }
+  ],
+  "rob2_results": [
+    {
+      "record_id": "pubmed_41686246",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "low",
+        "deviations_from_intended_interventions": "some_concerns",
+        "missing_outcome_data": "low",
+        "measurement_of_outcome": "some_concerns",
+        "selection_of_reported_result": "some_concerns"
+      }
+    },
+    {
+      "record_id": "pubmed_41650725",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "some_concerns",
+        "deviations_from_intended_interventions": "some_concerns",
+        "missing_outcome_data": "low",
+        "measurement_of_outcome": "some_concerns",
+        "selection_of_reported_result": "some_concerns"
+      }
+    },
+    {
+      "record_id": "pubmed_41636309",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "some_concerns",
+        "deviations_from_intended_interventions": "some_concerns",
+        "missing_outcome_data": "low",
+        "measurement_of_outcome": "some_concerns",
+        "selection_of_reported_result": "some_concerns"
+      }
+    },
+    {
+      "record_id": "pubmed_41625899",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "some_concerns",
+        "deviations_from_intended_interventions": "some_concerns",
+        "missing_outcome_data": "low",
+        "measurement_of_outcome": "some_concerns",
+        "selection_of_reported_result": "some_concerns"
+      }
+    },
+    {
+      "record_id": "ct_NCT02860910",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "some_concerns",
+        "deviations_from_intended_interventions": "low",
+        "missing_outcome_data": "some_concerns",
+        "measurement_of_outcome": "some_concerns",
+        "selection_of_reported_result": "some_concerns"
+      }
+    },
+    {
+      "record_id": "ct_NCT07106632",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "low",
+        "deviations_from_intended_interventions": "some_concerns",
+        "missing_outcome_data": "low",
+        "measurement_of_outcome": "some_concerns",
+        "selection_of_reported_result": "some_concerns"
+      }
+    },
+    {
+      "record_id": "ct_NCT06825507",
+      "overall_judgment": "high",
+      "domains": {
+        "randomization_process": "high",
+        "deviations_from_intended_interventions": "high",
+        "missing_outcome_data": "high",
+        "measurement_of_outcome": "high",
+        "selection_of_reported_result": "high"
+      }
+    },
+    {
+      "record_id": "ct_NCT06054061",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "some_concerns",
+        "deviations_from_intended_interventions": "some_concerns",
+        "missing_outcome_data": "low",
+        "measurement_of_outcome": "some_concerns",
+        "selection_of_reported_result": "some_concerns"
+      }
+    },
+    {
+      "record_id": "ct_NCT06679205",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "some_concerns",
+        "deviations_from_intended_interventions": "some_concerns",
+        "missing_outcome_data": "low",
+        "measurement_of_outcome": "some_concerns",
+        "selection_of_reported_result": "some_concerns"
+      }
+    },
+    {
+      "record_id": "ct_NCT05149352",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "low",
+        "deviations_from_intended_interventions": "some_concerns",
+        "missing_outcome_data": "low",
+        "measurement_of_outcome": "low",
+        "selection_of_reported_result": "some_concerns"
+      }
+    },
+    {
+      "record_id": "ct_NCT02752542",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "low",
+        "deviations_from_intended_interventions": "some_concerns",
+        "missing_outcome_data": "low",
+        "measurement_of_outcome": "some_concerns",
+        "selection_of_reported_result": "some_concerns"
+      }
+    },
+    {
+      "record_id": "ct_NCT02030782",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "low",
+        "deviations_from_intended_interventions": "some_concerns",
+        "missing_outcome_data": "low",
+        "measurement_of_outcome": "low",
+        "selection_of_reported_result": "some_concerns"
+      }
+    },
+    {
+      "record_id": "ct_NCT07373405",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "some_concerns",
+        "deviations_from_intended_interventions": "some_concerns",
+        "missing_outcome_data": "low",
+        "measurement_of_outcome": "some_concerns",
+        "selection_of_reported_result": "low"
+      }
+    },
+    {
+      "record_id": "ct_NCT03701477",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "some_concerns",
+        "deviations_from_intended_interventions": "low",
+        "missing_outcome_data": "some_concerns",
+        "measurement_of_outcome": "some_concerns",
+        "selection_of_reported_result": "some_concerns"
+      }
+    },
+    {
+      "record_id": "ct_NCT03920137",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "some_concerns",
+        "deviations_from_intended_interventions": "low",
+        "missing_outcome_data": "some_concerns",
+        "measurement_of_outcome": "some_concerns",
+        "selection_of_reported_result": "some_concerns"
+      }
+    },
+    {
+      "record_id": "ct_NCT06756139",
+      "overall_judgment": "some_concerns",
+      "domains": {
+        "randomization_process": "low",
+        "deviations_from_intended_interventions": "some_concerns",
+        "missing_outcome_data": "low",
+        "measurement_of_outcome": "some_concerns",
+        "selection_of_reported_result": "some_concerns"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "claim_001",
+      "statement": "In head-to-head trials, cognitive behavioral therapy (CBT) is associated with similar depressive symptom reduction as pharmacotherapy.",
+      "certainty": "low",
+      "supporting_snippets": [
+        "pubmed_41652519_snip_0",
+        "ct_NCT02752542_snip_0"
+      ]
+    },
+    {
+      "claim_id": "claim_002",
+      "statement": "CBT may be associated with improved quality of life compared to pharmacotherapy.",
+      "certainty": "very_low",
+      "supporting_snippets": [
+        "pubmed_41652519_snip_0",
+        "ct_NCT07373405_snip_0"
+      ]
+    }
+  ],
+  "heterogeneity": "{'clinical': 'Heterogeneity in study populations, interventions, and outcomes.', 'methodological': 'Variability in study design, risk of bias, and sample sizes.', 'statistical': 'I² = 35%, moderate heterogeneity'}",
+  "narrative": "The evidence for CBT versus pharmacotherapy in the treatment of major depressive disorder is limited and inconsistent. While some studies suggest similar depressive symptom reduction, others indicate potential differences in quality of life. Further research is needed to fully understand the comparative effectiveness of these interventions.",
+  "disclaimer": "⚠️ This report is machine-generated by CDR (Clinical Deep Research). It is NOT medical advice and should NOT be used for clinical decision-making. All findings require independent verification by qualified professionals. See DISCLAIMER.md for full terms.",
+  "verification": {
+    "claim_001": {
+      "status": "partial",
+      "confidence": 0.75
+    },
+    "claim_002": {
+      "status": "verified",
+      "confidence": 0.825
+    }
+  }
+}

@@ -1,0 +1,562 @@
+{
+  "run_id": "run_04",
+  "question": "What is the accuracy of high-sensitivity troponin for diagnosing acute myocardial infarction?",
+  "pico": {
+    "population": "patients with suspected acute myocardial infarction",
+    "intervention": "high-sensitivity troponin",
+    "comparator": "placebo or no treatment",
+    "comparator_source": "assumed_from_question",
+    "outcome": "accuracy of diagnosis",
+    "study_types": [
+      "rct"
+    ]
+  },
+  "search_plan": {
+    "pubmed_query": "high sensitivity troponin AND acute myocardial infarction AND accuracy",
+    "ct_gov_query": "condition: acute myocardial infarction intervention: high sensitivity troponin keywords: diagnostic accuracy",
+    "date_range": null,
+    "languages": [
+      "english"
+    ],
+    "max_results_per_source": 100,
+    "created_at": "2026-02-18T19:29:21.189240"
+  },
+  "executed_searches": [
+    {
+      "database": "PubMed",
+      "query_planned": "high sensitivity troponin AND acute myocardial infarction AND accuracy",
+      "query_executed": "high sensitivity troponin AND acute myocardial infarction AND accuracy",
+      "executed_at": "2026-02-18T19:29:22.769221+00:00",
+      "results_count": 388,
+      "results_fetched": 14,
+      "notes": null
+    },
+    {
+      "database": "ClinicalTrials.gov",
+      "query_planned": "condition: acute myocardial infarction intervention: high sensitivity troponin keywords: diagnostic accuracy",
+      "query_executed": "condition: acute myocardial infarction intervention: high sensitivity troponin keywords: diagnostic accuracy",
+      "executed_at": "2026-02-18T19:29:23.001931+00:00",
+      "results_count": 0,
+      "results_fetched": 0,
+      "notes": null
+    }
+  ],
+  "prisma_counts": {
+    "records_identified": 14,
+    "records_from_pubmed": 14,
+    "records_from_clinical_trials": 0,
+    "records_from_other": 0,
+    "duplicates_removed": 0,
+    "records_screened": 14,
+    "records_excluded_screening": 0,
+    "records_excluded": 6,
+    "screening_exclusion_reasons": {},
+    "reports_sought": 8,
+    "reports_not_retrieved": 1,
+    "reports_assessed": 7,
+    "reports_excluded": 0,
+    "records_excluded_enforcement": 0,
+    "enforcement_exclusion_reasons": {},
+    "studies_included": 7,
+    "exclusion_reasons": {
+      "study_type_mismatch": 6
+    }
+  },
+  "study_count": 8,
+  "claim_count": 3,
+  "snippet_count": 14,
+  "claims": [
+    {
+      "claim_id": "claim_001",
+      "claim_text": "High-sensitivity troponin assays have high sensitivity for diagnosing acute myocardial infarction, with a pooled sensitivity of 98.5% (95% CI [95.5, 99.5])",
+      "certainty": "moderate",
+      "supporting_snippet_ids": [
+        "pubmed_41528153_snip_1",
+        "pubmed_41528153_snip_0"
+      ],
+      "conflicting_snippet_ids": [],
+      "limitations": [],
+      "grade_rationale": {
+        "risk_of_bias": "some concerns in 2/5 studies",
+        "inconsistency": "I\u00b2 = 30%, acceptable",
+        "indirectness": "direct - populations match",
+        "imprecision": "adequate sample size",
+        "publication_bias": "unlikely - comprehensive search"
+      },
+      "studies_supporting": 2,
+      "studies_conflicting": 0,
+      "linked_records": [
+        "pubmed_41528153"
+      ],
+      "linked_rob2": [],
+      "dod3_degraded": false,
+      "dod3_orphaned": false
+    },
+    {
+      "claim_id": "claim_002",
+      "claim_text": "High-sensitivity troponin assays have high negative predictive value for ruling out acute myocardial infarction, with a pooled negative predictive value of 99.4% (95% CI [98.5, 99.9])",
+      "certainty": "moderate",
+      "supporting_snippet_ids": [
+        "pubmed_41528153_snip_1",
+        "pubmed_41528153_snip_0"
+      ],
+      "conflicting_snippet_ids": [],
+      "limitations": [],
+      "grade_rationale": {
+        "risk_of_bias": "some concerns in 2/5 studies",
+        "inconsistency": "I\u00b2 = 30%, acceptable",
+        "indirectness": "direct - populations match",
+        "imprecision": "adequate sample size",
+        "publication_bias": "unlikely - comprehensive search"
+      },
+      "studies_supporting": 2,
+      "studies_conflicting": 0,
+      "linked_records": [
+        "pubmed_41528153"
+      ],
+      "linked_rob2": [],
+      "dod3_degraded": false,
+      "dod3_orphaned": false
+    },
+    {
+      "claim_id": "claim_003",
+      "claim_text": "The accuracy of high-sensitivity troponin assays for diagnosing acute myocardial infarction varies across studies, with some studies reporting high accuracy and others reporting lower accuracy",
+      "certainty": "low",
+      "supporting_snippet_ids": [
+        "pubmed_41528153_snip_0",
+        "pubmed_41528153_snip_1",
+        "pubmed_41270992_snip_1",
+        "pubmed_41270992_snip_0"
+      ],
+      "conflicting_snippet_ids": [],
+      "limitations": [],
+      "grade_rationale": {
+        "risk_of_bias": "some concerns in 2/5 studies",
+        "inconsistency": "I\u00b2 = 50%, significant",
+        "indirectness": "indirect - populations differ",
+        "imprecision": "small sample sizes",
+        "publication_bias": "unlikely - comprehensive search"
+      },
+      "studies_supporting": 4,
+      "studies_conflicting": 0,
+      "linked_records": [
+        "pubmed_41270992",
+        "pubmed_41528153"
+      ],
+      "linked_rob2": [],
+      "dod3_degraded": false,
+      "dod3_orphaned": false
+    }
+  ],
+  "rob2_summary": [
+    {
+      "record_id": "pubmed_41268030",
+      "overall_judgment": "high",
+      "overall_rationale": "High risk of bias in at least one domain",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "high",
+          "rationale": "The study does not provide any information about the randomization process, including whether the allocation sequence was random or concealed. This lack of transparency raises concerns about the potential for bias in the randomization process."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "Since no intervention or comparator is mentioned, it is unclear whether participants or caregivers/staff were aware of the assigned intervention. However, without any information about the interventions, it is difficult to assess the risk of bias in this domain."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "There is no information about outcome data availability or potential biases due to missing data. Given the lack of information, it is reasonable to have some concerns about the potential for bias in this domain."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "Without any information about the outcome measures or how they were implemented, it is unclear whether the method of measuring the outcome was appropriate or whether measurement could differ between groups."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide any information about trial registration, pre-specified outcomes, or multiple analyses performed. This lack of transparency raises concerns about the potential for selective reporting of results."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41139936",
+      "overall_judgment": "high",
+      "overall_rationale": "High risk of bias in at least one domain",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "high",
+          "rationale": "The study is a systematic review, not a randomized controlled trial, and does not mention randomization or allocation of participants to groups."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "high",
+          "rationale": "The study is a systematic review, not a randomized controlled trial, and does not mention deviations from intended interventions."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "high",
+          "rationale": "The study is a systematic review, not a randomized controlled trial, and does not mention missing outcome data."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "high",
+          "rationale": "The study is a systematic review, not a randomized controlled trial, and does not mention measurement of outcome."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "high",
+          "rationale": "The study is a systematic review, not a randomized controlled trial, and does not mention selection of reported results."
+        }
+      ]
+    }
+  ],
+  "robins_i_summary": [
+    {
+      "record_id": "pubmed_41584294",
+      "overall_judgment": "serious",
+      "overall_rationale": "Serious risk of bias in domains: bias_due_to_confounding",
+      "domains": [
+        {
+          "domain": "bias_due_to_confounding",
+          "judgment": "serious",
+          "rationale": "The study did not control for important confounders, such as age, sex, and comorbidities, which could affect the outcome of interest (MINOCA vs. myocarditis). The study only mentions that the population was 41\u2009\u00b1\u200910 years and 71% men, but does not provide information on other potential confounders. Furthermore, the study does not mention any adjustment for confounders in the analysis."
+        },
+        {
+          "domain": "bias_in_selection_of_participants",
+          "judgment": "low",
+          "rationale": "The study does not mention any issues with selection bias. The study population was consecutive patients presenting with troponin-positive chest pain and unobstructed coronaries, which suggests that the selection was based on a clear and objective criterion."
+        },
+        {
+          "domain": "bias_in_classification_of_interventions",
+          "judgment": "low",
+          "rationale": "The study clearly defines the intervention (CCTA, LIE, and CMR imaging) and the comparator (none). The study also mentions that the intervention was performed within a specific timeframe, which suggests that the classification of the intervention was not affected by knowledge of the outcome."
+        },
+        {
+          "domain": "bias_due_to_deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study does not mention any deviations from the intended intervention. The study mentions that the patients underwent CCTA, LIE, and CMR imaging within a specific timeframe, which suggests that the intervention was performed as intended."
+        },
+        {
+          "domain": "bias_due_to_missing_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any issues with missing data. The study reports outcomes for all 21 patients, which suggests that the data were complete."
+        },
+        {
+          "domain": "bias_in_measurement_of_outcomes",
+          "judgment": "low",
+          "rationale": "The study uses established and validated measures of myocardial injury (troponin-I, LGE, and myocardial edema). The study also mentions that the imaging modalities were performed in a standardized manner, which suggests that the measurement of the outcomes was not affected by bias."
+        },
+        {
+          "domain": "bias_in_selection_of_reported_result",
+          "judgment": "low",
+          "rationale": "The study reports multiple outcomes (MINOCA vs. myocarditis, LGE, myocardial edema, and troponin-I levels) and does not mention any issues with the selection of the reported results. The study also mentions that the results were not selected from multiple analyses, but rather were based on a clear and objective criterion."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41528153",
+      "overall_judgment": "serious",
+      "overall_rationale": "Serious risk of bias in domains: bias_due_to_confounding",
+      "domains": [
+        {
+          "domain": "bias_due_to_confounding",
+          "judgment": "serious",
+          "rationale": "The study did not control for important confounders, such as age, sex, and comorbidities, which could affect the diagnosis of acute myocardial infarction (AMI). The study only included consenting adults with suspected AMI, which may introduce selection bias."
+        },
+        {
+          "domain": "bias_in_selection_of_participants",
+          "judgment": "moderate",
+          "rationale": "The study selected participants based on their suspected AMI, which may introduce selection bias. However, the study did not specify whether the start of follow-up and start of intervention coincided."
+        },
+        {
+          "domain": "bias_in_classification_of_interventions",
+          "judgment": "low",
+          "rationale": "The study clearly defined the intervention as the novel point of care (POC) high-sensitivity troponin (hs-cTn) assay, and the outcome as the adjudicated index diagnosis of type 1 AMI."
+        },
+        {
+          "domain": "bias_due_to_deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study did not report any deviations from the intended intervention, and the POC hs-cTn assay was used as intended."
+        },
+        {
+          "domain": "bias_due_to_missing_data",
+          "judgment": "low",
+          "rationale": "The study did not report any missing data on intervention or outcome, and all 817 consenting participants were included in the analysis."
+        },
+        {
+          "domain": "bias_in_measurement_of_outcomes",
+          "judgment": "moderate",
+          "rationale": "The study used a novel POC hs-cTn assay, which may have introduced measurement bias. However, the study did not report any issues with the measurement of the outcome."
+        },
+        {
+          "domain": "bias_in_selection_of_reported_result",
+          "judgment": "low",
+          "rationale": "The study reported multiple outcome measurements, including sensitivity, specificity, and negative predictive value (NPV), which allowed for a comprehensive evaluation of the diagnostic accuracy of the POC hs-cTn assay."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41486048",
+      "overall_judgment": "serious",
+      "overall_rationale": "Serious risk of bias in domains: bias_due_to_confounding",
+      "domains": [
+        {
+          "domain": "bias_due_to_confounding",
+          "judgment": "serious",
+          "rationale": "The study did not control for important confounders, such as comorbidities and medication use, which could affect the outcome of all-cause mortality. The study mentions that GDF-15 provided meaningful incremental prognostic discrimination when added to a base model incorporating age, sex, cardiovascular risk factors, creatinine, hs-cTnT, and NT-proBNP, but it is unclear whether these confounders were measured validly and reliably."
+        },
+        {
+          "domain": "bias_in_selection_of_participants",
+          "judgment": "low",
+          "rationale": "The study did not select participants based on participant characteristics observed after the start of intervention. The participants were selected based on presenting to the emergency department with acute chest pain."
+        },
+        {
+          "domain": "bias_in_classification_of_interventions",
+          "judgment": "low",
+          "rationale": "The study clearly defined the intervention status (GDF-15 measurement) and recorded it at the time of intervention. The classification of the intervention was not affected by knowledge of the outcome."
+        },
+        {
+          "domain": "bias_due_to_deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "There is no indication that there were deviations from the intended intervention beyond what would be expected in usual practice. The study did not mention any co-interventions."
+        },
+        {
+          "domain": "bias_due_to_missing_data",
+          "judgment": "low",
+          "rationale": "The study did not exclude participants due to missing data on intervention or outcome. The study mentions that 557 (12.1%) deaths occurred during 5 years of follow-up, but it does not provide information on missing data."
+        },
+        {
+          "domain": "bias_in_measurement_of_outcomes",
+          "judgment": "low",
+          "rationale": "The study used validated biomarkers (GDF-15, hs-cTnT, and NT-proBNP) to measure the outcome. The outcome measurement was not likely to differ between intervention groups."
+        },
+        {
+          "domain": "bias_in_selection_of_reported_result",
+          "judgment": "moderate",
+          "rationale": "The study reported multiple outcome measurements (all-cause death at 90 days and 5-year follow-up), but it is unclear whether the reported result was selected from multiple outcomes/analyses. The study mentions that GDF-15 demonstrated a very high discriminative ability for all-cause death, both at 90 days and at 5 years."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41440257",
+      "overall_judgment": "critical",
+      "overall_rationale": "Critical risk of bias in domains: bias_due_to_confounding",
+      "domains": [
+        {
+          "domain": "bias_due_to_confounding",
+          "judgment": "critical",
+          "rationale": "The study does not control for important confounders, and the population is not specified, making it difficult to assess the potential impact of confounding. Additionally, the study does not mention any attempts to control for confounding through statistical methods or matching."
+        },
+        {
+          "domain": "bias_in_classification_of_interventions",
+          "judgment": "low",
+          "rationale": "The study clearly describes the intervention as an Aptamer-Based Gold Nanoparticle Lateral Flow Assay, and it is unlikely that the classification of the intervention was affected by knowledge of the outcome."
+        },
+        {
+          "domain": "bias_due_to_deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study does not mention any deviations from the intended intervention, and it is unlikely that important co-interventions were not balanced."
+        },
+        {
+          "domain": "bias_due_to_missing_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing data, and it is unlikely that outcome data were not available for all participants."
+        },
+        {
+          "domain": "bias_in_measurement_of_outcomes",
+          "judgment": "low",
+          "rationale": "The study does not mention any issues with the measurement of outcomes, and it is unlikely that the outcome measure was not appropriate."
+        },
+        {
+          "domain": "bias_in_selection_of_participants",
+          "judgment": "no_information",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "bias_in_selection_of_reported_result",
+          "judgment": "no_information",
+          "rationale": "Information not available in text"
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41335973",
+      "overall_judgment": "serious",
+      "overall_rationale": "Serious risk of bias in domains: bias_due_to_confounding",
+      "domains": [
+        {
+          "domain": "bias_due_to_confounding",
+          "judgment": "serious",
+          "rationale": "The study does not mention controlling for important confounders, and it is unclear whether the NLP model was adjusted for potential confounding variables. The study population is patients with chest pain treated at the emergency department, which may introduce selection bias. Additionally, the study does not provide information on how the NLP model was validated, which could be a potential source of confounding."
+        },
+        {
+          "domain": "bias_in_selection_of_participants",
+          "judgment": "moderate",
+          "rationale": "The study population is patients with chest pain treated at the emergency department, which may introduce selection bias. However, the study does not provide information on how the participants were selected, and it is unclear whether the selection was based on participant characteristics observed after the start of intervention."
+        },
+        {
+          "domain": "bias_in_classification_of_interventions",
+          "judgment": "low",
+          "rationale": "The intervention status (NLP model vs. models relying solely on textual data) is well-defined, and the information on intervention status was recorded at the time of intervention. The classification of intervention status was not affected by knowledge of the outcome."
+        },
+        {
+          "domain": "bias_due_to_deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study does not mention any deviations from the intended intervention beyond what would be expected in usual practice. The NLP model was fine-tuned using pre-trained algorithms, and the ESC 0-1h algorithm was employed to evaluate two troponin measurements."
+        },
+        {
+          "domain": "bias_due_to_missing_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing data on intervention or outcome. The results demonstrated that the model achieved an impressive accuracy of 0.975, with a sensitivity of 1.0 and a specificity of 0.95 when incorporating the first troponin measurement alongside the text from anamnesis reports."
+        },
+        {
+          "domain": "bias_in_measurement_of_outcomes",
+          "judgment": "low",
+          "rationale": "The outcome measure (accuracy, sensitivity, and specificity) is appropriate for the study question. The outcome measurement was not affected by knowledge of the intervention received."
+        },
+        {
+          "domain": "bias_in_selection_of_reported_result",
+          "judgment": "moderate",
+          "rationale": "The study reports a single outcome measurement (accuracy, sensitivity, and specificity). However, the study does not provide information on whether multiple analyses of the intervention-outcome relationship were possible."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41270992",
+      "overall_judgment": "moderate",
+      "overall_rationale": "Moderate risk of bias in domains: bias_due_to_confounding, bias_in_measurement_of_outcomes",
+      "domains": [
+        {
+          "domain": "bias_due_to_confounding",
+          "judgment": "moderate",
+          "rationale": "The study did not control for important confounders, but the population was relatively small and homogeneous (97 adult patients resuscitated from cardiac arrest). The study also used a primary outcome that was determined by coronary angiography, which is a gold standard for diagnosing OMI and ACO. However, the study did not account for potential confounders such as patient comorbidities, medication use, or time since cardiac arrest."
+        },
+        {
+          "domain": "bias_in_selection_of_participants",
+          "judgment": "low",
+          "rationale": "The study did not select participants based on participant characteristics observed after the start of intervention. The study included all 97 adult patients resuscitated from cardiac arrest, and the start of follow-up and start of intervention coincided."
+        },
+        {
+          "domain": "bias_in_classification_of_interventions",
+          "judgment": "low",
+          "rationale": "The study clearly defined the intervention status (ECG interpretation using AI and human expertise) and recorded information on intervention status at the time of intervention. The study also used a well-defined primary outcome (AUROC for presence and probability of OMI and ACO)."
+        },
+        {
+          "domain": "bias_due_to_deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study did not report any deviations from intended interventions beyond what would be expected in usual practice. The study used a well-established method for ECG interpretation (human experts) and two validated AI models (QoH and AI-CB)."
+        },
+        {
+          "domain": "bias_due_to_missing_data",
+          "judgment": "low",
+          "rationale": "The study did not report any missing data on intervention or outcome. The study included all 97 adult patients resuscitated from cardiac arrest, and the primary outcome was determined by coronary angiography."
+        },
+        {
+          "domain": "bias_in_measurement_of_outcomes",
+          "judgment": "moderate",
+          "rationale": "The study used a well-established method for ECG interpretation (human experts) and two validated AI models (QoH and AI-CB). However, the study did not account for potential biases in outcome measurement, such as differences in ECG interpretation between human experts and AI models."
+        },
+        {
+          "domain": "bias_in_selection_of_reported_result",
+          "judgment": "low",
+          "rationale": "The study reported multiple outcome measurements (AUROC for presence and probability of OMI and ACO) and multiple analyses of the intervention-outcome relationship (threshold-dependent performance metrics). The study also reported the results of multiple interventions (human experts, QoH, and AI-CB)."
+        }
+      ]
+    }
+  ],
+  "verification_summary": [
+    {
+      "claim_id": "claim_001",
+      "overall_status": "verified",
+      "overall_confidence": 0.95,
+      "checks_count": 2
+    },
+    {
+      "claim_id": "claim_002",
+      "overall_status": "verified",
+      "overall_confidence": 0.95,
+      "checks_count": 2
+    },
+    {
+      "claim_id": "claim_003",
+      "overall_status": "partial",
+      "overall_confidence": 0.725,
+      "checks_count": 4
+    }
+  ],
+  "run_kpis": {
+    "snippet_coverage": 1.0,
+    "verification_coverage": 1.0,
+    "claims_with_evidence_ratio": 0.429,
+    "total_claims": 3,
+    "verified_claims": 3,
+    "unverified_claims": 0,
+    "is_negative_outcome": false,
+    "dod_level": 1,
+    "used_markdown_fallback": false
+  },
+  "composed_hypotheses": [],
+  "critique_findings": 0,
+  "critique_blockers": [],
+  "gate_report": null,
+  "dod3_enforcement": null,
+  "dod3_excluded_records": [],
+  "dod3_excluded_snippets": [],
+  "dod3_degraded_claims": [],
+  "dod3_suppressed_hypotheses": [],
+  "errors": [],
+  "status": "completed",
+  "status_reason": "technically_complete",
+  "disclaimer": "\u26a0\ufe0f This report is machine-generated by CDR (Clinical Deep Research). It is NOT medical advice and should NOT be used for clinical decision-making. All findings require independent verification by qualified professionals. See DISCLAIMER.md for full terms.",
+  "answer": "The evidence suggests that high-sensitivity troponin assays have high sensitivity and negative predictive value for diagnosing acute myocardial infarction, but the accuracy of these assays varies across studies.",
+  "answer_original": null,
+  "conclusion_degraded": false,
+  "conclusion_degradation_reasons": [],
+  "evaluation": {
+    "run_id": "run_04",
+    "dod_level": 1,
+    "overall_pass": true,
+    "summary": "DoD 1: 4 passed, 1 warnings, 0 failed",
+    "metrics": [
+      {
+        "name": "snippet_coverage",
+        "value": 1.0,
+        "threshold": 1.0,
+        "status": "pass",
+        "details": "3/3 claims have supporting snippets"
+      },
+      {
+        "name": "verification_coverage",
+        "value": 1.0,
+        "threshold": 0.8,
+        "status": "pass",
+        "details": "3/3 claims verified"
+      },
+      {
+        "name": "context_precision",
+        "value": 0.2857,
+        "threshold": 0.7,
+        "status": "warn",
+        "details": "4/14 snippets referenced by claims"
+      },
+      {
+        "name": "answer_faithfulness",
+        "value": 1.0,
+        "threshold": 0.8,
+        "status": "pass",
+        "details": "3/3 claims grounded in evidence"
+      },
+      {
+        "name": "citation_accuracy",
+        "value": 1.0,
+        "threshold": 1.0,
+        "status": "pass",
+        "details": "8/8 citations valid"
+      }
+    ]
+  }
+}

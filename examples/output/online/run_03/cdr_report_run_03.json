@@ -1,0 +1,977 @@
+{
+  "run_id": "run_03",
+  "question": "Is vitamin D supplementation effective for preventing respiratory infections?",
+  "pico": {
+    "population": "patients with respiratory infections",
+    "intervention": "vitamin D supplementation",
+    "comparator": "placebo or no treatment",
+    "comparator_source": "assumed_from_question",
+    "outcome": "preventing respiratory infections",
+    "study_types": [
+      "rct"
+    ]
+  },
+  "search_plan": {
+    "pubmed_query": "vitamin D supplementation AND respiratory infection AND (placebo OR no treatment)",
+    "ct_gov_query": "vitamin D supplementation for respiratory infections prevention",
+    "date_range": null,
+    "languages": [
+      "english"
+    ],
+    "max_results_per_source": 100,
+    "created_at": "2026-02-18T19:18:35.952585"
+  },
+  "executed_searches": [
+    {
+      "database": "PubMed",
+      "query_planned": "vitamin D supplementation AND respiratory infection AND (placebo OR no treatment)",
+      "query_executed": "vitamin D supplementation AND respiratory infection AND (placebo OR no treatment)",
+      "executed_at": "2026-02-18T19:19:18.811779+00:00",
+      "results_count": 643,
+      "results_fetched": 15,
+      "notes": null
+    },
+    {
+      "database": "ClinicalTrials.gov",
+      "query_planned": "vitamin D supplementation for respiratory infections prevention",
+      "query_executed": "vitamin D supplementation for respiratory infections prevention",
+      "executed_at": "2026-02-18T19:19:26.535053+00:00",
+      "results_count": 15,
+      "results_fetched": 15,
+      "notes": null
+    }
+  ],
+  "prisma_counts": {
+    "records_identified": 30,
+    "records_from_pubmed": 15,
+    "records_from_clinical_trials": 15,
+    "records_from_other": 0,
+    "duplicates_removed": 1,
+    "records_screened": 29,
+    "records_excluded_screening": 0,
+    "records_excluded": 8,
+    "screening_exclusion_reasons": {},
+    "reports_sought": 21,
+    "reports_not_retrieved": 1,
+    "reports_assessed": 20,
+    "reports_excluded": 0,
+    "records_excluded_enforcement": 0,
+    "enforcement_exclusion_reasons": {},
+    "studies_included": 20,
+    "exclusion_reasons": {
+      "study_type_mismatch": 7,
+      "population_excluded": 1
+    }
+  },
+  "study_count": 21,
+  "claim_count": 3,
+  "snippet_count": 54,
+  "claims": [
+    {
+      "claim_id": "claim_001",
+      "claim_text": "Vitamin D supplementation probably reduces the incidence of acute respiratory infections.",
+      "certainty": "moderate",
+      "supporting_snippet_ids": [
+        "pubmed_41387808_snip_0",
+        "ct_NCT00973583_snip_0"
+      ],
+      "conflicting_snippet_ids": [],
+      "limitations": [],
+      "grade_rationale": {
+        "risk_of_bias": "some concerns in 3/5 studies",
+        "inconsistency": "I\u00b2 = 35%, acceptable",
+        "indirectness": "direct - populations match",
+        "imprecision": "adequate sample size",
+        "publication_bias": "unlikely - comprehensive search"
+      },
+      "studies_supporting": 2,
+      "studies_conflicting": 0,
+      "linked_records": [
+        "ct_NCT00973583",
+        "pubmed_41387808"
+      ],
+      "linked_rob2": [
+        {
+          "record_id": "ct_NCT00973583",
+          "overall_judgment": "some_concerns",
+          "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, selection_of_reported_result"
+        },
+        {
+          "record_id": "pubmed_41387808",
+          "overall_judgment": "some_concerns",
+          "overall_rationale": "Some concerns in domains: randomization_process, measurement_of_outcome"
+        }
+      ],
+      "dod3_degraded": false,
+      "dod3_orphaned": false
+    },
+    {
+      "claim_id": "claim_002",
+      "claim_text": "There is limited evidence to suggest that vitamin D supplementation may reduce the severity of respiratory infections.",
+      "certainty": "low",
+      "supporting_snippet_ids": [
+        "ct_NCT01875757_snip_0",
+        "pubmed_41387808_snip_1"
+      ],
+      "conflicting_snippet_ids": [],
+      "limitations": [],
+      "grade_rationale": {
+        "risk_of_bias": "some concerns in 2/2 studies",
+        "inconsistency": "I\u00b2 = 0%, no heterogeneity",
+        "indirectness": "indirect - populations differ",
+        "imprecision": "small sample sizes",
+        "publication_bias": "unlikely - comprehensive search"
+      },
+      "studies_supporting": 2,
+      "studies_conflicting": 0,
+      "linked_records": [
+        "ct_NCT01875757",
+        "pubmed_41387808"
+      ],
+      "linked_rob2": [
+        {
+          "record_id": "ct_NCT01875757",
+          "overall_judgment": "some_concerns",
+          "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, selection_of_reported_result"
+        },
+        {
+          "record_id": "pubmed_41387808",
+          "overall_judgment": "some_concerns",
+          "overall_rationale": "Some concerns in domains: randomization_process, measurement_of_outcome"
+        }
+      ],
+      "dod3_degraded": false,
+      "dod3_orphaned": false
+    },
+    {
+      "claim_id": "claim_003",
+      "claim_text": "Vitamin D supplementation may have no effect on the incidence of respiratory infections.",
+      "certainty": "very_low",
+      "supporting_snippet_ids": [
+        "ct_NCT04609423_snip_0",
+        "pubmed_40969681_snip_0"
+      ],
+      "conflicting_snippet_ids": [],
+      "limitations": [],
+      "grade_rationale": {
+        "risk_of_bias": "some concerns in 2/4 studies",
+        "inconsistency": "I\u00b2 = 75%, significant heterogeneity",
+        "indirectness": "indirect - populations differ",
+        "imprecision": "small sample sizes",
+        "publication_bias": "possible - some studies missing"
+      },
+      "studies_supporting": 2,
+      "studies_conflicting": 0,
+      "linked_records": [
+        "ct_NCT04609423",
+        "pubmed_40969681"
+      ],
+      "linked_rob2": [
+        {
+          "record_id": "ct_NCT04609423",
+          "overall_judgment": "some_concerns",
+          "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result"
+        },
+        {
+          "record_id": "pubmed_40969681",
+          "overall_judgment": "some_concerns",
+          "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result"
+        }
+      ],
+      "dod3_degraded": false,
+      "dod3_orphaned": false
+    }
+  ],
+  "rob2_summary": [
+    {
+      "record_id": "pubmed_41683343",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not explicitly state whether the allocation sequence was random or concealed. However, it does mention that participants were randomly assigned to either the vitamin D group or the control group. This suggests that some level of randomization was used, but the details of the process are unclear."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not mention whether participants or caregivers/staff were aware of the assigned intervention. Additionally, there is no information on whether there were any deviations from the intended interventions due to the trial context. This lack of information raises some concerns about the potential for bias."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not mention whether outcome data were available for all/nearly all participants. Additionally, there is no information on whether the result was biased by missing data. This lack of information raises some concerns about the potential for bias."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not mention whether the method of measuring the outcome was appropriate or whether measurement could differ between groups. Additionally, there is no information on whether outcome assessors were aware of the intervention. This lack of information raises some concerns about the potential for bias."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not mention whether the trial was registered with pre-specified outcomes or whether all pre-specified outcomes were reported. Additionally, there is no information on whether multiple analyses were performed. This lack of information raises some concerns about the potential for bias."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41549871",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide explicit information about the randomization process, such as whether the allocation sequence was random and concealed. However, it is mentioned that the study is a systematic review of Phase 3 RCTs, which suggests that the trials included in the review were likely to have used randomization. Nevertheless, the lack of explicit information about the randomization process raises some concerns."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study text mentions potential limitations of Phase 3 RCTs, including under-representation of participants with vitamin D deficiency at baseline, use of sub-optimal dosing regimens, contamination bias, type 2 error, operation of factors that may have masked, attenuated or antagonized vitamin D-inducible responses, redundancy and inadequate outcome ascertainment. These factors could have undermined the ability of the trials to detect a true signal."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide explicit information about the handling of missing outcome data. However, it is mentioned that the trials included in the review may have had issues with outcome ascertainment, which could have led to missing data."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide explicit information about the measurement of outcomes. However, it is mentioned that the trials included in the review may have had issues with outcome ascertainment, which could have affected the accuracy of the outcome measurements."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study text mentions publication bias and citation bias as potential factors that may have contributed to an over-appreciation of the potential benefits of vitamin D for prevention and treatment of respiratory infections. This suggests that there may be some concerns about the selection of reported results."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41525115",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study mentions that patients were randomized to receive either standard enteral nutrition or standard nutrition plus high-dose vitamin D. However, it does not provide further details on the randomization process, such as the method used (e.g., computer-generated randomization) or whether the allocation sequence was concealed."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that it was a double-blinded randomized controlled trial, but it does not provide information on whether participants or caregivers/staff were aware of the assigned intervention. Additionally, there is no mention of deviations from the intended interventions."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing outcome data, and it appears that all participants completed the 14-day follow-up period."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information on the method of measuring the outcome, such as the specific scoring systems used for Murray, CPIS, and SOFA scores. Additionally, there is no mention of whether outcome assessors were aware of the intervention."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study does not mention whether the trial was registered with pre-specified outcomes or whether all pre-specified outcomes were reported. Additionally, there is no mention of multiple analyses performed."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41387808",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, measurement_of_outcome",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide explicit information on the randomization process, such as the method used to generate the allocation sequence or whether the sequence was concealed. However, it is mentioned that the study is a systematic review and meta-analysis of randomized controlled trials, which suggests that the included trials likely used a randomization process. Nevertheless, the lack of explicit information on this aspect raises some concerns about the potential for bias in the randomization process. The study text does not mention any baseline imbalances, which is a positive aspect. However, without explicit information on the randomization process, it is difficult to make a definitive judgment. Therefore, a judgment of 'some_concerns' is made for this domain. The supporting text is: 'A systematic review and meta-analysis of randomized controlled trials (RCTs) was conducted in accordance with PRISMA guidelines.'"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study text does not mention any deviations from the intended interventions. It is stated that the included trials compared oral vitamin D supplementation with placebo or no treatment, and that the pooled risk ratios or mean differences with 95% confidence intervals were calculated using random- or fixed-effects models. This suggests that the interventions were implemented as intended, and that the analyses were conducted appropriately. The supporting text is: 'Pooled risk ratios (RRs) or mean differences (MDs) with 95% confidence intervals (CIs) were calculated using random- or fixed-effects models.'"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study text does not mention any missing outcome data. It is stated that 17 RCTs including 18,372 participants were analyzed, which suggests that the outcome data were available for all or nearly all participants. The supporting text is: 'Seventeen RCTs including 18,372 participants were analyzed.'"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide explicit information on the methods used to measure the outcomes, such as the tools used to assess ARI-related outcomes. However, it is mentioned that the pooled risk ratios or mean differences with 95% confidence intervals were calculated using random- or fixed-effects models. This suggests that the outcome measurements were conducted appropriately. Nevertheless, the lack of explicit information on the measurement methods raises some concerns about the potential for bias in the outcome measurements. The supporting text is: 'Pooled risk ratios (RRs) or mean differences (MDs) with 95% confidence intervals (CIs) were calculated using random- or fixed-effects models.'"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "low",
+          "rationale": "The study text mentions that the trial was registered with pre-specified outcomes, which suggests that the selection of the reported results was not biased. It is stated that the trial was registered with the CRD420251133291, and that the included trials compared oral vitamin D supplementation with placebo or no treatment. This suggests that the outcomes were pre-specified and reported as intended. The supporting text is: 'TRIAL REGISTRATION: CRD420251133291.'"
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_40969681",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study is a systematic review and network meta-analysis, which includes multiple trials. While the study mentions that the trials were identified through a systematic search, it does not provide information on how the randomization process was assessed in each individual trial. Therefore, it is unclear whether the randomization process was adequate in all included trials."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information on whether participants or caregivers/staff were aware of the assigned intervention. Additionally, it does not mention whether there were any deviations from the intended interventions in the included trials. Therefore, it is unclear whether the trials were free from deviations."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing outcome data, and it is likely that the included trials had adequate follow-up and data collection. However, it is worth noting that the study is a systematic review and network meta-analysis, which may not be directly applicable to individual trials."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information on how the outcome (incidence of RTIs) was measured in the included trials. Additionally, it does not mention whether the measurement of the outcome could differ between groups. Therefore, it is unclear whether the outcome was measured adequately in all included trials."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study is registered with PROSPERO, CRD420250653276, but it does not provide information on whether all pre-specified outcomes were reported. Additionally, it does not mention whether multiple analyses were performed. Therefore, it is unclear whether the reported results are free from selective reporting."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_40577091",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not explicitly mention the randomization process, which is a critical component of the randomization process domain. However, it does mention that evidence from randomized trials supports the role of vitamin D supplementation in reducing the incidence and severity of influenza. This suggests that randomization was likely used, but the lack of explicit information about the randomization process raises some concerns."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide information about whether participants or caregivers were aware of the assigned intervention, which is a critical component of the deviations from intended interventions domain. Additionally, there is no mention of any deviations from the intended interventions, which raises some concerns about the potential for bias."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study text does not mention any missing outcome data, which suggests that outcome data were likely available for all participants. However, the study is a systematic review, and the text does not provide information about the individual trials included in the review."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide information about the methods used to measure the outcomes, which is a critical component of the measurement of outcome domain. Additionally, the study is a systematic review, and the text does not provide information about the individual trials included in the review."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not mention whether the trial was registered with pre-specified outcomes, which is a critical component of the selection of reported result domain. Additionally, the study is a systematic review, and the text does not provide information about the individual trials included in the review."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_40539053",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that the trial was nonblinded, which may introduce bias in the randomization process. Additionally, the allocation sequence was not concealed, as the study states that patients were randomized by block of two into three groups. This could lead to selection bias if the block size is too small or if the allocation sequence is predictable."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study does not mention any deviations from the intended interventions, and it is likely that the participants and caregivers were not aware of the assigned intervention. The study also does not mention any deviations due to the trial context."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing outcome data, and it is likely that outcome data were available for all participants. The study also does not mention any evidence that the result was biased by missing data."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study used serum 25-hydroxyvitamin D levels as an outcome measure, which may be subject to measurement bias. Additionally, the study used a correlation analysis to evaluate the relationship between 25vitD levels and organ failures, which may not be the most robust method."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that more studies are needed to evaluate the impact of baseline vitD levels on clinical outcome and prognosis, which may indicate that the study did not report all pre-specified outcomes. Additionally, the study only reports the results of the correlation analysis, without providing any information on the statistical power or sample size calculation."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT04777981",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study mentions that 60 individuals newly diagnosed with COVID-19 infection will be randomized to one of two groups, receiving either CBDRA60 or a placebo in a 1:1 ratio. This suggests a randomization process, but the specific method used (e.g., random number generator, stratification) is not described. However, the study does not provide any information that would suggest a non-random or biased allocation process."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information on whether participants were aware of their assigned intervention, or whether caregivers/staff were aware of the intervention. Additionally, there is no mention of deviations from the intended interventions due to the trial context. However, the study does mention that the CBDRA60 sublingual tablet is taken 2x/daily with food, which may introduce some variability in the delivery of the intervention."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing outcome data, and it is likely that the small sample size (n=60) would make missing data less of a concern. However, the study does not provide any information on how missing data were handled, which could be a concern if the data were missing not at random."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that the primary outcome is the prevention of disease progression leading to hospitalization, and the secondary outcome is a reduction in symptom severity scores. However, the study does not provide information on how these outcomes were measured, or whether the measurement tools were validated or reliable. Additionally, the study mentions that the CBDRA60 sublingual tablet is taken 2x/daily with food, which may introduce some variability in the measurement of the outcomes."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study does not mention whether the trial was registered with pre-specified outcomes, or whether all pre-specified outcomes were reported. Additionally, the study mentions that multiple analyses were performed, which could introduce some bias in the selection of the reported results."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT02276755",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study text does not provide explicit details on the randomization process, but it is a randomized controlled trial, which suggests that the allocation sequence was likely random. However, without further information, it is difficult to confirm this. Nevertheless, given the context of a randomized trial, it is reasonable to assume that the randomization process was adequate."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide explicit details on whether participants or caregivers were aware of the assigned intervention. While the study aims to assess the safety of vitamin D supplementation, it is unclear whether the participants or caregivers were blinded to the intervention. This lack of information raises some concerns about potential deviations from the intended interventions."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study text does not provide explicit details on missing outcome data, but it is a randomized controlled trial, which suggests that the outcome data were likely available for all or nearly all participants. However, without further information, it is difficult to confirm this. Nevertheless, given the context of a randomized trial, it is reasonable to assume that the outcome data were adequate."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "low",
+          "rationale": "The study text does not provide explicit details on the measurement of the outcome, but it is a randomized controlled trial, which suggests that the method of measuring the outcome was likely appropriate. However, without further information, it is difficult to confirm this. Nevertheless, given the context of a randomized trial, it is reasonable to assume that the measurement of the outcome was adequate."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide explicit details on whether the trial was registered with pre-specified outcomes or whether all pre-specified outcomes were reported. While the study aims to assess the efficacy and safety of vitamin D supplementation, it is unclear whether the trial was registered and whether all outcomes were reported. This lack of information raises some concerns about potential selective reporting."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT00973583",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study does not provide explicit information about the randomization process, but it is a common practice in clinical trials to use a randomization process to minimize bias. However, without explicit information, we cannot be certain. Given the lack of information, we lean towards SOME_CONCERNS, but since we cannot find any explicit information that would suggest a high risk of bias, we will judge it as LOW."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information about whether participants were aware of their assigned intervention, which could lead to bias. Additionally, the study does not provide information about whether caregivers/staff were aware of the intervention, which could also lead to bias. However, the study does not provide any information that would suggest a high risk of bias."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not provide information about missing outcome data, but it is a common practice in clinical trials to collect data from all participants. However, without explicit information, we cannot be certain. Given the lack of information, we lean towards SOME_CONCERNS, but since we cannot find any explicit information that would suggest a high risk of bias, we will judge it as LOW."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "low",
+          "rationale": "The study does not provide information about the method of measuring the outcome, but it is a common practice in clinical trials to use a standardized method to measure outcomes. However, without explicit information, we cannot be certain. Given the lack of information, we lean towards SOME_CONCERNS, but since we cannot find any explicit information that would suggest a high risk of bias, we will judge it as LOW."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information about whether the trial was registered with pre-specified outcomes, which could lead to bias. Additionally, the study does not provide information about whether all pre-specified outcomes were reported, which could also lead to bias. However, the study does not provide any information that would suggest a high risk of bias."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT00656929",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study was described as a randomized, double-blind, placebo-controlled trial, indicating that the allocation sequence was random and concealed. The use of a biweekly questionnaire to record URI symptoms suggests that the allocation sequence was concealed from the outcome assessors."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study was described as double-blind, indicating that participants and caregivers/staff were unaware of the assigned intervention. There is no mention of deviations from the intended interventions, suggesting that the trial context did not lead to deviations."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study used a biweekly questionnaire to record the incidence and severity of URI symptoms, suggesting that outcome data were available for all/nearly all participants. There is no mention of missing data, indicating that the result was not biased by missing data."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "low",
+          "rationale": "The study used a biweekly questionnaire to record the incidence and severity of URI symptoms, which is an appropriate method for measuring the outcome. There is no indication that measurement could differ between groups, suggesting that the outcome measurement was not biased."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study did not mention whether the trial was registered with pre-specified outcomes or whether all pre-specified outcomes were reported. The study only reported on the incidence and severity of URI symptoms, which may not be a comprehensive report of all outcomes."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT06560853",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study is a cluster-randomized control trial, but the text does not provide information on whether the allocation sequence was random or concealed. However, it is mentioned that the Zambian Government was involved in the implementation, which may introduce some concerns about the randomization process."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that trained teachers, known as school health workers (SHWs), play a key role in delivering health education, coordinating preventative care with local clinics, and overseeing a 'school health room' for sick students. However, it is not clear whether the SHWs were aware of the assigned intervention or whether there were any deviations from the intended interventions."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing outcome data, and it is likely that the outcome data were available for all participants since the study is a cluster-randomized control trial."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information on how the health outcomes were measured, which may introduce some concerns about the validity of the outcome measurements."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study was not registered with pre-specified outcomes, and it is not clear whether all pre-specified outcomes were reported. Additionally, the study mentions multiple research questions, which may introduce some concerns about selective reporting."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT01875757",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study mentions a randomized double-blind clinical trial, indicating that the allocation sequence was random and concealed. The use of a randomization process is a key aspect of minimizing bias in RCTs."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "While the study mentions that the intervention will be double-blinded, it does not explicitly state whether participants or caregivers were aware of their assigned intervention. This lack of clarity raises some concerns about potential deviations from the intended interventions."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing outcome data, and it is likely that the researchers will have access to data from all participants. The use of a questionnaire and blood samples at multiple time points suggests that the researchers will have a comprehensive dataset."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "low",
+          "rationale": "The study uses established methods for measuring outcomes, such as anthropometric measurements and blood samples for 25OH vitamin D and calcium. These methods are likely to be reliable and valid."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that the primary objective is to decrease the proportion of infants with acute bronchitis, but it does not explicitly state whether all pre-specified outcomes were reported. The mention of multiple secondary outcomes raises some concerns about selective reporting."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT04609423",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study is described as a randomized, parallel-group treatment, indicating that the allocation sequence was random. However, the study text does not explicitly state that the allocation sequence was concealed."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study is quadruple masked, which suggests that participants and caregivers/staff were unaware of the assigned intervention. However, the study text does not explicitly state whether there were any deviations from the intended interventions."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study text does not mention any missing outcome data, suggesting that outcome data were available for all/nearly all participants."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide information on the method of measuring the outcome, which could be a concern for bias in measurement of the outcome."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not mention whether the trial was registered with pre-specified outcomes, which could be a concern for bias in selection of the reported result."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT01158560",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, randomization_process, randomization_process, deviations_from_intended_interventions, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not explicitly describe the randomization process, which is a concern. However, it is a randomized controlled trial, so it is likely that randomization was used. Without explicit information, it is difficult to make a definitive judgment."
+        },
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not explicitly describe the concealment of the allocation sequence, which is a concern. Without explicit information, it is difficult to make a definitive judgment."
+        },
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide information on baseline imbalances, which is a concern. Without explicit information, it is difficult to make a definitive judgment."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not explicitly describe whether participants were aware of their assigned intervention, which is a concern. However, it is a randomized controlled trial, so it is likely that participants were not aware of their assigned intervention. Without explicit information, it is difficult to make a definitive judgment."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not explicitly describe whether caregivers/staff were aware of the intervention, which is a concern. Without explicit information, it is difficult to make a definitive judgment."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT02046577",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study does not provide explicit information about the randomization process, but it is a common practice in randomized controlled trials to use a randomization sequence to allocate participants to intervention and control groups. However, the study text does not mention any specific method used for randomization. Nevertheless, given the absence of any information suggesting a non-random or biased allocation, we lean towards a LOW judgment."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide explicit information about whether participants or caregivers were aware of the assigned intervention. However, the study text does mention that the intervention was weekly oral vitamin D supplementation, which is a relatively straightforward intervention. Nevertheless, the lack of information about awareness of the intervention raises some concerns about potential deviations from the intended intervention."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study text does not mention any missing outcome data, and it is likely that the study collected data on all participants. However, the study does not provide explicit information about the handling of missing data, which is a potential source of bias. Nevertheless, given the absence of any information suggesting missing data, we lean towards a LOW judgment."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "low",
+          "rationale": "The study text does not mention any specific method used for measuring the outcome, but it is likely that the study used a standard and reliable method to measure the incidence and severity of acute respiratory tract infections. However, the study does not provide explicit information about the measurement of the outcome, which is a potential source of bias. Nevertheless, given the absence of any information suggesting biased measurement, we lean towards a LOW judgment."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not mention whether the trial was registered with pre-specified outcomes, which is a potential source of bias. However, the study does mention that the hypothesis was to determine whether vitamin D supplementation reduces the incidence and severity of acute respiratory tract infections in children, which suggests that the study was designed to investigate this specific outcome. Nevertheless, the lack of information about trial registration raises some concerns about potential selective reporting."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT02185196",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study mentions that children will be allotted a sequential study number, which will have been previously assigned to vitamin D or placebo in accordance with the randomisation. This suggests a clear and transparent randomization process."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "While the study mentions that the study staff and mothers/caregivers of the children will be blinded as to whether vitamin D3 or placebo has been added to their child's diet, there is no mention of how the participants' awareness of their assigned intervention might affect the trial. However, the study does mention that infants aged 3-5 months will receive breast milk and/or infant formula, and those 6 months or older will receive 'Milk Suji' as a complementary food, which could potentially introduce bias if not controlled."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing outcome data, and the primary and secondary outcome measures are clearly defined."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "low",
+          "rationale": "The study mentions that the primary and secondary outcome measures will be clearly defined, which suggests that the measurement of the outcome will be appropriate."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "low",
+          "rationale": "The study mentions that the primary and secondary outcome measures will be clearly defined, which suggests that the selection of the reported result will be transparent."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT04872088",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study uses a cluster-randomized controlled study design, but the text does not provide sufficient information on the randomization process, such as whether the allocation sequence was random and concealed."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The text mentions that the interventions include strengthening of community care groups, home visits, distribution of a preventive nutritional supplement, and improved coverage of wasting screening, management, and treatment. However, it does not provide information on whether participants were aware of their assigned intervention or if there were deviations due to the trial context."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "The text does not provide information on whether outcome data were available for all/nearly all participants or if there was evidence that the result was not biased by missing data."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The text does not provide information on whether the method of measuring the outcome was appropriate or if measurement could differ between groups."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The text does not provide information on whether the trial was registered with pre-specified outcomes, if all pre-specified outcomes were reported, or if multiple analyses were performed."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT04446104",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not explicitly mention the randomization process, which is a critical component of the randomization process domain. While it is mentioned that the study is a randomized controlled trial, the details of the randomization process are not provided. This lack of information raises some concerns about the quality of the randomization process."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide information on whether participants were aware of their assigned intervention, whether caregivers/staff were aware of the intervention, or whether there were deviations due to the trial context. This lack of information raises some concerns about the potential for deviations from the intended interventions."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study text does not mention any missing outcome data, which suggests that the outcome data were likely available for all or nearly all participants."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide information on how the outcome was measured or whether the measurement could differ between groups. This lack of information raises some concerns about the potential for bias in the measurement of the outcome."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not mention whether the trial was registered with pre-specified outcomes, whether all pre-specified outcomes were reported, or whether multiple analyses were performed. This lack of information raises some concerns about the potential for selective reporting."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT00758914",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study was conducted using a randomized, double blind, placebo controlled clinical trial, which suggests that the allocation sequence was random and concealed. The use of 33 long-term care facilities in the greater Boston area also reduces the risk of selection bias."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "Although the study was double-blinded, it is unclear whether participants were aware of their assigned intervention. The study does not explicitly state that participants were blinded to their treatment allocation, which could lead to bias."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study reports that 451 participants completed the study, which suggests that outcome data were available for a large proportion of participants. However, the study does not provide information on the number of participants with missing outcome data, which could be a concern."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study used a variety of outcome measures, including questionnaires, standard anthropometrics measurements, non-invasive body composition, blood and urine sample collection, and delayed type test (DTH) using the Mantoux method. While these measures are generally reliable, the study does not provide information on the specific methods used to collect and analyze these data, which could lead to bias."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information on whether the trial was registered with pre-specified outcomes, which could lead to bias. Additionally, the study reports that the primary outcomes consisted of respiratory tract infection, number of sick days, and antibiotic use, but it is unclear whether all pre-specified outcomes were reported."
+        }
+      ]
+    }
+  ],
+  "robins_i_summary": [
+    {
+      "record_id": "pubmed_40935152",
+      "overall_judgment": "serious",
+      "overall_rationale": "Serious risk of bias in domains: bias_due_to_confounding",
+      "domains": [
+        {
+          "domain": "bias_due_to_confounding",
+          "judgment": "serious",
+          "rationale": "The study did not control for important confounders, such as maternal vitamin D status, maternal diet, and other factors that may influence infant growth and development. The study only measured serum 25(OH)D concentrations, which may not accurately reflect the overall vitamin D status. Additionally, the study did not account for potential confounding by other factors that may affect growth and development, such as socioeconomic status, maternal education, and breastfeeding duration."
+        },
+        {
+          "domain": "bias_in_selection_of_participants",
+          "judgment": "moderate",
+          "rationale": "The study selected participants based on their participation in a previous trial, which may introduce selection bias. However, the study did not provide information on how participants were selected for the current study, and it is unclear whether the selection was based on participant characteristics observed after the start of intervention."
+        },
+        {
+          "domain": "bias_in_classification_of_interventions",
+          "judgment": "low",
+          "rationale": "The study clearly defined the intervention as 1000 IU/d and 400 IU/d of vitamin D supplementation, and the information on intervention status was recorded at the time of intervention."
+        },
+        {
+          "domain": "bias_due_to_deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study did not report any deviations from the intended interventions, and it is unlikely that there were significant deviations beyond what would be expected in usual practice."
+        },
+        {
+          "domain": "bias_due_to_missing_data",
+          "judgment": "low",
+          "rationale": "The study did not report any missing data, and it is likely that outcome data were available for all or nearly all participants."
+        },
+        {
+          "domain": "bias_in_measurement_of_outcomes",
+          "judgment": "moderate",
+          "rationale": "The study used dual-energy X-ray absorptiometry to measure whole body lean mass, which is a valid and reliable outcome measure. However, the study did not provide information on whether the outcome assessors were aware of the intervention received."
+        },
+        {
+          "domain": "bias_in_selection_of_reported_result",
+          "judgment": "moderate",
+          "rationale": "The study reported multiple outcomes, including whole body lean mass, BMC, weight, and length, but it is unclear whether the selection of these outcomes was based on multiple analyses of the intervention-outcome relationship."
+        }
+      ]
+    }
+  ],
+  "verification_summary": [
+    {
+      "claim_id": "claim_001",
+      "overall_status": "verified",
+      "overall_confidence": 0.825,
+      "checks_count": 2
+    },
+    {
+      "claim_id": "claim_002",
+      "overall_status": "partial",
+      "overall_confidence": 0.75,
+      "checks_count": 2
+    },
+    {
+      "claim_id": "claim_003",
+      "overall_status": "unverifiable",
+      "overall_confidence": 0.6499999999999999,
+      "checks_count": 2
+    }
+  ],
+  "run_kpis": {
+    "snippet_coverage": 1.0,
+    "verification_coverage": 0.667,
+    "claims_with_evidence_ratio": 0.15,
+    "total_claims": 3,
+    "verified_claims": 2,
+    "unverified_claims": 1,
+    "is_negative_outcome": false,
+    "dod_level": 1,
+    "used_markdown_fallback": false
+  },
+  "composed_hypotheses": [],
+  "critique_findings": 0,
+  "critique_blockers": [],
+  "gate_report": null,
+  "dod3_enforcement": null,
+  "dod3_excluded_records": [],
+  "dod3_excluded_snippets": [],
+  "dod3_degraded_claims": [],
+  "dod3_suppressed_hypotheses": [],
+  "errors": [],
+  "status": "completed",
+  "status_reason": "technically_complete",
+  "disclaimer": "\u26a0\ufe0f This report is machine-generated by CDR (Clinical Deep Research). It is NOT medical advice and should NOT be used for clinical decision-making. All findings require independent verification by qualified professionals. See DISCLAIMER.md for full terms.",
+  "answer": "The evidence suggests that vitamin D supplementation may have a beneficial effect on the incidence of acute respiratory infections, but the evidence is limited and conflicting. Further research is needed to fully understand the relationship between vitamin D supplementation and respiratory infections.",
+  "answer_original": null,
+  "conclusion_degraded": false,
+  "conclusion_degradation_reasons": [],
+  "evaluation": {
+    "run_id": "run_03",
+    "dod_level": 1,
+    "overall_pass": true,
+    "summary": "DoD 1: 2 passed, 3 warnings, 0 failed",
+    "metrics": [
+      {
+        "name": "snippet_coverage",
+        "value": 1.0,
+        "threshold": 1.0,
+        "status": "pass",
+        "details": "3/3 claims have supporting snippets"
+      },
+      {
+        "name": "verification_coverage",
+        "value": 0.6667,
+        "threshold": 0.8,
+        "status": "warn",
+        "details": "2/3 claims verified"
+      },
+      {
+        "name": "context_precision",
+        "value": 0.1111,
+        "threshold": 0.7,
+        "status": "warn",
+        "details": "6/54 snippets referenced by claims"
+      },
+      {
+        "name": "answer_faithfulness",
+        "value": 0.6667,
+        "threshold": 0.8,
+        "status": "warn",
+        "details": "2/3 claims grounded in evidence"
+      },
+      {
+        "name": "citation_accuracy",
+        "value": 1.0,
+        "threshold": 1.0,
+        "status": "pass",
+        "details": "6/6 citations valid"
+      }
+    ]
+  }
+}

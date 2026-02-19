@@ -1,0 +1,132 @@
+# =============================================================================
+# CDR — .gitignore (Publication-grade)
+# =============================================================================
+
+# ── Python bytecode & packaging ──
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ── Virtual environments ──
+.venv/
+venv/
+ENV/
+env/
+
+# ── IDE / Editor ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── OS artifacts ──
+.DS_Store
+Thumbs.db
+*.tmp
+
+# ── Testing & coverage ──
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+test_reports/
+*.junit.xml
+
+# ── Linting & type-checking caches ──
+.mypy_cache/
+.ruff_cache/
+.dmypy.json
+
+# ── Secrets, credentials & environment ──
+.env
+.env.*
+!.env.example
+*.bak
+*.orig
+*backup*
+*LEAKED*
+*DELETE_ME*
+
+# ── Runtime data ──
+*.db
+*.sqlite
+*.sqlite3
+*.log
+server.log
+harness_output.txt
+validation_output.log
+
+# ── Generated reports (not curated) ──
+/reports/
+/logs/
+/tmp/
+/artifacts/
+
+# ── Session / validation artifacts (historical, not for publication) ──
+golden_set_results_*.json
+validation_results_*.json
+runs_check.json
+harness_results/
+results_dod3_session/
+validation_runs_export/
+validation_run_results/
+export_validation_*/
+evidence_gates_validation/
+semantic_coherence_exports/
+native_exports_real/
+dod3_exports/
+
+# ── Loose PDFs/JSONs at root (old pipeline dumps) ──
+CDR_DOD3_*.json
+CDR_DOD3_*.pdf
+CDR_REAL_*.json
+CDR_REAL_*.pdf
+CDR_REAL_DoD3_*.json
+
+# ── Session-specific markdown (working docs, not publication) ──
+CDR_SESSION_*.md
+CDR_STATUS_REPORT_*.md
+CDR_EXHAUSTIVE_DIAGNOSTIC.md
+CDR_TECHNICAL_DECISIONS.md
+CONTRACT_CORRECTIONS.md
+DOMAIN_UNIFICATION_LOG.md
+DOD3_COMPLIANCE_REPORT_*.md
+DoD3_ENFORCEMENT_VALIDATION.txt
+FIXES_APPLIED_*.md
+P0_IMPLEMENTATION_REPORT.md
+ARTEFACTOS_DOD3_FINAL.md
+README_ARTEFACTOS_DOD3.md
+
+# ── One-off scripts (keep in scripts/) ──
+run_publishable_harness.py
+run_sota_validation.py
+run_validation_suite.py
+
+# ── Lock files ──
+# uv.lock is tracked (reproducible installs)
+# Do NOT add uv.lock here
+
+# ── Frontend ──
+ui/node_modules/
+ui/dist/
+ui/coverage/
+ui/.vite/
+ui/playwright-report/
+ui/test-results/
+
+# ── Docker ──
+docker-compose.override.yml
+
+# ── Eval timestamped results (keep only baseline) ──
+eval/results/20*_results.json
+eval/results/20*_summary.md

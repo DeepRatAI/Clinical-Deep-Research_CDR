@@ -1,0 +1,68 @@
+{
+  "version": "0.1.0",
+  "description": "CDR Golden Set — 5 clinical questions with known evidence profiles for evaluation.",
+  "source": "src/cdr/evaluation/golden_set.py",
+  "sha256_questions": "a55e120c9f5e79a97b8009435a1b255a813c0ee3ab6d2be66bf585e56cfbe426",
+  "questions": [
+    {
+      "id": "GS-001",
+      "question": "Is aspirin effective for secondary prevention of cardiovascular events?",
+      "population": "Adults with established cardiovascular disease",
+      "intervention": "Low-dose aspirin (75-100mg daily)",
+      "comparator": "Placebo or no treatment",
+      "outcome": "Major adverse cardiovascular events (MACE)",
+      "expected_evidence_level": "high",
+      "expected_min_studies": 10,
+      "expected_claim_patterns": ["aspirin", "cardiovascular", "secondary prevention", "MACE", "risk reduction"],
+      "composition_expected": false
+    },
+    {
+      "id": "GS-002",
+      "question": "Does metformin combined with GLP-1 agonists improve outcomes beyond monotherapy?",
+      "population": "Adults with type 2 diabetes inadequately controlled on metformin",
+      "intervention": "Metformin plus GLP-1 receptor agonist",
+      "comparator": "Metformin monotherapy",
+      "outcome": "HbA1c reduction and cardiovascular events",
+      "expected_evidence_level": "moderate",
+      "expected_min_studies": 5,
+      "expected_claim_patterns": ["metformin", "GLP-1", "HbA1c", "glycemic control", "cardiovascular"],
+      "composition_expected": true
+    },
+    {
+      "id": "GS-003",
+      "question": "Is vitamin D supplementation effective for preventing respiratory infections?",
+      "population": "General adult population",
+      "intervention": "Vitamin D supplementation (any dose)",
+      "comparator": "Placebo",
+      "outcome": "Incidence of acute respiratory tract infections",
+      "expected_evidence_level": "low",
+      "expected_min_studies": 5,
+      "expected_claim_patterns": ["vitamin D", "respiratory", "infection", "inconsistent", "heterogeneity"],
+      "composition_expected": false
+    },
+    {
+      "id": "GS-004",
+      "question": "What is the accuracy of high-sensitivity troponin for diagnosing acute MI?",
+      "population": "Adults presenting with chest pain",
+      "intervention": "High-sensitivity cardiac troponin T or I",
+      "comparator": "Standard troponin or clinical diagnosis",
+      "outcome": "Diagnostic accuracy (sensitivity, specificity) for acute MI",
+      "expected_evidence_level": "moderate",
+      "expected_min_studies": 8,
+      "expected_claim_patterns": ["troponin", "sensitivity", "specificity", "acute myocardial infarction", "NPV"],
+      "composition_expected": false
+    },
+    {
+      "id": "GS-005",
+      "question": "Can anti-inflammatory therapies reduce cardiovascular events in patients with elevated CRP?",
+      "population": "Patients with established CVD and elevated hs-CRP (>2mg/L)",
+      "intervention": "Anti-inflammatory agents (colchicine, IL-1β inhibitors)",
+      "comparator": "Standard therapy without anti-inflammatory",
+      "outcome": "Major adverse cardiovascular events",
+      "expected_evidence_level": "moderate",
+      "expected_min_studies": 3,
+      "expected_claim_patterns": ["inflammation", "CRP", "cardiovascular", "colchicine", "canakinumab", "IL-1"],
+      "composition_expected": true
+    }
+  ]
+}

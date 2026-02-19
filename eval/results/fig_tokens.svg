@@ -1,0 +1,64 @@
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .q-label { font-size: 11px; text-anchor: middle; font-weight: bold; }
+    .value-label { font-size: 9px; text-anchor: middle; }
+    .axis-label { font-size: 12px; font-weight: bold; }
+    .title { font-size: 16px; font-weight: bold; text-anchor: middle; }
+  </style>
+  <rect width="900" height="500" fill="#f8f9fa"/>
+  <text x="450" y="28" class="title">CDR Token Usage by Question (Baseline v0.1)</text>
+
+  <!-- Axes -->
+  <line x1="60" y1="50" x2="60" y2="400" stroke="#333" stroke-width="2"/>
+  <line x1="60" y1="400" x2="850" y2="400" stroke="#333" stroke-width="2"/>
+  <text x="25" y="225" class="axis-label" text-anchor="middle" transform="rotate(-90 25 225)">Tokens</text>
+  <text x="455" y="450" class="axis-label" text-anchor="middle">Question (Golden Set)</text>
+
+  <line x1="55" y1="400.0" x2="60" y2="400.0" stroke="#333" stroke-width="1"/>
+  <text x="50" y="404.0" text-anchor="end" font-size="10">0</text>
+  <line x1="55" y1="330.0" x2="60" y2="330.0" stroke="#333" stroke-width="1"/>
+  <text x="50" y="334.0" text-anchor="end" font-size="10">5000</text>
+  <line x1="55" y1="260.0" x2="60" y2="260.0" stroke="#333" stroke-width="1"/>
+  <text x="50" y="264.0" text-anchor="end" font-size="10">10000</text>
+  <line x1="55" y1="190.0" x2="60" y2="190.0" stroke="#333" stroke-width="1"/>
+  <text x="50" y="194.0" text-anchor="end" font-size="10">15000</text>
+  <line x1="55" y1="120.0" x2="60" y2="120.0" stroke="#333" stroke-width="1"/>
+  <text x="50" y="124.0" text-anchor="end" font-size="10">20000</text>
+  <line x1="55" y1="50.0" x2="60" y2="50.0" stroke="#333" stroke-width="1"/>
+  <text x="50" y="54.0" text-anchor="end" font-size="10">25000</text>
+  <line x1="60" y1="400.0" x2="850" y2="400.0" stroke="#ddd" stroke-width="1"/>
+  <line x1="60" y1="330.0" x2="850" y2="330.0" stroke="#ddd" stroke-width="1"/>
+  <line x1="60" y1="260.0" x2="850" y2="260.0" stroke="#ddd" stroke-width="1"/>
+  <line x1="60" y1="190.0" x2="850" y2="190.0" stroke="#ddd" stroke-width="1"/>
+  <line x1="60" y1="120.0" x2="850" y2="120.0" stroke="#ddd" stroke-width="1"/>
+  <line x1="60" y1="50.0" x2="850" y2="50.0" stroke="#ddd" stroke-width="1"/>
+  <rect x="80" y="148.0" width="20" height="252.0" fill="#388e3c" opacity="0.8"/>
+  <text x="90.0" y="143.0" class="value-label" fill="#388e3c">18000</text>
+  <rect x="100" y="316.0" width="20" height="84.0" fill="#f57c00" opacity="0.8"/>
+  <text x="110.0" y="311.0" class="value-label" fill="#f57c00">6000</text>
+  <text x="100" y="420" class="q-label">GS-001</text>
+  <rect x="220" y="92.0" width="20" height="308.0" fill="#388e3c" opacity="0.8"/>
+  <text x="230.0" y="87.0" class="value-label" fill="#388e3c">22000</text>
+  <rect x="240" y="281.0" width="20" height="119.0" fill="#f57c00" opacity="0.8"/>
+  <text x="250.0" y="276.0" class="value-label" fill="#f57c00">8500</text>
+  <text x="240" y="420" class="q-label">GS-002</text>
+  <rect x="360" y="176.0" width="20" height="224.0" fill="#388e3c" opacity="0.8"/>
+  <text x="370.0" y="171.0" class="value-label" fill="#388e3c">16000</text>
+  <rect x="380" y="327.2" width="20" height="72.8" fill="#f57c00" opacity="0.8"/>
+  <text x="390.0" y="322.2" class="value-label" fill="#f57c00">5200</text>
+  <text x="380" y="420" class="q-label">GS-003</text>
+  <rect x="500" y="120.0" width="20" height="280.0" fill="#388e3c" opacity="0.8"/>
+  <text x="510.0" y="115.0" class="value-label" fill="#388e3c">20000</text>
+  <rect x="520" y="300.6" width="20" height="99.4" fill="#f57c00" opacity="0.8"/>
+  <text x="530.0" y="295.6" class="value-label" fill="#f57c00">7100</text>
+  <text x="520" y="420" class="q-label">GS-004</text>
+  <rect x="640" y="134.0" width="20" height="266.0" fill="#388e3c" opacity="0.8"/>
+  <text x="650.0" y="129.0" class="value-label" fill="#388e3c">19000</text>
+  <rect x="660" y="304.8" width="20" height="95.2" fill="#f57c00" opacity="0.8"/>
+  <text x="670.0" y="299.8" class="value-label" fill="#f57c00">6800</text>
+  <text x="660" y="420" class="q-label">GS-005</text>
+  <rect x="60" y="430" width="12" height="12" fill="#388e3c"/>
+  <text x="77" y="440" font-size="11">Input Tokens</text>
+  <rect x="280" y="430" width="12" height="12" fill="#f57c00"/>
+  <text x="297" y="440" font-size="11">Output Tokens</text>
+</svg>

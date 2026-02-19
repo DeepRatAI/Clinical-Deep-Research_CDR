@@ -1,0 +1,930 @@
+{
+  "run_id": "run_02",
+  "question": "Does metformin combined with GLP-1 agonists improve outcomes beyond monotherapy in type 2 diabetes?",
+  "pico": {
+    "population": "patients with type 2 diabetes",
+    "intervention": "metformin combined with GLP-1 agonists",
+    "comparator": "metformin monotherapy",
+    "comparator_source": "user_specified",
+    "outcome": "outcomes",
+    "study_types": [
+      "rct"
+    ]
+  },
+  "search_plan": {
+    "pubmed_query": "metformin AND GLP-1 agonists AND type 2 diabetes",
+    "ct_gov_query": "metformin combined with GLP-1 agonists vs metformin monotherapy in patients with type 2 diabetes",
+    "date_range": null,
+    "languages": [
+      "english"
+    ],
+    "max_results_per_source": 100,
+    "created_at": "2026-02-18T16:41:29.926604"
+  },
+  "executed_searches": [
+    {
+      "database": "PubMed",
+      "query_planned": "metformin AND GLP-1 agonists AND type 2 diabetes",
+      "query_executed": "metformin AND GLP-1 agonists AND type 2 diabetes",
+      "executed_at": "2026-02-18T16:41:32.971687+00:00",
+      "results_count": 1569,
+      "results_fetched": 48,
+      "notes": null
+    },
+    {
+      "database": "ClinicalTrials.gov",
+      "query_planned": "metformin combined with GLP-1 agonists vs metformin monotherapy in patients with type 2 diabetes",
+      "query_executed": "metformin combined with GLP-1 agonists vs metformin monotherapy in patients with type 2 diabetes",
+      "executed_at": "2026-02-18T16:41:33.243904+00:00",
+      "results_count": 0,
+      "results_fetched": 0,
+      "notes": null
+    }
+  ],
+  "prisma_counts": {
+    "records_identified": 48,
+    "records_from_pubmed": 48,
+    "records_from_clinical_trials": 0,
+    "records_from_other": 0,
+    "duplicates_removed": 0,
+    "records_screened": 48,
+    "records_excluded_screening": 0,
+    "records_excluded": 30,
+    "screening_exclusion_reasons": {},
+    "reports_sought": 18,
+    "reports_not_retrieved": 0,
+    "reports_assessed": 18,
+    "reports_excluded": 0,
+    "records_excluded_enforcement": 0,
+    "enforcement_exclusion_reasons": {},
+    "studies_included": 18,
+    "exclusion_reasons": {
+      "study_type_mismatch": 28,
+      "population_excluded": 2
+    }
+  },
+  "study_count": 18,
+  "claim_count": 4,
+  "snippet_count": 36,
+  "claims": [
+    {
+      "claim_id": "claim_001",
+      "claim_text": "In head-to-head trials, metformin combined with GLP-1 agonists may reduce HbA1c levels compared to metformin monotherapy.",
+      "certainty": "low",
+      "supporting_snippet_ids": [
+        "pubmed_41621217_snip_1",
+        "pubmed_41432725_snip_1",
+        "pubmed_41432725_snip_0",
+        "pubmed_41621217_snip_0"
+      ],
+      "conflicting_snippet_ids": [],
+      "limitations": [],
+      "grade_rationale": {
+        "risk_of_bias": "some concerns in 4/5 studies",
+        "inconsistency": "I\u00b2 = 45%, acceptable",
+        "indirectness": "indirect - populations differ",
+        "imprecision": "small sample sizes",
+        "publication_bias": "unlikely - comprehensive search"
+      },
+      "studies_supporting": 4,
+      "studies_conflicting": 0,
+      "linked_records": [
+        "pubmed_41432725",
+        "pubmed_41621217"
+      ],
+      "linked_rob2": [
+        {
+          "record_id": "pubmed_41432725",
+          "overall_judgment": "some_concerns",
+          "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result"
+        },
+        {
+          "record_id": "pubmed_41621217",
+          "overall_judgment": "some_concerns",
+          "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result"
+        }
+      ],
+      "dod3_degraded": false,
+      "dod3_orphaned": false
+    },
+    {
+      "claim_id": "claim_002",
+      "claim_text": "Metformin combined with GLP-1 agonists may improve glycemic control and reduce cardiovascular risk compared to traditional hypoglycemic drugs.",
+      "certainty": "low",
+      "supporting_snippet_ids": [
+        "pubmed_41573745_snip_1",
+        "pubmed_41557360_snip_1",
+        "pubmed_41557360_snip_0",
+        "pubmed_41573745_snip_0"
+      ],
+      "conflicting_snippet_ids": [],
+      "limitations": [],
+      "grade_rationale": {
+        "risk_of_bias": "some concerns in 4/5 studies",
+        "inconsistency": "I\u00b2 = 35%, acceptable",
+        "indirectness": "indirect - populations differ",
+        "imprecision": "small sample sizes",
+        "publication_bias": "unlikely - comprehensive search"
+      },
+      "studies_supporting": 4,
+      "studies_conflicting": 0,
+      "linked_records": [
+        "pubmed_41557360",
+        "pubmed_41573745"
+      ],
+      "linked_rob2": [
+        {
+          "record_id": "pubmed_41557360",
+          "overall_judgment": "some_concerns",
+          "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result"
+        },
+        {
+          "record_id": "pubmed_41573745",
+          "overall_judgment": "some_concerns",
+          "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result"
+        }
+      ],
+      "dod3_degraded": false,
+      "dod3_orphaned": false
+    },
+    {
+      "claim_id": "claim_003",
+      "claim_text": "The combination of metformin and GLP-1 agonists may reduce the risk of chronic kidney disease and acute kidney injury compared to GLP-1 RA treatment.",
+      "certainty": "low",
+      "supporting_snippet_ids": [
+        "pubmed_41557360_snip_1",
+        "pubmed_41557360_snip_0"
+      ],
+      "conflicting_snippet_ids": [],
+      "limitations": [],
+      "grade_rationale": {
+        "risk_of_bias": "some concerns in 1/1 study",
+        "inconsistency": "I\u00b2 = 0%, acceptable",
+        "indirectness": "indirect - populations differ",
+        "imprecision": "small sample size",
+        "publication_bias": "unlikely - comprehensive search"
+      },
+      "studies_supporting": 2,
+      "studies_conflicting": 0,
+      "linked_records": [
+        "pubmed_41557360"
+      ],
+      "linked_rob2": [
+        {
+          "record_id": "pubmed_41557360",
+          "overall_judgment": "some_concerns",
+          "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result"
+        }
+      ],
+      "dod3_degraded": false,
+      "dod3_orphaned": false
+    },
+    {
+      "claim_id": "claim_004",
+      "claim_text": "Metformin combined with GLP-1 agonists may improve glycemic control and reduce gastrointestinal symptoms compared to injectable formulations.",
+      "certainty": "low",
+      "supporting_snippet_ids": [
+        "pubmed_41509889_snip_1",
+        "pubmed_41509889_snip_0"
+      ],
+      "conflicting_snippet_ids": [],
+      "limitations": [],
+      "grade_rationale": {
+        "risk_of_bias": "some concerns in 1/1 study",
+        "inconsistency": "I\u00b2 = 0%, acceptable",
+        "indirectness": "indirect - populations differ",
+        "imprecision": "small sample size",
+        "publication_bias": "unlikely - comprehensive search"
+      },
+      "studies_supporting": 2,
+      "studies_conflicting": 0,
+      "linked_records": [
+        "pubmed_41509889"
+      ],
+      "linked_rob2": [],
+      "dod3_degraded": false,
+      "dod3_orphaned": false
+    }
+  ],
+  "rob2_summary": [
+    {
+      "record_id": "pubmed_41621217",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41607999",
+      "overall_judgment": "high",
+      "overall_rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 7 column 180 (char 725) - High risk assumed conservatively.",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 7 column 180 (char 725)"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 7 column 180 (char 725)"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 7 column 180 (char 725)"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 7 column 180 (char 725)"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 7 column 180 (char 725)"
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41573745",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41566094",
+      "overall_judgment": "high",
+      "overall_rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting value: line 13 column 32 (char 882) - High risk assumed conservatively.",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting value: line 13 column 32 (char 882)"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting value: line 13 column 32 (char 882)"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting value: line 13 column 32 (char 882)"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting value: line 13 column 32 (char 882)"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting value: line 13 column 32 (char 882)"
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41557987",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41557360",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41432725",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41427055",
+      "overall_judgment": "high",
+      "overall_rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 7 column 110 (char 663) - High risk assumed conservatively.",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 7 column 110 (char 663)"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 7 column 110 (char 663)"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 7 column 110 (char 663)"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 7 column 110 (char 663)"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "high",
+          "rationale": "ASSESSMENT FAILED: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 7 column 110 (char 663)"
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41386999",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41285895",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41260459",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41216778",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41167231",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41146812",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "Information not available in text"
+        }
+      ]
+    }
+  ],
+  "robins_i_summary": [
+    {
+      "record_id": "pubmed_41591292",
+      "overall_judgment": "moderate",
+      "overall_rationale": "Moderate risk of bias in domains: bias_due_to_confounding",
+      "domains": [
+        {
+          "domain": "bias_due_to_confounding",
+          "judgment": "moderate",
+          "rationale": "The study controlled for important confounders, but it's unclear if they were measured validly and reliably. The study population is small (n=15), which may limit the generalizability of the results."
+        },
+        {
+          "domain": "bias_in_classification_of_interventions",
+          "judgment": "low",
+          "rationale": "The intervention status was well-defined, and information on intervention status was recorded at the time of intervention. The study used a crossover design, which minimizes the risk of bias in classification of interventions."
+        },
+        {
+          "domain": "bias_due_to_deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study was conducted in a double-blind, randomized, crossover design, which minimizes the risk of deviations from intended interventions. The study also controlled for co-interventions, such as diet and/or metformin."
+        },
+        {
+          "domain": "bias_due_to_missing_data",
+          "judgment": "low",
+          "rationale": "The study did not report any missing data, and it's unclear if participants were excluded due to missing data on intervention or outcome."
+        },
+        {
+          "domain": "bias_in_measurement_of_outcomes",
+          "judgment": "low",
+          "rationale": "The outcome measure (plasma TG levels) was appropriate, and it's unlikely that outcome measurement differed between intervention groups. The study used a validated method (liquid chromatography-tandem mass spectrometry) to measure plasma TG levels."
+        },
+        {
+          "domain": "bias_in_selection_of_participants",
+          "judgment": "no_information",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "bias_in_selection_of_reported_result",
+          "judgment": "no_information",
+          "rationale": "Information not available in text"
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41509889",
+      "overall_judgment": "serious",
+      "overall_rationale": "Serious risk of bias in domains: bias_due_to_confounding",
+      "domains": [
+        {
+          "domain": "bias_due_to_confounding",
+          "judgment": "serious",
+          "rationale": "The study controlled for HbA1c levels and metformin use, but did not account for other potential confounders. The study also found that high-dose metformin was associated with a higher risk of discontinuation, but it is unclear if this is a causal relationship or due to confounding."
+        },
+        {
+          "domain": "bias_in_classification_of_interventions",
+          "judgment": "low",
+          "rationale": "The study clearly defined the intervention as oral semaglutide and the comparator as injectable formulations. The study also recorded information on intervention status at the time of intervention."
+        },
+        {
+          "domain": "bias_due_to_deviations_from_intended_interventions",
+          "judgment": "moderate",
+          "rationale": "The study did not report any deviations from the intended intervention beyond what would be expected in usual practice. However, it is unclear if the participants who escalated from 3 mg to higher doses received the intended dose."
+        },
+        {
+          "domain": "bias_due_to_missing_data",
+          "judgment": "low",
+          "rationale": "The study did not report any missing data on intervention or outcome. All 358 participants were included in the analysis."
+        },
+        {
+          "domain": "bias_in_measurement_of_outcomes",
+          "judgment": "low",
+          "rationale": "The study used a clear and objective outcome measure (continuation of treatment for at least 180 days). The outcome assessors were not aware of the intervention received."
+        },
+        {
+          "domain": "bias_in_selection_of_participants",
+          "judgment": "no_information",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "bias_in_selection_of_reported_result",
+          "judgment": "no_information",
+          "rationale": "Information not available in text"
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41314560",
+      "overall_judgment": "serious",
+      "overall_rationale": "Serious risk of bias in domains: bias_due_to_confounding",
+      "domains": [
+        {
+          "domain": "bias_due_to_confounding",
+          "judgment": "serious",
+          "rationale": "The study did not control for important confounders, such as age, sex, and body mass index (BMI), which are known to affect glucose metabolism and insulin sensitivity. Although the study controlled for diet-induced obesity, it did not account for other potential confounders that may have influenced the results."
+        },
+        {
+          "domain": "bias_in_classification_of_interventions",
+          "judgment": "low",
+          "rationale": "The study clearly defined the intervention (EA, metformin, or liraglutide) and recorded the information at the time of intervention. The classification of interventions was not affected by knowledge of the outcome."
+        },
+        {
+          "domain": "bias_due_to_deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study did not report any deviations from the intended interventions. The study used a standardized protocol for administering EA, metformin, and liraglutide."
+        },
+        {
+          "domain": "bias_due_to_missing_data",
+          "judgment": "low",
+          "rationale": "The study did not report any missing data. The study used a complete case analysis, and all mice were included in the analysis."
+        },
+        {
+          "domain": "bias_in_measurement_of_outcomes",
+          "judgment": "moderate",
+          "rationale": "The study used standardized protocols for measuring glucose tolerance and insulin sensitivity. However, the study did not report any information on the reliability and validity of the outcome measures."
+        },
+        {
+          "domain": "bias_in_selection_of_participants",
+          "judgment": "no_information",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "bias_in_selection_of_reported_result",
+          "judgment": "no_information",
+          "rationale": "Information not available in text"
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41161770",
+      "overall_judgment": "moderate",
+      "overall_rationale": "Moderate risk of bias in domains: bias_due_to_confounding",
+      "domains": [
+        {
+          "domain": "bias_due_to_confounding",
+          "judgment": "moderate",
+          "rationale": "The study used propensity score matching (PSM) to control for important confounders. However, the study did not mention whether the PSM was done using a validated method or whether the model was adequately specified. Additionally, the study did not mention whether the PSM was done using a time-varying covariate approach, which might be necessary given the nature of the intervention (once weekly semaglutide)."
+        },
+        {
+          "domain": "bias_in_selection_of_participants",
+          "judgment": "low",
+          "rationale": "The study used a 1:1 propensity score-matched (PSM) cohort, which suggests that selection into the study was based on participant characteristics observed after the start of intervention. Additionally, the study mentioned that the start of follow-up and start of intervention coincided."
+        },
+        {
+          "domain": "bias_in_classification_of_interventions",
+          "judgment": "low",
+          "rationale": "The study clearly defined the intervention status (injectable semaglutide vs. SoC medications) and recorded this information at the time of intervention. Additionally, the study did not mention any issues with classification of interventions."
+        },
+        {
+          "domain": "bias_due_to_deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study did not mention any deviations from intended intervention beyond what would be expected in usual practice. Additionally, the study did not mention any issues with co-interventions."
+        },
+        {
+          "domain": "bias_due_to_missing_data",
+          "judgment": "low",
+          "rationale": "The study did not mention any issues with missing data on intervention or outcome. Additionally, the study did not mention any participants being excluded due to missing data."
+        },
+        {
+          "domain": "bias_in_measurement_of_outcomes",
+          "judgment": "low",
+          "rationale": "The study used a well-established outcome measure (A1C <7%) and did not mention any issues with measurement of outcomes. Additionally, the study did not mention any outcome assessors being aware of intervention received."
+        },
+        {
+          "domain": "bias_in_selection_of_reported_result",
+          "judgment": "low",
+          "rationale": "The study reported a single outcome measurement (proportion of patients achieving A1C <7%) and did not mention any multiple analyses of the intervention-outcome relationship. Additionally, the study did not mention any issues with selection of the reported result."
+        }
+      ]
+    }
+  ],
+  "verification_summary": [
+    {
+      "claim_id": "claim_001",
+      "overall_status": "partial",
+      "overall_confidence": 0.6625,
+      "checks_count": 4
+    },
+    {
+      "claim_id": "claim_002",
+      "overall_status": "verified",
+      "overall_confidence": 0.8,
+      "checks_count": 4
+    },
+    {
+      "claim_id": "claim_003",
+      "overall_status": "partial",
+      "overall_confidence": 0.7,
+      "checks_count": 2
+    },
+    {
+      "claim_id": "claim_004",
+      "overall_status": "partial",
+      "overall_confidence": 0.675,
+      "checks_count": 2
+    }
+  ],
+  "run_kpis": {
+    "snippet_coverage": 1.0,
+    "verification_coverage": 1.0,
+    "claims_with_evidence_ratio": 0.222,
+    "total_claims": 4,
+    "verified_claims": 4,
+    "unverified_claims": 0,
+    "is_negative_outcome": false,
+    "dod_level": 1,
+    "used_markdown_fallback": false
+  },
+  "composed_hypotheses": [],
+  "critique_findings": 0,
+  "critique_blockers": [],
+  "gate_report": null,
+  "dod3_enforcement": null,
+  "dod3_excluded_records": [],
+  "dod3_excluded_snippets": [],
+  "dod3_degraded_claims": [],
+  "dod3_suppressed_hypotheses": [],
+  "errors": [
+    "RoB2 assessment failed for pubmed_41607999: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 7 column 180 (char 725)",
+    "RoB2 assessment failed for pubmed_41566094: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting value: line 13 column 32 (char 882)",
+    "RoB2 assessment failed for pubmed_41427055: RoB2 assessment failed: Failed to parse RoB2 JSON: Expecting ',' delimiter: line 7 column 110 (char 663)"
+  ],
+  "status": "completed",
+  "status_reason": "technically_complete",
+  "disclaimer": "\u26a0\ufe0f This report is machine-generated by CDR (Clinical Deep Research). It is NOT medical advice and should NOT be used for clinical decision-making. All findings require independent verification by qualified professionals. See DISCLAIMER.md for full terms.",
+  "answer": "The evidence suggests that metformin combined with GLP-1 agonists may improve glycemic control and reduce cardiovascular risk compared to traditional hypoglycemic drugs. However, the evidence is limited, and more research is needed to confirm these findings.",
+  "answer_original": null,
+  "conclusion_degraded": false,
+  "conclusion_degradation_reasons": [],
+  "evaluation": {
+    "run_id": "run_02",
+    "dod_level": 1,
+    "overall_pass": true,
+    "summary": "DoD 1: 4 passed, 1 warnings, 0 failed",
+    "metrics": [
+      {
+        "name": "snippet_coverage",
+        "value": 1.0,
+        "threshold": 1.0,
+        "status": "pass",
+        "details": "4/4 claims have supporting snippets"
+      },
+      {
+        "name": "verification_coverage",
+        "value": 1.0,
+        "threshold": 0.8,
+        "status": "pass",
+        "details": "4/4 claims verified"
+      },
+      {
+        "name": "context_precision",
+        "value": 0.2778,
+        "threshold": 0.7,
+        "status": "warn",
+        "details": "10/36 snippets referenced by claims"
+      },
+      {
+        "name": "answer_faithfulness",
+        "value": 1.0,
+        "threshold": 0.8,
+        "status": "pass",
+        "details": "4/4 claims grounded in evidence"
+      },
+      {
+        "name": "citation_accuracy",
+        "value": 1.0,
+        "threshold": 1.0,
+        "status": "pass",
+        "details": "12/12 citations valid"
+      }
+    ]
+  }
+}

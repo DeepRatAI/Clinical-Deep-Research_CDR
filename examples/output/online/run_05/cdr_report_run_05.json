@@ -1,0 +1,944 @@
+{
+  "run_id": "run_05",
+  "question": "Can anti-inflammatory therapies reduce cardiovascular events in patients with elevated CRP?",
+  "pico": {
+    "population": "patients with elevated CRP",
+    "intervention": "anti-inflammatory therapies",
+    "comparator": "placebo or no treatment",
+    "comparator_source": "assumed_from_question",
+    "outcome": "cardiovascular events",
+    "study_types": [
+      "rct"
+    ]
+  },
+  "search_plan": {
+    "pubmed_query": "CRP AND anti-inflammatory therapy AND cardiovascular events",
+    "ct_gov_query": "elevated CRP anti-inflammatory treatment vs placebo cardiovascular outcomes",
+    "date_range": null,
+    "languages": [
+      "english"
+    ],
+    "max_results_per_source": 100,
+    "created_at": "2026-02-18T19:36:03.724117"
+  },
+  "executed_searches": [
+    {
+      "database": "PubMed",
+      "query_planned": "CRP AND anti-inflammatory therapy AND cardiovascular events",
+      "query_executed": "CRP AND anti-inflammatory therapy AND cardiovascular events",
+      "executed_at": "2026-02-18T19:36:05.710908+00:00",
+      "results_count": 254,
+      "results_fetched": 14,
+      "notes": null
+    },
+    {
+      "database": "ClinicalTrials.gov",
+      "query_planned": "elevated CRP anti-inflammatory treatment vs placebo cardiovascular outcomes",
+      "query_executed": "elevated CRP anti-inflammatory treatment vs placebo cardiovascular outcomes",
+      "executed_at": "2026-02-18T19:36:13.456346+00:00",
+      "results_count": 15,
+      "results_fetched": 15,
+      "notes": null
+    }
+  ],
+  "prisma_counts": {
+    "records_identified": 29,
+    "records_from_pubmed": 14,
+    "records_from_clinical_trials": 15,
+    "records_from_other": 0,
+    "duplicates_removed": 0,
+    "records_screened": 29,
+    "records_excluded_screening": 0,
+    "records_excluded": 9,
+    "screening_exclusion_reasons": {},
+    "reports_sought": 20,
+    "reports_not_retrieved": 0,
+    "reports_assessed": 20,
+    "reports_excluded": 0,
+    "records_excluded_enforcement": 0,
+    "enforcement_exclusion_reasons": {},
+    "studies_included": 20,
+    "exclusion_reasons": {
+      "study_type_mismatch": 9
+    }
+  },
+  "study_count": 20,
+  "claim_count": 3,
+  "snippet_count": 55,
+  "claims": [
+    {
+      "claim_id": "claim_001",
+      "claim_text": "Anti-inflammatory therapies may reduce cardiovascular events in patients with elevated CRP, but the evidence is limited and of low certainty.",
+      "certainty": "low",
+      "supporting_snippet_ids": [
+        "pubmed_41221450_snip_0",
+        "pubmed_41614521_snip_0"
+      ],
+      "conflicting_snippet_ids": [],
+      "limitations": [],
+      "grade_rationale": {
+        "risk_of_bias": "some concerns in 2/5 studies",
+        "inconsistency": "I\u00b2 = 50%, conflicting results",
+        "indirectness": "indirect - populations do not match",
+        "imprecision": "small sample sizes",
+        "publication_bias": "unlikely - comprehensive search"
+      },
+      "studies_supporting": 2,
+      "studies_conflicting": 0,
+      "linked_records": [
+        "pubmed_41221450",
+        "pubmed_41614521"
+      ],
+      "linked_rob2": [
+        {
+          "record_id": "pubmed_41221450",
+          "overall_judgment": "some_concerns",
+          "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result"
+        }
+      ],
+      "dod3_degraded": false,
+      "dod3_orphaned": false
+    },
+    {
+      "claim_id": "claim_002",
+      "claim_text": "Colchicine may reduce cardiovascular events in patients with elevated CRP, but the evidence is limited and of low certainty.",
+      "certainty": "low",
+      "supporting_snippet_ids": [
+        "ct_NCT06286423_snip_0",
+        "pubmed_41221450_snip_0"
+      ],
+      "conflicting_snippet_ids": [],
+      "limitations": [],
+      "grade_rationale": {
+        "risk_of_bias": "some concerns in 2/5 studies",
+        "inconsistency": "I\u00b2 = 50%, conflicting results",
+        "indirectness": "indirect - populations do not match",
+        "imprecision": "small sample sizes",
+        "publication_bias": "unlikely - comprehensive search"
+      },
+      "studies_supporting": 2,
+      "studies_conflicting": 0,
+      "linked_records": [
+        "ct_NCT06286423",
+        "pubmed_41221450"
+      ],
+      "linked_rob2": [
+        {
+          "record_id": "ct_NCT06286423",
+          "overall_judgment": "some_concerns",
+          "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions"
+        },
+        {
+          "record_id": "pubmed_41221450",
+          "overall_judgment": "some_concerns",
+          "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result"
+        }
+      ],
+      "dod3_degraded": false,
+      "dod3_orphaned": false
+    },
+    {
+      "claim_id": "claim_003",
+      "claim_text": "Anti-inflammatory therapies may reduce inflammatory markers in patients with elevated CRP, but the evidence is limited and of low certainty.",
+      "certainty": "low",
+      "supporting_snippet_ids": [
+        "ct_NCT06286423_snip_0",
+        "pubmed_41122555_snip_0"
+      ],
+      "conflicting_snippet_ids": [],
+      "limitations": [],
+      "grade_rationale": {
+        "risk_of_bias": "some concerns in 2/5 studies",
+        "inconsistency": "I\u00b2 = 50%, conflicting results",
+        "indirectness": "indirect - populations do not match",
+        "imprecision": "small sample sizes",
+        "publication_bias": "unlikely - comprehensive search"
+      },
+      "studies_supporting": 2,
+      "studies_conflicting": 0,
+      "linked_records": [
+        "ct_NCT06286423",
+        "pubmed_41122555"
+      ],
+      "linked_rob2": [
+        {
+          "record_id": "ct_NCT06286423",
+          "overall_judgment": "some_concerns",
+          "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions"
+        },
+        {
+          "record_id": "pubmed_41122555",
+          "overall_judgment": "some_concerns",
+          "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result"
+        }
+      ],
+      "dod3_degraded": false,
+      "dod3_orphaned": false
+    }
+  ],
+  "rob2_summary": [
+    {
+      "record_id": "pubmed_41296459",
+      "overall_judgment": "high",
+      "overall_rationale": "High risk of bias in at least one domain",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "high",
+          "rationale": "The study text does not mention randomization or allocation of participants to any groups. It appears to be a narrative review or a discussion paper rather than a randomized controlled trial."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "high",
+          "rationale": "The study text does not mention any interventions or deviations from intended interventions. It appears to be a discussion paper rather than a randomized controlled trial."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "high",
+          "rationale": "The study text does not mention any outcome data or missing data. It appears to be a narrative review or a discussion paper rather than a randomized controlled trial."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "high",
+          "rationale": "The study text does not mention any outcome measures or how they were measured. It appears to be a discussion paper rather than a randomized controlled trial."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "high",
+          "rationale": "The study text does not mention any results or selection of reported results. It appears to be a narrative review or a discussion paper rather than a randomized controlled trial."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41285329",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study was described as a randomized, double-blind, parallel-group trial, indicating that the allocation sequence was random and concealed. However, the text does not provide explicit details on the randomization process, such as the method used or the allocation ratio."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study did not report any deviations from the intended interventions, but it is unclear whether participants or caregivers were aware of their assigned intervention. The double-blind design suggests that caregivers were unaware, but the text does not explicitly state this."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study reported that outcome data were available for all participants, and there is no evidence to suggest that the result was biased by missing data."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "low",
+          "rationale": "The study used a standardized and widely used measure of depression and anxiety, the Hospital Anxiety and Depression Scale (HADS), which is appropriate for measuring these outcomes."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study was registered on Clinicaltrials.gov, but the text does not provide information on whether all pre-specified outcomes were reported. The study reported several outcomes, but it is unclear whether these were all pre-specified."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41221450",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study is described as a single-arm study, which implies that participants were not randomly allocated to the intervention or comparator groups. However, the study aims to evaluate the safety and efficacy of an aspirin-free, inflammation-guided treatment strategy, which suggests that the intervention is being tested against a standard treatment. The text does not explicitly state that participants were randomly allocated to the intervention or comparator groups, but it does mention that the study is investigator-initiated and prospective, which suggests that some level of randomization may have occurred. Nevertheless, the lack of explicit information about randomization makes it difficult to assess the risk of bias in this domain."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that aspirin is discontinued on the day after PCI, and ticagrelor is continued at the standard dose. However, it is unclear whether participants were aware of their assigned intervention, and whether caregivers/staff were aware of the intervention. Additionally, the study mentions that colchicine is initiated within 24 h after PCI, but it is unclear whether there were any deviations from this protocol. The text does not provide explicit information about these aspects, which makes it difficult to assess the risk of bias in this domain."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing outcome data, and the text suggests that outcome data were available for all participants. The primary outcome is the 12-month incidence of net adverse clinical events, a composite of cardiovascular death, nonfatal myocardial infarction, nonfatal ischemic stroke, unplanned urgent revascularization, and major bleeding. The text does not suggest that any of these outcomes were missing."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study uses high-sensitivity C-reactive protein (hs-CRP) levels to guide the continuation or discontinuation of colchicine. However, it is unclear whether the measurement of hs-CRP levels was blinded or unbiased. Additionally, the study mentions that longitudinal hs-CRP trends are a secondary outcome, but it is unclear whether these trends were measured in a way that was free from bias. The text does not provide explicit information about these aspects, which makes it difficult to assess the risk of bias in this domain."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study was registered on ClinicalTrials.gov with the identifier NCT06543082. However, it is unclear whether all pre-specified outcomes were reported. The text mentions that the primary outcome is the 12-month incidence of net adverse clinical events, but it does not explicitly state that all pre-specified outcomes were reported. Additionally, the study mentions that multiple analyses were performed, but it is unclear whether these analyses were pre-specified or not. The text does not provide explicit information about these aspects, which makes it difficult to assess the risk of bias in this domain."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41214504",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, missing_outcome_data, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that 25 RCTs were included in the systematic review, but it does not provide information on how the randomization process was conducted in each trial. It only mentions that risk of bias was assessed via Cochrane RoB 1.0, but it does not provide the results of this assessment. Therefore, I have some concerns about the randomization process."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study does not mention any deviations from the intended interventions. It only reports the results of the trials, but it does not provide information on whether participants or caregivers were aware of their assigned intervention or whether there were any deviations due to the trial context."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information on whether outcome data were available for all or nearly all participants. It only reports the results of the trials, but it does not provide information on whether there was any missing data or whether the results were biased by missing data."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "low",
+          "rationale": "The study reports the results of the trials using risk ratios and 95% confidence intervals, which suggests that the outcome was measured appropriately. However, it does not provide information on whether the measurement of the outcome could differ between groups or whether the outcome assessors were aware of the intervention."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study was registered with pre-specified outcomes, but it does not provide information on whether all pre-specified outcomes were reported. It only reports the results of the trials, but it does not provide information on whether multiple analyses were performed."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41122555",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide explicit information on the randomization process, such as whether the allocation sequence was random and concealed. However, it is mentioned that the Cochrane Risk of Bias 2.0 was used for quality assessment, which suggests that the randomization process was likely evaluated. Given the lack of explicit information, I lean towards SOME_CONCERNS."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide explicit information on whether participants or caregivers/staff were aware of the assigned intervention. However, it is mentioned that the review indicated that empagliflozin consistently improved LVEF, which suggests that the intervention was likely effective. Given the lack of explicit information, I lean towards SOME_CONCERNS."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study text does not mention any missing outcome data, and it is likely that the review included only RCTs with complete outcome data. The Cochrane Risk of Bias 2.0 was used for quality assessment, which suggests that the missing data were evaluated. Given the lack of information on missing data, I lean towards LOW."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide explicit information on whether the method of measuring the outcome was appropriate or whether measurement could differ between groups. However, it is mentioned that the review included RCTs with various outcome measures, such as LVEF, NT-proBNP, and HF hospitalization. Given the lack of explicit information, I lean towards SOME_CONCERNS."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide explicit information on whether the trial was registered with pre-specified outcomes or whether all pre-specified outcomes were reported. However, it is mentioned that the Cochrane Risk of Bias 2.0 was used for quality assessment, which suggests that the selection of reported results was evaluated. Given the lack of explicit information, I lean towards SOME_CONCERNS."
+        }
+      ]
+    },
+    {
+      "record_id": "pubmed_41111082",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, measurement_of_outcome",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study was described as a randomized, double-blind, parallel-controlled multicenter trial, indicating that the allocation sequence was random and concealed. However, the text does not explicitly state that the allocation sequence was generated using a random number generator or that it was concealed from the researchers."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study stated that both groups received intravenous XST for 10 consecutive days along with standard medical therapy. However, it is unclear whether the caregivers/staff were aware of the intervention, which could lead to bias. Additionally, there is no information on whether there were any deviations from the intended interventions."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study reported that a total of 59 patients completed the trial, with 30 in the treatment group and 29 in the control group. This suggests that there was no missing outcome data, or at least not enough to affect the results."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study used laboratory tests to measure the outcome, but it is unclear whether the measurement method was appropriate and whether it could differ between groups. Additionally, there is no information on whether the outcome assessors were aware of the intervention."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "low",
+          "rationale": "The study was registered with a registration number (ITMCTR2025000552), which suggests that the trial was registered with pre-specified outcomes. Additionally, the study reported all the pre-specified outcomes, including the primary and secondary outcomes."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT06286423",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study is described as a double-blind, placebo-controlled pilot trial, indicating that the allocation sequence was random and concealed. The use of a 1:1 randomization ratio further supports this judgment. However, the study text does not explicitly state that the allocation sequence was generated using a random number generator or that it was concealed from the researchers and participants. Nevertheless, the use of a double-blind design and the description of the randomization process as a pilot trial suggest that the risk of bias in this domain is low. The study text does not mention any baseline imbalances, which further supports this judgment. (\"Upon enrollment, patients will be randomized 1:1 to receive either the experimental drug (Colchicine) or matching placebo.\")"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study allows for dose reduction in patients with Stage III chronic kidney disease and in case of GI symptoms. Additionally, the study team will transiently stop the experimental medication in case of acute kidney injury (AKI). These deviations from the intended intervention may introduce bias, particularly if the decision to reduce or stop the medication is not made randomly. However, the study text does not provide information on how these decisions were made, which limits the ability to assess the risk of bias in this domain. (\"Dose reduction for patients with Stage III chronic kidney disease is allowed as detailed in the protocol. At the same time, dose reduction can also be elected in case of GI symptoms. The study team will transiently stop the experimental medication in case of acute kidney injury (AKI), defined per Kidney Disease Improving Global Outcomes (KDIGO) Stage I, as specified in the protocol.\")"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study text does not mention any missing outcome data, which suggests that the outcome data were available for all participants. However, the study does not provide information on how missing data were handled, which may limit the ability to assess the risk of bias in this domain. Nevertheless, the lack of mention of missing data suggests that the risk of bias in this domain is low. (\"Blood will be obtained from the patients in order to measure hsCRP and IL-6.\")"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "low",
+          "rationale": "The study uses a standardized method to measure the outcome (hsCRP and IL-6), which suggests that the measurement of the outcome was appropriate. The study text does not mention any differences in measurement between groups, which further supports this judgment. Additionally, the study does not mention any outcome assessors being aware of the intervention, which suggests that the measurement of the outcome was blinded. (\"Blood will be obtained from the patients in order to measure hsCRP and IL-6.\")"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "low",
+          "rationale": "The study text does not mention any pre-specified outcomes, which suggests that the trial was not registered with pre-specified outcomes. However, the study does not mention any selective reporting of outcomes, which suggests that all pre-specified outcomes were reported. The study text does not mention any multiple analyses performed, which further supports this judgment. (\"The study team will study colchicine, an anti-inflammatory drug, as compares with placebo.\")"
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT02308111",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study does not provide explicit information about the randomization process, but it is a randomized controlled trial, which suggests that the allocation sequence was likely random. However, without further details, it is difficult to confirm this. Nevertheless, given the study's design as an RCT, it is reasonable to assume that the randomization process was adequate."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide explicit information about whether participants or caregivers were aware of the assigned intervention. While it is stated that OCA is an investigational drug, it is unclear whether this knowledge could have influenced the outcome. Additionally, there is no mention of deviations due to the trial context or whether appropriate analyses were used."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing outcome data, which suggests that outcome data were available for all participants. However, without explicit confirmation, it is difficult to be certain. Nevertheless, given the study's design and the fact that no missing data are mentioned, it is reasonable to assume that outcome data were available for all participants."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide explicit information about the method of measuring the outcome or whether measurement could differ between groups. While it is stated that the study will assess clinical outcomes in PBC participants, the specific outcome measures are not described. This lack of detail raises some concerns about the potential for bias in the measurement of the outcome."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study does not mention whether the trial was registered with pre-specified outcomes or whether all pre-specified outcomes were reported. Additionally, there is no mention of multiple analyses being performed. This lack of transparency raises some concerns about the potential for selective reporting."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT05350592",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study does not explicitly state whether the allocation sequence was random or concealed. However, it does mention that the patients were randomly assigned to receive either the intervention or placebo. This suggests that some level of randomization was used, but the details of the process are not provided."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study does not mention whether participants or caregivers were aware of the assigned intervention. Additionally, there is no information on whether there were any deviations from the intended interventions due to the trial context. This lack of information raises some concerns about the potential for bias."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing outcome data, and it is likely that the primary endpoint of plasma concentrations of pro-B-type natriuretic peptide (proBNP) would be available for all participants. The study's focus on a single primary endpoint and the use of a proxy biomarker for cardiogenic shock suggests that missing data may not be a significant concern."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study uses plasma concentrations of pro-B-type natriuretic peptide (proBNP) as a proxy for development of cardiogenic shock, which may not be a direct or objective measure of the outcome. Additionally, the study does not mention whether the outcome assessors were aware of the intervention. This raises some concerns about the potential for bias in the measurement of the outcome."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study does not mention whether the trial was registered with pre-specified outcomes, and there is no information on whether all pre-specified outcomes were reported. This lack of information raises some concerns about the potential for selective reporting."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT07391267",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not explicitly describe the randomization process, including whether the allocation sequence was random and concealed. However, it is mentioned that the study is designed as a 'randomised controlled trial', which suggests that some level of randomization was employed. Without further information, it is difficult to assess the quality of the randomization process."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide information on whether participants or caregivers/staff were aware of the assigned intervention. Additionally, there is no mention of deviations from the intended interventions due to the trial context. However, it is stated that participants will be followed for 2 years with regular assessments, which suggests that the trial context may not have significantly impacted the interventions."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide information on whether outcome data were available for all/nearly all participants. Additionally, there is no mention of evidence that the result was not biased by missing data. However, it is stated that participants will be followed for 2 years with regular assessments, which suggests that the risk of missing data may be low."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "low",
+          "rationale": "The study text describes the use of established and validated measures for kidney function (eGFR, ACR), liver health (FibroScan, ALT/AST), and metabolic parameters, which suggests that the outcome measurement was appropriate. Additionally, there is no indication that measurement could differ between groups."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not mention whether the trial was registered with pre-specified outcomes or whether all pre-specified outcomes were reported. However, it is stated that the expected outcome is to demonstrate that semaglutide slows CKD progression and improves NAFLD, which suggests that the primary outcome was pre-specified."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT03700424",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not explicitly mention the randomization process, which is a critical component of the randomization process domain. While it is mentioned that the study is a randomized controlled trial (RCT), the details of the randomization process are not provided. This lack of information raises some concerns about the potential for bias in the randomization process."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study text does not mention any deviations from the intended interventions. It is stated that the investigators will explore the potential efficacy of IV trehalose administration on arterial inflammation, and the study employs a PET/CT technique to noninvasively characterize vascular inflammation and atherosclerosis. This suggests that the interventions were implemented as intended."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study text does not mention any missing outcome data. It is stated that the study employs a PET/CT technique to noninvasively characterize vascular inflammation and atherosclerosis, which suggests that the outcome data were likely available for all participants."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study text mentions the use of a PET/CT technique to measure the outcome, which is a noninvasive method. However, the study text does not provide information on whether the outcome assessors were aware of the intervention or whether the measurement method could differ between groups. This lack of information raises some concerns about the potential for bias in the measurement of the outcome."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not mention whether the trial was registered with pre-specified outcomes or whether all pre-specified outcomes were reported. This lack of information raises some concerns about the potential for bias in the selection of the reported result."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT05459974",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, missing_outcome_data, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not explicitly mention the randomization process, which is a concern. However, it is a randomized controlled trial, so it is likely that randomization was used. The lack of information makes it difficult to assess the risk of bias."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study text does not mention any deviations from the intended interventions, which suggests that the interventions were implemented as planned."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "The study text mentions that previous studies have shown increased inflammatory markers in patients who develop AFib, but it does not provide information about how missing outcome data were handled in this study. This is a concern because it is unclear whether the results were biased by missing data."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "low",
+          "rationale": "The study text does not mention any concerns about the measurement of the outcome, which suggests that the outcome was measured appropriately."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study text mentions that the information obtained from this study will guide future clinical practice, which suggests that the results may have been influenced by the study's funding or other external factors. Additionally, the study text does not mention whether all pre-specified outcomes were reported."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT04445623",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not explicitly mention the randomization process, which is a critical component of the randomization process domain. While it is mentioned that the study is a randomized controlled trial, the details of the randomization process are not provided. This lack of information raises some concerns about the potential for bias in the randomization process."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study text mentions that the proposed treatment is feasible in all coronavirus disease 2019 (COVID-19) patients, regardless of the treatment regimen (antivirals, anti-inflammatory drugs, antibiotics), except for specific contraindications. This suggests that there may be deviations from the intended interventions, particularly if patients are not receiving the standard treatment regimens. However, the study text does not provide explicit information on how these deviations were handled."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study text does not mention any missing outcome data, which suggests that the outcome data were available for all or nearly all participants. However, it is worth noting that the study text does not provide explicit information on how missing data were handled, which could be a concern."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study text mentions that the use of purinergic receptor P2Y12 inhibitors in pneumococcal pneumonia may improve inflammation and respiratory function in humans. However, it is not clear how the outcomes of interest (e.g., pulmonary thrombosis, respiratory and multi-organ failure) were measured. This lack of information raises some concerns about the potential for bias in the measurement of the outcome."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study text mentions that there are no validated protocols for thrombosis prevention in COVID-19, which suggests that the selection of reported results may be influenced by the lack of established protocols. Additionally, the study text does not provide explicit information on how the outcomes were selected for reporting, which raises some concerns about the potential for bias in the selection of reported results."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT05384431",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "low",
+          "rationale": "The study states that participants will be 'randomized to either exercise alone or exercise plus supplement for 12 weeks.' This suggests that the allocation sequence was random and concealed."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "While the study states that participants will be instructed to take the supplements daily, there is no information on whether participants or caregivers/staff were aware of the intervention assignments. Additionally, there is no mention of any deviations from the intended interventions."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing outcome data, and it is likely that all participants completed the 12-week training period."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "While the study uses established measures for body composition, aerobic capacity, and blood lipids, there is no information on whether the outcome assessors were aware of the intervention assignments. Additionally, the study measures a wide range of outcomes, which may increase the risk of bias."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study does not mention whether the trial was registered with pre-specified outcomes, and it is unclear whether all pre-specified outcomes were reported. Additionally, the study measures a wide range of outcomes, which may increase the risk of bias."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT07143136",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not explicitly mention the randomization process, which is a concern. However, it does not provide any information that would suggest a high risk of bias. Therefore, I lean towards some concerns rather than high risk of bias. The study text does mention that the COLCOT and LoDoCo2 trials demonstrated the efficacy of colchicine, but this does not provide information about the randomization process in the current study. The text does not mention the allocation sequence being random or concealed, and there is no mention of baseline imbalances. However, the text does not provide any information that would suggest a high risk of bias in this domain. Therefore, I judge this domain as some concerns. The supporting text is: 'This study proposes to assess whether a loading dose of colchicine before PCI, followed by 3-months maintenance therapy, can improve short-term clinical outcomes and inflammatory markers in non- STEMI patients.'"
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide any information about whether participants were aware of their assigned intervention, whether caregivers/staff were aware of the intervention, or whether there were deviations due to the trial context. However, it does not provide any information that would suggest a high risk of bias. Therefore, I lean towards some concerns rather than high risk of bias. The study text does mention that the intervention is a loading dose of colchicine before PCI, followed by 3-months maintenance therapy, but it does not provide any information about whether participants or caregivers/staff were aware of the intervention. The text does not mention any deviations from the intended intervention, but it does not provide any information that would suggest a low risk of bias. Therefore, I judge this domain as some concerns. The supporting text is: 'This study proposes to assess whether a loading dose of colchicine before PCI, followed by 3-months maintenance therapy, can improve short-term clinical outcomes and inflammatory markers in non- STEMI patients.'"
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide any information about whether outcome data were available for all/nearly all participants, or whether there is evidence that the result was not biased by missing data. However, it does not provide any information that would suggest a high risk of bias. Therefore, I lean towards some concerns rather than high risk of bias. The study text does mention that the study aims to assess short-term clinical outcomes and inflammatory markers, but it does not provide any information about whether outcome data were available for all participants. The text does not mention any missing data, but it does not provide any information that would suggest a low risk of bias. Therefore, I judge this domain as some concerns. The supporting text is: 'This study proposes to assess whether a loading dose of colchicine before PCI, followed by 3-months maintenance therapy, can improve short-term clinical outcomes and inflammatory markers in non- STEMI patients.'"
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide any information about whether the method of measuring the outcome was appropriate, or whether measurement could differ between groups. However, it does not provide any information that would suggest a high risk of bias. Therefore, I lean towards some concerns rather than high risk of bias. The study text does mention that the study aims to assess short-term clinical outcomes and inflammatory markers, but it does not provide any information about the method of measurement. The text does not mention any differences in measurement between groups, but it does not provide any information that would suggest a low risk of bias. Therefore, I judge this domain as some concerns. The supporting text is: 'This study proposes to assess whether a loading dose of colchicine before PCI, followed by 3-months maintenance therapy, can improve short-term clinical outcomes and inflammatory markers in non- STEMI patients.'"
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study text does not provide any information about whether the trial was registered with pre-specified outcomes, or whether all pre-specified outcomes were reported. However, it does not provide any information that would suggest a high risk of bias. Therefore, I lean towards some concerns rather than high risk of bias. The study text does mention that the study aims to assess short-term clinical outcomes and inflammatory markers, but it does not provide any information about whether the trial was registered or whether all outcomes were reported. The text does not mention any multiple analyses, but it does not provide any information that would suggest a low risk of bias. Therefore, I judge this domain as some concerns. The supporting text is: 'This study proposes to assess whether a loading dose of colchicine before PCI, followed by 3-months maintenance therapy, can improve short-term clinical outcomes and inflammatory markers in non- STEMI patients.'"
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT05193396",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, missing_outcome_data, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that this will be the first placebo-controlled RCT in patients with PMR and GCA after planned cessation of GC treatment, which suggests that the randomization process may not have been extensively validated or tested. Additionally, the study does not provide any information on the randomization method used, such as whether it was computer-generated or done by a third party."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study does not mention any deviations from the intended interventions, and it is stated that the study will be a placebo-controlled RCT, which suggests that the interventions will be clearly defined and implemented."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide any information on how missing outcome data will be handled, which is a concern because the study is investigating a condition (GIA) that may be associated with significant morbidity and mortality. Additionally, the study mentions that 25% of patients exhibited pronounced symptoms of adrenal insufficiency, which suggests that there may be a high risk of missing outcome data."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that the AddiQoL-30 questionnaire will be used to detect symptoms of adrenal insufficiency, but it does not provide any information on the validity or reliability of this questionnaire. Additionally, the study mentions that basal cortisol levels will be measured, but it does not provide any information on the method used to measure cortisol levels."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study does not mention whether the trial was registered with pre-specified outcomes, which is a concern because the study is investigating a condition (GIA) that may be associated with significant morbidity and mortality. Additionally, the study mentions that the results of the trial will be used to provide evidence-based guidance and aid to GIA patients, which suggests that there may be a risk of selective reporting."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT04873349",
+      "overall_judgment": "some_concerns",
+      "overall_rationale": "Some concerns in domains: randomization_process, deviations_from_intended_interventions, measurement_of_outcome, selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "randomization_process",
+          "judgment": "some_concerns",
+          "rationale": "The study mentions that patients were randomly assigned in a 1:1 ratio, but it does not provide information on how the randomization was performed (e.g., whether it was computer-generated or done by a person). Additionally, the study does not mention whether the allocation sequence was concealed."
+        },
+        {
+          "domain": "deviations_from_intended_interventions",
+          "judgment": "some_concerns",
+          "rationale": "The study does not mention whether participants or caregivers were aware of the assigned intervention. Additionally, there is no information on whether there were any deviations from the intended interventions due to the trial context."
+        },
+        {
+          "domain": "missing_outcome_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing outcome data, and it is likely that the outcomes were measured for all participants. However, the study does not provide information on whether the results were biased by missing data."
+        },
+        {
+          "domain": "measurement_of_outcome",
+          "judgment": "some_concerns",
+          "rationale": "The study does not provide information on whether the method of measuring the outcomes was appropriate. Additionally, there is no information on whether the measurement of outcomes could differ between groups."
+        },
+        {
+          "domain": "selection_of_reported_result",
+          "judgment": "some_concerns",
+          "rationale": "The study does not mention whether the trial was registered with pre-specified outcomes. Additionally, there is no information on whether all pre-specified outcomes were reported."
+        }
+      ]
+    }
+  ],
+  "robins_i_summary": [
+    {
+      "record_id": "pubmed_41614521",
+      "overall_judgment": "moderate",
+      "overall_rationale": "Moderate risk of bias in domains: bias_due_to_confounding",
+      "domains": [
+        {
+          "domain": "bias_due_to_confounding",
+          "judgment": "moderate",
+          "rationale": "The study controlled for demographic and vascular risk factors, but did not account for potential confounding by other variables that may be associated with both cytokine levels and stroke recurrence. The study also did not adjust for potential confounding by other inflammatory biomarkers."
+        },
+        {
+          "domain": "bias_due_to_missing_data",
+          "judgment": "low",
+          "rationale": "The study did not report any missing data on outcome or intervention, and it is unlikely that there were any significant missing data."
+        },
+        {
+          "domain": "bias_in_selection_of_participants",
+          "judgment": "no_information",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "bias_in_classification_of_interventions",
+          "judgment": "no_information",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "bias_due_to_deviations_from_intended_interventions",
+          "judgment": "no_information",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "bias_in_measurement_of_outcomes",
+          "judgment": "no_information",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "bias_in_selection_of_reported_result",
+          "judgment": "no_information",
+          "rationale": "Information not available in text"
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT06959043",
+      "overall_judgment": "critical",
+      "overall_rationale": "Critical risk of bias in domains: bias_due_to_confounding, bias_in_selection_of_reported_result",
+      "domains": [
+        {
+          "domain": "bias_due_to_confounding",
+          "judgment": "critical",
+          "rationale": "The study does not control for important confounders, such as age, sex, and duration of diabetes, which are known to affect metabolic, inflammatory, and epigenetic parameters. Additionally, the study does not account for potential confounding by indication, as participants may have chosen to adopt a strict vegetarian diet and regular physical exercise due to their underlying health conditions."
+        },
+        {
+          "domain": "bias_in_selection_of_participants",
+          "judgment": "moderate",
+          "rationale": "The study does not provide information on how participants were selected into the study, but it is likely that selection was based on participant characteristics observed after the start of intervention. However, the study does not mention whether the start of follow-up and start of intervention coincided."
+        },
+        {
+          "domain": "bias_in_classification_of_interventions",
+          "judgment": "low",
+          "rationale": "The study clearly defines the intervention as a strict vegetarian diet combined with regular physical exercise and the use of probiotics. Information on intervention status was likely recorded at the time of intervention, and it is unlikely that intervention classification was affected by knowledge of the outcome."
+        },
+        {
+          "domain": "bias_due_to_deviations_from_intended_interventions",
+          "judgment": "moderate",
+          "rationale": "The study does not provide information on whether there were deviations from the intended intervention beyond what would be expected in usual practice. However, it is likely that participants may have deviated from the intervention due to various reasons, such as lack of motivation or difficulty in adhering to the diet and exercise regimen."
+        },
+        {
+          "domain": "bias_due_to_missing_data",
+          "judgment": "low",
+          "rationale": "The study does not provide information on whether outcome data were available for all or nearly all participants. However, it is likely that outcome data were available for most participants, as the study aimed to evaluate the impact of the intervention on various metabolic, inflammatory, and epigenetic parameters."
+        },
+        {
+          "domain": "bias_in_measurement_of_outcomes",
+          "judgment": "moderate",
+          "rationale": "The study uses a variety of outcome measures, including metabolic, inflammatory, and epigenetic parameters. However, it is unclear whether these measures were appropriate for the study population and whether they could have differed between intervention groups."
+        },
+        {
+          "domain": "bias_in_selection_of_reported_result",
+          "judgment": "critical",
+          "rationale": "The study reports a single outcome measurement, which is the change in metabolic, inflammatory, and epigenetic parameters after 6 months of intervention. However, it is unclear whether multiple outcome measurements were available or whether multiple analyses of the intervention-outcome relationship were possible."
+        }
+      ]
+    },
+    {
+      "record_id": "ct_NCT06130059",
+      "overall_judgment": "critical",
+      "overall_rationale": "Critical risk of bias in domains: bias_due_to_confounding",
+      "domains": [
+        {
+          "domain": "bias_due_to_confounding",
+          "judgment": "critical",
+          "rationale": "The study does not control for important confounders, and the population is not specified, which makes it difficult to assess the potential impact of confounding variables."
+        },
+        {
+          "domain": "bias_in_classification_of_interventions",
+          "judgment": "low",
+          "rationale": "The study clearly defines the intervention (LoDoCo) and the comparator (placebo), and it is likely that the information on intervention status was recorded at the time of intervention."
+        },
+        {
+          "domain": "bias_due_to_deviations_from_intended_interventions",
+          "judgment": "low",
+          "rationale": "The study does not mention any deviations from the intended interventions, and it is likely that the participants received the assigned interventions (LoDoCo or placebo) as intended."
+        },
+        {
+          "domain": "bias_due_to_missing_data",
+          "judgment": "low",
+          "rationale": "The study does not mention any missing data, and it is likely that the outcome data were available for all participants."
+        },
+        {
+          "domain": "bias_in_measurement_of_outcomes",
+          "judgment": "low",
+          "rationale": "The study uses established measures of exercise capacity, physical function, frailty, and quality of life, which suggests that the outcome measurement was appropriate."
+        },
+        {
+          "domain": "bias_in_selection_of_participants",
+          "judgment": "no_information",
+          "rationale": "Information not available in text"
+        },
+        {
+          "domain": "bias_in_selection_of_reported_result",
+          "judgment": "no_information",
+          "rationale": "Information not available in text"
+        }
+      ]
+    }
+  ],
+  "verification_summary": [
+    {
+      "claim_id": "claim_001",
+      "overall_status": "partial",
+      "overall_confidence": 0.75,
+      "checks_count": 2
+    },
+    {
+      "claim_id": "claim_002",
+      "overall_status": "verified",
+      "overall_confidence": 0.875,
+      "checks_count": 2
+    },
+    {
+      "claim_id": "claim_003",
+      "overall_status": "verified",
+      "overall_confidence": 0.875,
+      "checks_count": 2
+    }
+  ],
+  "run_kpis": {
+    "snippet_coverage": 1.0,
+    "verification_coverage": 1.0,
+    "claims_with_evidence_ratio": 0.15,
+    "total_claims": 3,
+    "verified_claims": 3,
+    "unverified_claims": 0,
+    "is_negative_outcome": false,
+    "dod_level": 1,
+    "used_markdown_fallback": false
+  },
+  "composed_hypotheses": [],
+  "critique_findings": 2,
+  "critique_blockers": [],
+  "gate_report": null,
+  "dod3_enforcement": null,
+  "dod3_excluded_records": [],
+  "dod3_excluded_snippets": [],
+  "dod3_degraded_claims": [],
+  "dod3_suppressed_hypotheses": [],
+  "errors": [],
+  "status": "completed",
+  "status_reason": "technically_complete",
+  "disclaimer": "\u26a0\ufe0f This report is machine-generated by CDR (Clinical Deep Research). It is NOT medical advice and should NOT be used for clinical decision-making. All findings require independent verification by qualified professionals. See DISCLAIMER.md for full terms.",
+  "answer": "The evidence suggests that anti-inflammatory therapies may reduce cardiovascular events and inflammatory markers in patients with elevated CRP, but the evidence is limited and of low certainty due to the high risk of bias in some studies and the limited number of studies.",
+  "answer_original": null,
+  "conclusion_degraded": false,
+  "conclusion_degradation_reasons": [],
+  "evaluation": {
+    "run_id": "run_05",
+    "dod_level": 1,
+    "overall_pass": true,
+    "summary": "DoD 1: 4 passed, 1 warnings, 0 failed",
+    "metrics": [
+      {
+        "name": "snippet_coverage",
+        "value": 1.0,
+        "threshold": 1.0,
+        "status": "pass",
+        "details": "3/3 claims have supporting snippets"
+      },
+      {
+        "name": "verification_coverage",
+        "value": 1.0,
+        "threshold": 0.8,
+        "status": "pass",
+        "details": "3/3 claims verified"
+      },
+      {
+        "name": "context_precision",
+        "value": 0.0727,
+        "threshold": 0.7,
+        "status": "warn",
+        "details": "4/55 snippets referenced by claims"
+      },
+      {
+        "name": "answer_faithfulness",
+        "value": 1.0,
+        "threshold": 0.8,
+        "status": "pass",
+        "details": "3/3 claims grounded in evidence"
+      },
+      {
+        "name": "citation_accuracy",
+        "value": 1.0,
+        "threshold": 1.0,
+        "status": "pass",
+        "details": "6/6 citations valid"
+      }
+    ]
+  }
+}

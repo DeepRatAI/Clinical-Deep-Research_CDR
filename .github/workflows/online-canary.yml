@@ -1,0 +1,133 @@
+# CDR Online Canary — Real E2E pipeline validation
+#
+# Schedule: every 48 hours + manual dispatch
+# Runs ≥5 clinical queries through the full CDR pipeline with a real LLM provider,
+# validates schema compliance, publishes artifacts with outputs + metrics.
+#
+# PASS/FAIL policy (honest green):
+#   FAIL (invariants): crash, schema invalid, missing disclaimer, empty output,
+#                      export not generated, claim_count != len(claims)
+#   WARN (soft):       latency drift, coverage changes, count variations
+#                      → reported in summary, does NOT break the build
+
+name: CDR Online Canary
+
+on:
+  schedule:
+    # Every 48 hours (midnight UTC, odd days)
+    - cron: "0 0 */2 * *"
+  workflow_dispatch:
+    inputs:
+      provider:
+        description: "LLM provider to use"
+        required: false
+        default: "auto"
+        type: choice
+        options:
+          - auto
+          - openrouter
+          - groq
+          - cerebras
+          - gemini
+
+env:
+  PYTHON_VERSION: "3.12"
+
+jobs:
+  online-canary:
+    runs-on: ubuntu-latest
+    name: Online Canary (≥5 queries)
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('uv.lock') }}
+          restore-keys: ${{ runner.os }}-pip-
+
+      - name: Install uv
+        run: pip install uv
+
+      - name: Install dependencies (frozen from uv.lock)
+        run: uv sync --frozen
+
+      - name: Run online canary
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          CDR_CANARY_PROVIDER: ${{ github.event.inputs.provider || 'auto' }}
+        run: |
+          uv run python scripts/online_canary.py \
+            --output canary_output/ \
+            --provider "$CDR_CANARY_PROVIDER"
+
+      - name: Validate canary results
+        run: |
+          echo "=============================================="
+          echo "📊 CDR Online Canary — Validation"
+          echo "=============================================="
+
+          # Check summary exists
+          if [ ! -f canary_output/canary_summary.json ]; then
+            echo "❌ FAIL: canary_summary.json not generated"
+            exit 1
+          fi
+
+          # Validate results
+          uv run python -c "
+          import json, sys
+
+          summary = json.load(open('canary_output/canary_summary.json'))
+
+          total = summary['total_queries']
+          passed = summary['passed']
+          failed = summary['failed']
+          warnings = summary.get('warnings', [])
+
+          print(f'  Total queries:  {total}')
+          print(f'  Passed:         {passed}')
+          print(f'  Failed:         {failed}')
+          print(f'  Provider:       {summary[\"provider\"]}')
+          print()
+
+          # Invariant checks
+          if total < 5:
+              print('❌ FAIL: fewer than 5 queries executed')
+              sys.exit(1)
+
+          if failed > 0:
+              print(f'❌ FAIL: {failed} queries failed invariant checks')
+              for q in summary.get('query_results', []):
+                  if q.get('status') == 'FAIL':
+                      print(f'   → {q[\"query_id\"]}: {q.get(\"error\", \"unknown\")}')
+              sys.exit(1)
+
+          # Soft warnings (reported but don't break)
+          if warnings:
+              print(f'⚠️  {len(warnings)} warnings (non-blocking):')
+              for w in warnings:
+                  print(f'   → {w}')
+
+          print()
+          print(f'✅ CANARY PASSED: {passed}/{total} queries OK')
+          "
+
+      - name: Upload canary artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: online-canary-results
+          path: canary_output/
+          retention-days: 30
