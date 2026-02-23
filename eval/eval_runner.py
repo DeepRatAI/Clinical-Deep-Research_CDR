@@ -22,6 +22,9 @@ Usage:
     # Single question:
     python -m eval.eval_runner --question GS-001
 
+    # Output as markdown table:
+    python -m eval.eval_runner --format markdown
+
 Requirements:
     - CDR installed (pip install -e ".[dev]")
     - For online mode: .env configured with at least one LLM provider
@@ -550,6 +553,7 @@ def run_evaluation(
     question_id: str | None = None,
     mode: str = "offline",
     baseline_path: str | None = None,
+    output_format: str = "json",
 ) -> dict[str, Any]:
     """Run evaluation on a dataset.
 
@@ -559,6 +563,7 @@ def run_evaluation(
         question_id: Optional single question to evaluate.
         mode: 'offline' (structural only) or 'online' (full pipeline).
         baseline_path: Optional path to baseline JSON for comparison.
+        output_format: Output format - 'json' (default) or 'markdown'.
 
     Returns:
         Evaluation summary dict.
@@ -573,6 +578,7 @@ def run_evaluation(
 
     print(f"📊  CDR Evaluation Runner")
     print(f"    Mode:     {mode}")
+    print(f"    Format:   {output_format}")
     print(f"    Dataset:  {dataset_path}")
     print(f"    Checksum: sha256:{checksum[:16]}...")
     print(f"    Questions: {len(questions)}")
@@ -629,20 +635,22 @@ def run_evaluation(
     output_path.mkdir(parents=True, exist_ok=True)
 
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-    results_file = output_path / f"{ts}_results.json"
-    summary_file = output_path / f"{ts}_summary.md"
 
-    with open(results_file, "w") as f:
-        json.dump(summary, f, indent=2, default=str)
-
-    md_content = generate_markdown_summary(summary, comparisons)
-    with open(summary_file, "w") as f:
-        f.write(md_content)
-
-    print()
-    print(f"✅  Evaluation complete")
-    print(f"    Results: {results_file}")
-    print(f"    Summary: {summary_file}")
+    if output_format == "json":
+        results_file = output_path / f"{ts}_results.json"
+        with open(results_file, "w") as f:
+            json.dump(summary, f, indent=2, default=str)
+        print()
+        print(f"✅  Evaluation complete")
+        print(f"    Results: {results_file}")
+    elif output_format == "markdown":
+        summary_file = output_path / f"{ts}_summary.md"
+        md_content = generate_markdown_summary(summary, comparisons)
+        with open(summary_file, "w") as f:
+            f.write(md_content)
+        print()
+        print(f"✅  Evaluation complete")
+        print(f"    Summary: {summary_file}")
 
     return summary
 
@@ -664,6 +672,12 @@ Examples:
 
   # Single question:
   python -m eval.eval_runner --question GS-001 --mode online
+
+  # Output as markdown table:
+  python -m eval.eval_runner --format markdown
+
+  # Combine options:
+  python -m eval.eval_runner --mode online --format markdown --output eval/results/
         """,
     )
     parser.add_argument(
@@ -688,6 +702,13 @@ Examples:
         help="Evaluation mode: 'offline' (structural) or 'online' (full pipeline)",
     )
     parser.add_argument(
+        "--format",
+        choices=["json", "markdown"],
+        default="json",
+        dest="output_format",
+        help="Output format: 'json' (default) or 'markdown' (human-readable table)",
+    )
+    parser.add_argument(
         "--compare-baseline",
         default=None,
         dest="compare_baseline",
@@ -701,6 +722,7 @@ Examples:
         args.question,
         args.mode,
         args.compare_baseline,
+        args.output_format,
     )
 
 
