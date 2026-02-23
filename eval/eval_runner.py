@@ -691,7 +691,13 @@ Examples:
         "--compare-baseline",
         default=None,
         dest="compare_baseline",
-        help="Path to baseline JSON for regression comparison",
+        help="Path to baseline JSON for regression comparison",    parser.add_argument(
+        "--format",
+        choices=["json", "markdown", "csv", "html", "all"],
+        default="all",
+        help="Output format: 'json', 'markdown', 'csv', 'html', or 'all' (default: all)"
+    )
+
     )
     args = parser.parse_args()
 
@@ -701,7 +707,7 @@ Examples:
         args.question,
         args.mode,
         args.compare_baseline,
-    )
+    , args.format)
 
 
 if __name__ == "__main__":
