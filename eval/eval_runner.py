@@ -44,13 +44,25 @@ import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 from cdr.evaluation.golden_set import get_golden_set, get_question_by_id, GoldenSetQuestion
 from cdr.evaluation.metrics import CDRMetricsEvaluator, EvaluationReport
+
+# ============================================================================
+# Type aliases
+# ============================================================================
+
+EvalMode = Literal["offline", "online"]
+OutputFormat = Literal["json", "markdown", "all"]
+QuestionDict = dict[str, Any]
+MetricsDict = dict[str, Any]
+EvalResult = dict[str, Any]
+EvalSummary = dict[str, Any]
+ComparisonResult = dict[str, Any]
 
 # ============================================================================
 # Constants
@@ -85,7 +97,7 @@ PIPELINE_STAGES = [
 # ============================================================================
 
 
-def load_dataset(dataset_path: str) -> tuple[list[dict[str, Any]], str]:
+def load_dataset(dataset_path: str) -> tuple[list[QuestionDict], str]:
     """Load evaluation dataset and compute its checksum.
 
     Args:
@@ -118,7 +130,7 @@ def load_dataset(dataset_path: str) -> tuple[list[dict[str, Any]], str]:
     return questions, checksum
 
 
-def load_baseline(baseline_path: str) -> dict[str, Any] | None:
+def load_baseline(baseline_path: str) -> EvalSummary | None:
     """Load a baseline results file for comparison.
 
     Args:
@@ -140,7 +152,7 @@ def load_baseline(baseline_path: str) -> dict[str, Any] | None:
 # ============================================================================
 
 
-def evaluate_question_offline(question: dict[str, Any]) -> dict[str, Any]:
+def evaluate_question_offline(question: QuestionDict) -> EvalResult:
     """Evaluate a single question using offline structural metrics.
 
     Checks:
@@ -149,8 +161,8 @@ def evaluate_question_offline(question: dict[str, Any]) -> dict[str, Any]:
 
     This mode does NOT execute the pipeline — no LLM calls, no network.
     """
-    qid = question.get("id", "unknown")
-    golden = get_question_by_id(qid)
+    qid: str = question.get("id", "unknown")
+    golden: GoldenSetQuestion | None = get_question_by_id(qid)
 
     # Structural checks
     checks: dict[str, bool] = {
@@ -161,9 +173,9 @@ def evaluate_question_offline(question: dict[str, Any]) -> dict[str, Any]:
         "has_outcome": bool(question.get("outcome")),
         "has_expected_evidence_level": bool(question.get("expected_evidence_level")),
     }
-    all_pass = all(checks.values())
+    all_pass: bool = all(checks.values())
 
-    result: dict[str, Any] = {
+    result: EvalResult = {
         "question_id": qid,
         "question": question.get("question", ""),
         "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -196,7 +208,7 @@ def evaluate_question_offline(question: dict[str, Any]) -> dict[str, Any]:
 # ============================================================================
 
 
-def evaluate_question_online(question: dict[str, Any]) -> dict[str, Any]:
+def evaluate_question_online(question: QuestionDict) -> EvalResult:
     """Evaluate a single question by running the full CDR pipeline.
 
     Requires:
@@ -211,9 +223,9 @@ def evaluate_question_online(question: dict[str, Any]) -> dict[str, Any]:
     """
     import asyncio
 
-    qid = question.get("id", "unknown")
-    golden = get_question_by_id(qid)
-    question_text = question.get("question", "")
+    qid: str = question.get("id", "unknown")
+    golden: GoldenSetQuestion | None = get_question_by_id(qid)
+    question_text: str = question.get("question", "")
 
     stage_latencies: dict[str, float] = {}
     t_start = time.perf_counter()
@@ -251,20 +263,20 @@ def evaluate_question_online(question: dict[str, Any]) -> dict[str, Any]:
             "latency_ms": {},
         }
 
-    t_end = time.perf_counter()
-    total_ms = round((t_end - t_start) * 1000, 1)
+    t_end: float = time.perf_counter()
+    total_ms: float = round((t_end - t_start) * 1000, 1)
 
     # Extract report from result
-    report = result_state if isinstance(result_state, dict) else {}
+    report: dict[str, Any] = result_state if isinstance(result_state, dict) else {}
     if hasattr(result_state, "report"):
         report = result_state.report or {}
 
     # Extract metrics from report
-    run_kpis = report.get("run_kpis", {})
-    prisma = report.get("prisma_counts", {})
-    claims = report.get("claims", [])
+    run_kpis: dict[str, Any] = report.get("run_kpis", {})
+    prisma: dict[str, Any] = report.get("prisma_counts", {})
+    claims: list[dict[str, Any]] = report.get("claims", [])
 
-    result: dict[str, Any] = {
+    result: EvalResult = {
         "question_id": qid,
         "question": question_text,
         "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -316,9 +328,9 @@ def evaluate_question_online(question: dict[str, Any]) -> dict[str, Any]:
 
 
 def compare_with_baseline(
-    current_results: list[dict[str, Any]],
-    baseline: dict[str, Any],
-) -> list[dict[str, Any]]:
+    current_results: list[EvalResult],
+    baseline: EvalSummary,
+) -> list[ComparisonResult]:
     """Compare current evaluation results against a baseline.
 
     For each question, compares metrics and flags regressions.
@@ -330,11 +342,11 @@ def compare_with_baseline(
     Returns:
         List of comparison dicts per question.
     """
-    baseline_by_id: dict[str, dict[str, Any]] = {}
+    baseline_by_id: dict[str, EvalResult] = {}
     for br in baseline.get("results", []):
         baseline_by_id[br.get("question_id", "")] = br
 
-    comparisons = []
+    comparisons: list[ComparisonResult] = []
     for result in current_results:
         qid = result.get("question_id", "")
         bl = baseline_by_id.get(qid)
@@ -351,7 +363,7 @@ def compare_with_baseline(
         bl_metrics = bl.get("metrics", {})
         cur_metrics = result.get("metrics", {})
 
-        diffs: dict[str, dict[str, Any]] = {}
+        diffs: dict[str, MetricsDict] = {}
         for key in [
             "snippet_coverage",
             "verification_coverage",
@@ -390,12 +402,12 @@ def compare_with_baseline(
 # ============================================================================
 
 
-def compute_aggregate(results: list[dict[str, Any]]) -> dict[str, Any]:
+def compute_aggregate(results: list[EvalResult]) -> MetricsDict:
     """Compute aggregate statistics across all evaluation results.
 
     Includes p50/p95 latencies when available.
     """
-    agg: dict[str, Any] = {
+    agg: MetricsDict = {
         "total_questions": len(results),
         "passed": sum(1 for r in results if r.get("status") in ("pass", "completed")),
         "failed": sum(1 for r in results if r.get("status") in ("fail", "error", "unpublishable")),
@@ -458,8 +470,8 @@ def compute_aggregate(results: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def generate_markdown_summary(
-    summary: dict[str, Any],
-    comparisons: list[dict[str, Any]] | None = None,
+    summary: EvalSummary,
+    comparisons: list[ComparisonResult] | None = None,
 ) -> str:
     """Generate a human-readable Markdown summary of evaluation results."""
     lines = [
@@ -554,10 +566,10 @@ def run_evaluation(
     dataset_path: str,
     output_dir: str,
     question_id: str | None = None,
-    mode: str = "offline",
+    mode: EvalMode = "offline",
     baseline_path: str | None = None,
-    output_format: str = "all",
-) -> dict[str, Any]:
+    output_format: OutputFormat = "all",
+) -> EvalSummary:
     """Run evaluation on a dataset.
 
     Args:
@@ -587,9 +599,9 @@ def run_evaluation(
     print()
 
     # Evaluate each question
-    results: list[dict[str, Any]] = []
+    results: list[EvalResult] = []
     for i, q in enumerate(questions, 1):
-        qid = q.get("id", f"Q-{i}")
+        qid: str = q.get("id", f"Q-{i}")
         print(f"  [{i}/{len(questions)}] {qid}: {q.get('question', '')[:55]}...")
 
         if mode == "online":
@@ -606,7 +618,7 @@ def run_evaluation(
     aggregate = compute_aggregate(results)
 
     # Baseline comparison
-    comparisons: list[dict[str, Any]] | None = None
+    comparisons: list[ComparisonResult] | None = None
     if baseline_path:
         baseline = load_baseline(baseline_path)
         if baseline:
@@ -619,7 +631,7 @@ def run_evaluation(
                 print(f"✅  No regressions vs baseline")
 
     # Build summary
-    summary: dict[str, Any] = {
+    summary: EvalSummary = {
         "eval_version": "0.1.0",
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "mode": mode,
