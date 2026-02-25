@@ -68,7 +68,7 @@ jobs:
             --cov-report=term-missing
 
       - name: Upload test results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         if: always()
         with:
           name: backend-test-results
@@ -142,7 +142,7 @@ jobs:
           CI: true
 
       - name: Upload Playwright report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         if: always()
         with:
           name: playwright-report
@@ -176,7 +176,7 @@ jobs:
         run: uv run python -m pytest tests/test_openapi_spec.py -v --tb=short
 
       - name: Upload OpenAPI spec
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: openapi-spec
           path: docs/openapi.json
@@ -263,7 +263,7 @@ jobs:
           "
 
       - name: Upload eval results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         if: always()
         with:
           name: eval-offline-results
