@@ -23,6 +23,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Canary provider fallback**: `pick_provider()` in `online_canary.py` now sends a health-check completion before committing to a provider. Detects 402 (payment), 401/403 (auth), and quota errors at selection time, automatically falling back to the next provider. Prevents a single provider's credit exhaustion from failing the entire canary run. Refs: Canary #7 (2026-03-02, OpenRouter 402). ([#33](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/33))
 - **Canary provider order**: `PROVIDER_ORDER` reordered to `groq → cerebras → gemini → openrouter` (free-tier providers first). ([#33](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/33))
+- **Canary timeouts and CI observability**: Added `PYTHONUNBUFFERED=1`, `python -u`, per-query timeout (8 min via `asyncio.wait_for`), and health-check timeout (30s). Ensures real-time log output in CI and prevents indefinite hangs. ([#34](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/34))
+
+### Suspended
+
+- **Online Canary cron schedule temporarily disabled** (2026-03-05). All free-tier LLM providers have exhausted their available quota: Groq hits daily token limit (TPD) after 1 query, OpenRouter has insufficient credits (HTTP 402), Cerebras deprecated model `llama-3.3-70b` (HTTP 404). The canary infrastructure itself is healthy — health-check fallback (#33), timeouts (#34), and unbuffered CI output are all in place. Manual dispatch remains available via `gh workflow run "CDR Online Canary"`. Schedule will be re-enabled once provider quota is restored.
+- **Canary timeouts and CI observability**: Added `PYTHONUNBUFFERED=1`, `python -u`, per-query timeout (8 min via `asyncio.wait_for`), and health-check timeout (30s). Ensures real-time log output in CI and prevents indefinite hangs. ([#34](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/34))
+
+### Suspended
+
+- **Online Canary cron schedule temporarily disabled** (2026-03-05). All free-tier LLM providers have exhausted their available quota: Groq hits daily token limit (TPD) after 1 query, OpenRouter has insufficient credits (HTTP 402), Cerebras deprecated model `llama-3.3-70b` (HTTP 404). The canary infrastructure itself is healthy — health-check fallback (#33), timeouts (#34), and unbuffered CI output are all in place. Manual dispatch remains available via `gh workflow run "CDR Online Canary"`. Schedule will be re-enabled once provider quota is restored.
 
 ### Dependencies
 

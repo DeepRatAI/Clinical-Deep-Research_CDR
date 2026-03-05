@@ -13,9 +13,26 @@
 name: CDR Online Canary
 
 on:
-  schedule:
-    # Every 48 hours (midnight UTC, odd days)
-    - cron: "0 0 */2 * *"
+  # ┌──────────────────────────────────────────────────────────────────┐
+  # │  CANARY SCHEDULE SUSPENDED — 2026-03-05                         │
+  # │                                                                  │
+  # │  All free-tier LLM providers have exhausted their rate limits:   │
+  # │    • Groq:       daily token limit (TPD) hit after 1 query       │
+  # │    • OpenRouter:  insufficient credits (HTTP 402)                │
+  # │    • Cerebras:    model llama-3.3-70b deprecated (HTTP 404)      │
+  # │    • Gemini:      not configured for canary use                  │
+  # │                                                                  │
+  # │  The canary itself is healthy — all code changes from #33 and    │
+  # │  #34 (health-check, timeouts, provider fallback) are in place.   │
+  # │                                                                  │
+  # │  TO RE-ENABLE:                                                   │
+  # │    1. Ensure at least one provider has available quota            │
+  # │    2. Uncomment the cron line below                              │
+  # │    3. Test with: gh workflow run "CDR Online Canary"             │
+  # └──────────────────────────────────────────────────────────────────┘
+  #
+  # schedule:
+  #   - cron: "0 0 */2 * *"
   workflow_dispatch:
     inputs:
       provider:
