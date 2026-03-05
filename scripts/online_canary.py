@@ -69,6 +69,9 @@ CANARY_QUERIES = [
 # OpenRouter moved last — free credits can expire silently (INC: Canary #7, 2026-03-02).
 PROVIDER_ORDER = ["groq", "cerebras", "gemini", "openrouter"]
 
+# Per-query timeout: 8 minutes (successful queries typically take 2-3 min)
+QUERY_TIMEOUT_SECONDS = 480
+
 KEY_MAP = {
     "openrouter": "OPENROUTER_API_KEY",
     "groq": "GROQ_API_KEY",
@@ -91,21 +94,28 @@ def sanitize_text(text: str) -> str:
     return text
 
 
-async def _health_check(provider, name: str) -> bool:
+async def _health_check(provider, name: str, timeout: float = 30.0) -> bool:
     """Send a trivial completion to verify the provider actually works.
 
     Catches payment errors (402), auth errors (401/403), and other
     issues that only surface at request time, not during init.
+    Enforces a hard timeout to prevent the canary from hanging.
     """
     from cdr.llm.base import Message
 
     try:
-        await provider.acomplete(
-            messages=[Message(role="user", content="Reply with the single word OK.")],
-            max_tokens=4,
-            temperature=0.0,
+        await asyncio.wait_for(
+            provider.acomplete(
+                messages=[Message(role="user", content="Reply with the single word OK.")],
+                max_tokens=4,
+                temperature=0.0,
+            ),
+            timeout=timeout,
         )
         return True
+    except asyncio.TimeoutError:
+        print(f"  ⚠️  {name}: health-check timed out ({timeout}s)")
+        return False
     except Exception as exc:
         exc_str = str(exc).lower()
         # Detect payment / quota / auth errors
@@ -316,9 +326,9 @@ async def main():
     output_dir = Path(args.output)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    print("=" * 60)
-    print("🐤 CDR Online Canary — Real E2E Validation")
-    print("=" * 60)
+    print("=" * 60, flush=True)
+    print("🐤 CDR Online Canary — Real E2E Validation", flush=True)
+    print("=" * 60, flush=True)
 
     # ── Select provider ──
     print("\n🔍 Selecting LLM provider...")
@@ -337,7 +347,21 @@ async def main():
         print(f"   {query['question'][:80]}...")
         print(f"{'─' * 60}")
 
-        result = await run_single_query(query, provider, provider_name, output_dir)
+        try:
+            result = await asyncio.wait_for(
+                run_single_query(query, provider, provider_name, output_dir),
+                timeout=QUERY_TIMEOUT_SECONDS,
+            )
+        except asyncio.TimeoutError:
+            result = {
+                "query_id": query["id"],
+                "question": query["question"],
+                "run_id": f"canary_{query['id'].lower()}",
+                "status": "FAIL",
+                "error": f"Query timed out after {QUERY_TIMEOUT_SECONDS}s",
+                "warnings": [],
+                "metrics": {},
+            }
         query_results.append(result)
 
         status_icon = "✅" if result["status"] == "PASS" else "❌"
