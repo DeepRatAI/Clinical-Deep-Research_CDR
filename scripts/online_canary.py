@@ -26,6 +26,15 @@ import sys
 import time
 from pathlib import Path
 
+class _QueryTimeoutError(Exception):
+    """Raised by SIGALRM when a canary query exceeds its wall-clock budget."""
+    pass
+
+
+def _sigalrm_handler(signum, frame):
+    raise _QueryTimeoutError("SIGALRM: wall-clock timeout")
+
+
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
@@ -347,21 +356,27 @@ async def main():
         print(f"   {query['question'][:80]}...")
         print(f"{'─' * 60}")
 
+        # Use SIGALRM for hard wall-clock timeout — works even when
+        # synchronous time.sleep() calls in LLM providers block the event loop.
+        import signal
+        old_handler = signal.signal(signal.SIGALRM, _sigalrm_handler)
+        signal.alarm(QUERY_TIMEOUT_SECONDS)
         try:
-            result = await asyncio.wait_for(
-                run_single_query(query, provider, provider_name, output_dir),
-                timeout=QUERY_TIMEOUT_SECONDS,
-            )
-        except asyncio.TimeoutError:
+            result = await run_single_query(query, provider, provider_name, output_dir)
+        except _QueryTimeoutError:
             result = {
                 "query_id": query["id"],
                 "question": query["question"],
                 "run_id": f"canary_{query['id'].lower()}",
                 "status": "FAIL",
-                "error": f"Query timed out after {QUERY_TIMEOUT_SECONDS}s",
+                "error": f"Query timed out after {QUERY_TIMEOUT_SECONDS}s (wall-clock SIGALRM)",
                 "warnings": [],
                 "metrics": {},
             }
+            print(f"  ⏰ SIGALRM: query killed after {QUERY_TIMEOUT_SECONDS}s", flush=True)
+        finally:
+            signal.alarm(0)  # Cancel the alarm
+            signal.signal(signal.SIGALRM, old_handler)
         query_results.append(result)
 
         status_icon = "✅" if result["status"] == "PASS" else "❌"
