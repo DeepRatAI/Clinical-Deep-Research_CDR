@@ -19,21 +19,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Comprehensive type annotations in `eval_runner.py`**: Added 7 type aliases (`EvalMode`, `OutputFormat`, `QuestionDict`, `MetricsDict`, `EvalResult`, `EvalSummary`, `ComparisonResult`), explicit variable annotations, and full `typing` imports. Passes `mypy --strict` with 0 errors. Closes [#1](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/issues/1). ([#25](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/25))
 
+### Fixed
+
+- **Canary provider fallback**: `pick_provider()` in `online_canary.py` now sends a health-check completion before committing to a provider. Detects 402 (payment), 401/403 (auth), and quota errors at selection time, automatically falling back to the next provider. Prevents a single provider's credit exhaustion from failing the entire canary run. Refs: Canary #7 (2026-03-02, OpenRouter 402). ([#33](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/33))
+- **Canary provider order**: `PROVIDER_ORDER` reordered to `groq → cerebras → gemini → openrouter` (free-tier providers first). ([#33](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/33))
+
 ### Dependencies
 
 - **GitHub Actions** (CI):
   - `actions/checkout` 4 → 6 ([#13](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/13))
-  - `actions/upload-artifact` 4 → 6 ([#14](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/14))
+  - `actions/upload-artifact` 4 → 6 → 7 ([#14](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/14), [#27](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/27))
   - `actions/setup-python` 5 → 6 ([#15](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/15))
   - `actions/cache` 4 → 5 ([#16](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/16))
   - `actions/setup-node` 4 → 6 ([#17](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/17))
 - **npm** (`/ui`):
   - Minor-and-patch group: 7 updates including vite, vitest, eslint plugins ([#18](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/18))
   - `jsdom` 25.0.1 → 28.1.0 ([#23](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/23))
+  - `autoprefixer` 10.4.24 → 10.4.27 ([#28](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/28))
+  - `eslint-plugin-react-hooks` 5.2.0 → 7.0.1 ([#31](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/31))
+  - `@vitejs/plugin-react` 4.7.0 → 5.1.4 ([#32](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/32))
+  - `react-router-dom` 6.30.3 → 7.13.1 ([#30](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/30))
 
 ### Removed
 
-- Closed Dependabot PRs for incompatible major bumps: tailwindcss 3→4 ([#19](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/19)), eslint 9→10 ([#20](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/20)), react-dom ([#22](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/22)). These require migration work and may be addressed in v0.2.0.
+- Closed Dependabot PRs for incompatible major bumps: tailwindcss 3→4 ([#19](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/19)), eslint 9→10 ([#20](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/20)), react-dom ([#22](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/22)), react 18→19 ([#29](https://github.com/DeepRatAI/Clinical-Deep-Research_CDR/pull/29)). These require migration work and may be addressed in v0.2.0.
 
 ### Community
 
