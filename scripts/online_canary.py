@@ -65,7 +65,9 @@ CANARY_QUERIES = [
     },
 ]
 
-PROVIDER_ORDER = ["openrouter", "groq", "cerebras", "gemini"]
+# Prefer providers with generous free tiers first.
+# OpenRouter moved last — free credits can expire silently (INC: Canary #7, 2026-03-02).
+PROVIDER_ORDER = ["groq", "cerebras", "gemini", "openrouter"]
 
 KEY_MAP = {
     "openrouter": "OPENROUTER_API_KEY",
@@ -89,11 +91,44 @@ def sanitize_text(text: str) -> str:
     return text
 
 
-def pick_provider(preferred: str = "auto"):
-    """Select an available LLM provider."""
+async def _health_check(provider, name: str) -> bool:
+    """Send a trivial completion to verify the provider actually works.
+
+    Catches payment errors (402), auth errors (401/403), and other
+    issues that only surface at request time, not during init.
+    """
+    from cdr.llm.base import Message
+
+    try:
+        await provider.acomplete(
+            messages=[Message(role="user", content="Reply with the single word OK.")],
+            max_tokens=4,
+            temperature=0.0,
+        )
+        return True
+    except Exception as exc:
+        exc_str = str(exc).lower()
+        # Detect payment / quota / auth errors
+        if any(k in exc_str for k in ("402", "credit", "payment", "quota", "401", "403", "unauthorized")):
+            print(f"  ⚠️  {name}: health-check failed ({exc_str[:120]})")
+            return False
+        # Transient errors (429, 500, etc.) — provider might still work
+        print(f"  ⚠️  {name}: health-check warning ({exc_str[:120]}), proceeding anyway")
+        return True
+
+
+async def pick_provider(preferred: str = "auto"):
+    """Select an available LLM provider with health-check verification.
+
+    Improvement over naive key-exists check: sends a trivial completion
+    to detect payment errors (402), expired keys, and quota exhaustion
+    before committing to a provider for the full canary run.
+
+    Refs: Canary #7 failure (2026-03-02) — OpenRouter 402 on all 5 queries.
+    """
     from cdr.llm.factory import create_provider
 
-    order = PROVIDER_ORDER
+    order = list(PROVIDER_ORDER)
     if preferred != "auto" and preferred in PROVIDER_ORDER:
         order = [preferred] + [p for p in PROVIDER_ORDER if p != preferred]
 
@@ -105,10 +140,18 @@ def pick_provider(preferred: str = "auto"):
             continue
         try:
             provider = create_provider(name)
-            print(f"  ✅ Using provider: {name}")
-            return provider, name
         except Exception as exc:
             print(f"  ⚠️  {name}: init failed ({exc})")
+            continue
+
+        # Health-check: verify the provider can actually serve requests
+        if not await _health_check(provider, name):
+            print(f"  ⏭  {name}: skipped (health-check failed)")
+            continue
+
+        print(f"  ✅ Using provider: {name}")
+        return provider, name
+
     return None, None
 
 
@@ -279,7 +322,7 @@ async def main():
 
     # ── Select provider ──
     print("\n🔍 Selecting LLM provider...")
-    provider, provider_name = pick_provider(args.provider)
+    provider, provider_name = await pick_provider(args.provider)
     if provider is None:
         print("❌ No LLM provider available. Set at least one API key.")
         sys.exit(1)
